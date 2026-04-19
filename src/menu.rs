@@ -163,7 +163,7 @@ pub fn section_title(title: &str, section: &str) {
 }
 
 /// This function will format a literal string into a style desired for a title.
-pub fn subheader_title(title: &str) {
+pub fn header_title(title: &str) {
   println!("{}", title.bright_blue().bold());
   println!("{} \n", "-".repeat(title.len()).bright_blue());  
 }
