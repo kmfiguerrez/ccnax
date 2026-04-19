@@ -132,7 +132,7 @@ pub enum PostHeaderPromptError {
 /// Reads a single menu command from the user and returns a `PostHeaderPromptAction`.
 /// Only accepts `q` (quit) or `s` (list subheaders). Any other input is an error.
 pub fn post_header_prompt() -> Result<PostHeaderPromptAction, PostHeaderPromptError> {
-  print!("Enter 'q' to quit or 'h' to list headers: ");
+  print!("Enter 'q' to quit or 's' to list subheaders: ");
   io::stdout().flush()?;
 
   let mut input = String::new();
@@ -143,7 +143,7 @@ pub fn post_header_prompt() -> Result<PostHeaderPromptAction, PostHeaderPromptEr
 
   match input.trim() {
     "q" | "Q" => Ok(PostHeaderPromptAction::Quit),
-    "h" | "H" => Ok(PostHeaderPromptAction::ListPreviousMenu),
+    "s" | "S" => Ok(PostHeaderPromptAction::ListPreviousMenu),
     other => Err(PostHeaderPromptError::InvalidOption(other.to_string())),
   }
 }
@@ -156,14 +156,14 @@ pub fn chapter_title(title: &str, chapter: &str) {
 }
 
 /// This function will format a literal string into a style desired for a title.
-pub fn section_title(title: &str) {
-  let section_title = format!("Section: {}", title);
+pub fn section_title(title: &str, section: &str) {
+  let section_title = format!("{}: {}", section, title);
   println!("{}", section_title.bright_blue().bold());
   println!("{} \n", "-".repeat(section_title.len()).bright_blue());  
 }
 
 /// This function will format a literal string into a style desired for a title.
-pub fn header_title(title: &str) {
+pub fn subheader_title(title: &str) {
   println!("{}", title.bright_blue().bold());
   println!("{} \n", "-".repeat(title.len()).bright_blue());  
 }
