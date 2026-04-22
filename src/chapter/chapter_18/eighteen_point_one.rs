@@ -126,8 +126,6 @@ fn pcb_content() {
 
 // Header: Using Ping with Names and with IP Addresses. Abbreviated as upwnawia.
 fn upwnawia_content() {
-  let solid_disc = "\u{2022}";
-
   menu::header_title("Using Ping with Names and with IP Addresses");
 
   println!(
