@@ -163,6 +163,9 @@
   .relative {
     position: relative;
   }
+  .static {
+    position: static;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -189,6 +192,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
 }
 @property --tw-rotate-x {

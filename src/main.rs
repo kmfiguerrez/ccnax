@@ -1,14 +1,26 @@
 // The dioxus prelude contains a ton of common items used in dioxus apps. It's a good idea to import wherever you
 // need dioxus
 use dioxus::prelude::*;
-
-use components::Hero;
-use views::{Blog, Home, Navbar};
+use crate::utils::db_models::Database;
+use views::{
+    Blog, 
+    Home, 
+    Navbar,
+    Volume,
+    Part,
+    Chapter,
+    Section,
+    Subheader,
+    volume1::chapter1::{Chapter1, SectionsRenderer}, 
+};
 
 /// Define a components module that contains all shared components for our app.
 mod components;
 /// Define a views module that contains the UI for all Layouts and Routes for our app.
 mod views;
+/// The utils module contains utility functions that are used throughout the app.
+/// These functions are not specific to any one component or view, but are useful for many different parts of the app.
+mod utils;
 
 /// The Route enum is used to define the structure of internal routes in our app. All route enums need to derive
 /// the [`Routable`] trait, which provides the necessary methods for the router to work.
@@ -31,6 +43,32 @@ enum Route {
         // Fields of the route variant will be passed to the component as props. In this case, the blog component must accept
         // an `id` prop of type `i32`.
         Blog { id: i32 },
+    #[end_layout]
+
+    #[nest("/volume1/chapter1")]
+        #[route("/")]
+        Chapter1 {},
+        #[route("/:section")]
+        SectionsRenderer { section: String },
+    #[end_nest]
+
+    #[nest("/volume/:volume_id")]
+        #[route("/")]
+        Volume { volume_id: u32 },
+        #[nest("/part/:part_id")]
+            #[route("/")]
+            Part { volume_id: u32, part_id: u32 },
+            #[nest("/chapter/:chapter_id")]
+                #[route("/")]
+                Chapter { volume_id: u32, part_id: u32, chapter_id: u32 },
+                #[nest("/section/:section_id")]
+                    #[route("/")]
+                    Section { volume_id:u32, part_id: u32, chapter_id:u32, section_id: u32},
+                    #[nest("/subheader/:subheader_id")]
+                    #[route("/")]
+                    Subheader { volume_id:u32, part_id: u32, chapter_id:u32, section_id: u32, subheader_id: u32},
+
+
 }
 
 // We can import assets in dioxus with the `asset!` macro. This macro takes a path to an asset relative to the crate root.
@@ -39,6 +77,7 @@ const FAVICON: Asset = asset!("/assets/favicon.ico");
 // The asset macro also minifies some assets like CSS and JS to make bundled smaller
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
+// const JSON_DATA: &str = include_str!("../assets/data.json");
 
 fn main() {
     // The `launch` function is the main entry point for a dioxus app. It takes a component and renders it with the platform feature
@@ -52,6 +91,16 @@ fn main() {
 /// Components should be annotated with `#[component]` to support props, better error messages, and autocomplete
 #[component]
 fn App() -> Element {
+    // 1. Create the signal and provide it to the whole app.
+    // Parse the JSON string into our BTreeMap
+    let db = use_signal(|| {
+        let json_data = include_str!("../assets/data.json");
+        serde_json::from_str::<Database>(json_data)
+            .expect("Failed to parse JSON")
+    });    
+    // The closure ensures it only initializes once.
+    use_context_provider(|| db);    
+
     // The `rsx!` macro lets us define HTML inside of rust. It expands to an Element with all of our HTML inside.
     rsx! {
         // In addition to element and text (which we will see later), rsx can contain other components. In this case,

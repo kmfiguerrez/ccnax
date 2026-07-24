@@ -1,0 +1,147 @@
+{
+    "1": {
+        "parts": {
+            "1": {
+                "name": "Introduction to Networking",
+                "chapters": {
+                    "1": {
+                        "name": "Introduction to TCP/IP Networking",
+                        "sections": {
+                            "1": {
+                                "name": "Perspectives on Networking",
+                                "subheaders": {
+                                    "1": {
+                                        "name": "Section Introduction"
+                                    }
+                                }
+                            },
+                            "2": {
+                                "name": "TCP/IP Networking Model",
+                                "subheaders": {
+                                    "1": {
+                                        "name": "Section Introduction"
+                                    },
+                                    "2": {
+                                        "name": "History Leading to TCP/IP"
+                                    },
+                                    "3": {
+                                        "name": "Overview of the TCP/IP Networking Model"
+                                    },
+                                    "4": {
+                                        "name": "TCP/IP Application Layer"
+                                    },
+                                    "5": {
+                                        "name": "TCP/IP Transport Layer"
+                                    },
+                                    "6": {
+                                        "name": "TCP/IP Network Layer"
+                                    },
+                                    "7": {
+                                        "name": "TCP/IP Data-Link and Physical Layers"
+                                    }
+                                }
+                            },
+                            "3": {
+                                "name": "Data Encapsulation Terminology",
+                                "subheaders": {
+                                    "1": {
+                                        "name": "Section Introduction"
+                                    },
+                                    "2": {
+                                        "name": "Names of TCP/IP Messages"
+                                    },
+                                    "3": {
+                                        "name": "OSI Networking Model and Terminology"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "2": {
+        "parts": {
+            "3": {
+                "name": "IP Services",
+                "chapters": {
+                    "9": {
+                        "name": "Device Management Protocols",
+                        "sections": {
+                            "1": {
+                                "name": "System Message Logging (Syslog)",
+                                "subheaders": {
+                                    "1": {
+                                        "name": "Section Introduction"
+                                    },
+                                    "2": {
+                                        "name": "Sending Messages in Real Time to Current Users"
+                                    },
+                                    "3": {
+                                        "name": "Storing Log Messages for Later Review"
+                                    },
+                                    "4": {
+                                        "name": "Log Message Format"
+                                    },
+                                    "5": {
+                                        "name": "Log Message Severity Levels"
+                                    },
+                                    "6": {
+                                        "name": "Configuring and Verifying System Logging"
+                                    },
+                                    "7": {
+                                        "name": "The debug Command and Log Messages"
+                                    }
+                                }
+                            },
+                            "2": {
+                                "name": "Network Time Protocol (NTP)",
+                                "subheaders": {
+                                    "1": {
+                                        "name": "Section Introduction"
+                                    },
+                                    "2": {
+                                        "name": "Setting the Time and Timezone"
+                                    },
+                                    "3": {
+                                        "name": "Basic NTP Configuration"
+                                    },
+                                    "4": {
+                                        "name": "NTP Reference Clock and Stratum"
+                                    },
+                                    "5": {
+                                        "name": "Redundant NTP Configuration"
+                                    },
+                                    "6": {
+                                        "name": "NTP Using a Loopback Interface for Better Availability"
+                                    }
+                                }
+                            },
+                            "3": {
+                                "name": "Analyzing Topology Using CDP and LLDP",
+                                "subheaders": {
+                                    "1": {
+                                        "name": "Section Introduction"
+                                    },
+                                    "2": {
+                                        "name": "Examining Information Learned by CDP"
+                                    },
+                                    "3": {
+                                        "name": "Configuring and Verifying CDP"
+                                    },
+                                    "4": {
+                                        "name": "Examining Information Learned by LLDP"
+                                    },
+                                    "5": {
+                                        "name": "Configuring and Verifying LLDP"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
