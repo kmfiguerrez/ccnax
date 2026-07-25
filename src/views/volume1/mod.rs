@@ -1,1 +1,1 @@
-pub mod chapter1;
+pub mod chapters;

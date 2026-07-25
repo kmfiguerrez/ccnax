@@ -9,7 +9,7 @@ pub fn Volume(volume_id: u32) -> Element {
     let volume = db.read().get(&volume_id).cloned();
 
     rsx! {
-        h1 { "Volume: {volume_id}" }
+        h1 { class: "text-lg font-bold mb-4", "Volume: {volume_id}" }
         if let Some(volume) = volume {
             ol {
                 for (idx , part) in volume.parts {

@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 
 use crate::{
     utils::db_models::Database,
-    views::volume2::chapter9::section1::subheader1
+    views::volume2::chapter9::section1::subheader1_content
 };
 
 #[component]
@@ -19,34 +19,34 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
     // This keeps the borrow alive until the component function finishes.
     let db_guard = db.read();
 
-    // 2. Get an Option<&Section>.
-    let section = db_guard.get(&volume_id)
+    // 2. Get an Option<&Subheader>.
+    let subheader = db_guard.get(&volume_id)
         .and_then(|v| v.parts.get(&part_id))
         .and_then(|p| p.chapters.get(&chapter_id))   
-        .and_then(|s| s.sections.get(&section_id));
+        .and_then(|s| s.sections.get(&section_id))
+        .and_then(|sh| sh.subheaders.get(&subheader_id));
 
 
     
     rsx! {
-        if let Some(section) = section {
-            h1 { "Section {chapter_id}.{section_id}: {section.name}" }
+        if let Some(subheader) = subheader {
+            h1 { class: "text-lg font-bold mb-4", "{subheader.name}" }
             // Display subheader content.
             // This is for demostration purposes only.
             // For real application, use Database!
             match (volume_id, part_id, chapter_id, section_id, subheader_id) {
                 (1, 1, 1, 1, 1) => rsx! {
                     h3 { "sucker" }
-
                 },
                 (2, 3, 9, 1, 1) => rsx! {
-                    subheader1::Content {}
+                    subheader1_content::Content {}
                 },
                 _ => rsx! {
                     h3 { "get lost" }
                 },
             }
         } else {
-            h2 { "Subheader {subheader_id} not found." }
+            h1 { "Subheader {subheader_id} not found." }
         }
     }
 }

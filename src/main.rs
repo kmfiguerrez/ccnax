@@ -11,7 +11,6 @@ use views::{
     Chapter,
     Section,
     Subheader,
-    volume1::chapter1::{Chapter1, SectionsRenderer}, 
 };
 
 /// Define a components module that contains all shared components for our app.
@@ -43,14 +42,7 @@ enum Route {
         // Fields of the route variant will be passed to the component as props. In this case, the blog component must accept
         // an `id` prop of type `i32`.
         Blog { id: i32 },
-    #[end_layout]
-
-    #[nest("/volume1/chapter1")]
-        #[route("/")]
-        Chapter1 {},
-        #[route("/:section")]
-        SectionsRenderer { section: String },
-    #[end_nest]
+    // #[end_layout]
 
     #[nest("/volume/:volume_id")]
         #[route("/")]

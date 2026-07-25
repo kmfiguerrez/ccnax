@@ -20,7 +20,7 @@ pub fn Chapter(volume_id: u32, part_id: u32, chapter_id: u32) -> Element {
     
     rsx! {
         if let Some(chapter) = chapter {
-            h1 { "Chapter {chapter_id}: {chapter.name}" }
+            h1 { class: "text-lg font-bold mb-4", "Chapter {chapter_id}: {chapter.name}" }
             ol {
                 for (idx , section) in chapter.sections.iter() {
                     li { key: "{idx}",

@@ -24,7 +24,7 @@ pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -
     
     rsx! {
         if let Some(section) = section {
-            h1 { "Section {chapter_id}.{section_id}: {section.name}" }
+            h1 { class: "text-lg font-bold mb-4", "Section {chapter_id}.{section_id}: {section.name}" }
             ol {
                 for (idx , subheader) in section.subheaders.iter() {
                     li { key: "{idx}",

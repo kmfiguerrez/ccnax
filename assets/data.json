@@ -73,24 +73,21 @@
                                 "name": "System Message Logging (Syslog)",
                                 "subheaders": {
                                     "1": {
-                                        "name": "Section Introduction"
-                                    },
-                                    "2": {
                                         "name": "Sending Messages in Real Time to Current Users"
                                     },
-                                    "3": {
+                                    "2": {
                                         "name": "Storing Log Messages for Later Review"
                                     },
-                                    "4": {
+                                    "3": {
                                         "name": "Log Message Format"
                                     },
-                                    "5": {
+                                    "4": {
                                         "name": "Log Message Severity Levels"
                                     },
-                                    "6": {
+                                    "5": {
                                         "name": "Configuring and Verifying System Logging"
                                     },
-                                    "7": {
+                                    "6": {
                                         "name": "The debug Command and Log Messages"
                                     }
                                 }
@@ -99,21 +96,18 @@
                                 "name": "Network Time Protocol (NTP)",
                                 "subheaders": {
                                     "1": {
-                                        "name": "Section Introduction"
-                                    },
-                                    "2": {
                                         "name": "Setting the Time and Timezone"
                                     },
-                                    "3": {
+                                    "2": {
                                         "name": "Basic NTP Configuration"
                                     },
-                                    "4": {
+                                    "3": {
                                         "name": "NTP Reference Clock and Stratum"
                                     },
-                                    "5": {
+                                    "4": {
                                         "name": "Redundant NTP Configuration"
                                     },
-                                    "6": {
+                                    "5": {
                                         "name": "NTP Using a Loopback Interface for Better Availability"
                                     }
                                 }

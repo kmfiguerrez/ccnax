@@ -1,5 +1,7 @@
 pub mod db_models;
 
+pub mod text_command;
+
 pub fn format_section_title(slug: &str) -> String {
     // 1. Replace "tcp-ip" before splitting by hyphens
     let fixed_slug = slug.to_lowercase().replace("tcp-ip", "TCP/IP");
