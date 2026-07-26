@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 
 use crate::{
     utils::db_models::Database,
-    views::volume2::chapter9::section1::subheader1_content
+    views::volume2::chapter9::section1::{subheader1_content, subheader2_content, subheader3_content}
 };
 
 #[component]
@@ -40,6 +40,12 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
                 },
                 (2, 3, 9, 1, 1) => rsx! {
                     subheader1_content::Content {}
+                },
+                (2, 3, 9, 1, 2) => rsx! {
+                    subheader2_content::Content {}
+                },
+                (2, 3, 9, 1, 3) => rsx! {
+                    subheader3_content::Content {}
                 },
                 _ => rsx! {
                     h3 { "get lost" }

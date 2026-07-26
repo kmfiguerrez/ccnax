@@ -8,8 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
     --color-amber-400: oklch(82.8% 0.189 84.429);
-    --color-blue-400: oklch(70.7% 0.165 254.624);
-    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --spacing: 0.25rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
@@ -171,9 +170,6 @@
   .relative {
     position: relative;
   }
-  .static {
-    position: static;
-  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -192,8 +188,14 @@
       max-width: 96rem;
     }
   }
+  .mr-1 {
+    margin-right: calc(var(--spacing) * 1);
+  }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -204,36 +206,17 @@
   .contents {
     display: contents;
   }
-  .table {
-    display: table;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
-  }
-  .list-inside {
-    list-style-position: inside;
-  }
-  .list-outside {
-    list-style-position: outside;
-  }
   .list-decimal {
     list-style-type: decimal;
   }
   .list-disc {
     list-style-type: disc;
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -253,21 +236,11 @@
   .text-amber-400 {
     color: var(--color-amber-400);
   }
-  .text-blue-400 {
-    color: var(--color-blue-400);
-  }
-  .text-blue-500 {
-    color: var(--color-blue-500);
+  .text-gray-300 {
+    color: var(--color-gray-300);
   }
   .uppercase {
     text-transform: uppercase;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
 }
 @property --tw-rotate-x {
@@ -290,19 +263,9 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
@@ -312,9 +275,7 @@
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }

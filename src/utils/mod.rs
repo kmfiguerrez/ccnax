@@ -60,39 +60,4 @@ pub fn slugify(text: &str) -> String {
         .join("-")
 }
 
-pub struct Chapter<'a> {
-    pub title: &'a str,
-    pub slug: u32
-}
-
-
-/// Returns a list of chapters for a given volume ID.
-pub fn list_chapters(volume_id: &u32) -> &[Chapter] {
-    match volume_id {
-        1 => &[Chapter { title: "Chapter 1: Introduction to Networking", slug: 1 }],
-        _ => &[Chapter { title: "Chapter 9: Device Management Protocols", slug: 9 }],
-    }
-}
-
-/// Returns a list of sections for a given volume and chapter ID.
-/// 
-/// For demonstration purposes, we return a static list of sections based on the volume and chapter IDs.
-/// In a real application, you might fetch this data from a database or an API.
-// pub fn list_sections(volume_id: u32, chapter_id: u32) -> Vec<String> {
-pub fn list_sections(volume_id: u32, chapter_id: &u32) -> &[&str] {
-
-    match (volume_id, chapter_id) {
-        (1, 1) => &[
-            "introduction",
-            "networking-basics",
-            "protocols-overview",
-        ],
-        (2, 9) => &[
-            "System Message Logging (Syslog)",
-            "Network Time Protocol (NTP)",
-            "Analyzing Topology Using CDP and LLDP",
-        ],
-        _ => &["section-1", "section-2"],
-    }
-}
 
