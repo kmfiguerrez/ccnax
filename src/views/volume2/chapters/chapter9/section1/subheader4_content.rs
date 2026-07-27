@@ -20,7 +20,10 @@ pub fn Content() -> Element {
             strong { "(Note that the values on the left and center are used in IOS commands.)" }
         }
 
-        img { class: "mb-4", src: asset!("/assets/static/v2p3c9s1sh3f9-3.png") }
+        img {
+            class: "mb-4",
+            src: asset!("/assets/static/v2p3c9s1sh3f9-3.png", AssetOptions::image().with_avif()),
+        }
 
         p { class: "mb-4",
             "Figure 9-3 breaks the eight severity levels into four sections just to make a little more sense
@@ -72,8 +75,10 @@ pub fn Content() -> Element {
         p { class: "mb-3",
             " Table 9-2 summarizes the configuration commands used to enable logging and to set the severity level for each type."
             br {}
-            "When the severity level is set, IOS will send messages of that severity level and more severe ones 
-            (lower severity numbers) to the service identified in the command."
+            strong {
+                "When the severity level is set, IOS will send messages of that severity level and more severe ones 
+                (lower severity numbers) to the service identified in the command."
+            }
             br {}
             "For example, the command "
             {text_command("logging console 4")}
@@ -89,7 +94,6 @@ pub fn Content() -> Element {
             {text_command("no logging monitor")}
             " and so on )."
         }
-        img { src: asset!("/assets/static/v2p3c9s1sh3t9-2.png") }
-
+        img { src: asset!("/assets/static/v2p3c9s1sh3t9-2.png", AssetOptions::image().with_avif()) }
     }
 }

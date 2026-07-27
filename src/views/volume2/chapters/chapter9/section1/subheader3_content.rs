@@ -41,13 +41,14 @@ pub fn Content() -> Element {
             }
         }
 
-        p {
+        p { class: "mb-3",
             "IOS dictates most of the contents of the messages, but you can at least toggle on and off
             the use of the timestamp (which is included by default) and a log message sequence number
             (which is not enabled by default)."
             br {}
             "Example 9-1 reverses those defaults by turning off timestamps and turning on sequence numbers."
         }
-        img { src: asset!("/assets/static/v2p3c9s1sh3ex9-1.png") }
+        img { src: asset!("/assets/static/v2p3c9s1sh3ex9-1.png", AssetOptions::image().with_avif()) }
+
     }
 }
