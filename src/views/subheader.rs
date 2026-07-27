@@ -2,7 +2,12 @@ use dioxus::prelude::*;
 
 use crate::{
     utils::db_models::Database,
-    views::volume2::chapter9::section1::{subheader1_content, subheader2_content, subheader3_content}
+    views::volume2::chapter9::section1::{
+        subheader1_content, 
+        subheader2_content, 
+        subheader3_content, 
+        subheader4_content
+    }
 };
 
 #[component]
@@ -31,6 +36,7 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
     rsx! {
         if let Some(subheader) = subheader {
             h1 { class: "text-lg font-bold mb-4", "{subheader.name}" }
+            // p { "what" }
             // Display subheader content.
             // This is for demostration purposes only.
             // For real application, use Database!
@@ -46,6 +52,9 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
                 },
                 (2, 3, 9, 1, 3) => rsx! {
                     subheader3_content::Content {}
+                },
+                (2, 3, 9, 1, 4) => rsx! {
+                    subheader4_content::Content {}
                 },
                 _ => rsx! {
                     h3 { "get lost" }

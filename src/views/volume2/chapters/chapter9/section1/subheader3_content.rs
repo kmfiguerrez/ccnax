@@ -48,6 +48,6 @@ pub fn Content() -> Element {
             br {}
             "Example 9-1 reverses those defaults by turning off timestamps and turning on sequence numbers."
         }
-        img { src: asset!("/assets/static/v2p3c9s1sh3e9-1.png") }
+        img { src: asset!("/assets/static/v2p3c9s1sh3ex9-1.png") }
     }
 }
