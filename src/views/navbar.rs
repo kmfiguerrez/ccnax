@@ -15,6 +15,7 @@ pub fn Navbar() -> Element {
 
         nav { id: "navbar", class: "mb-4",
             Link { to: Route::Home {}, "Home" }
+            Link { to: Route::Page {}, "Page" }
             // Link { to: Route::Blog { id: 5 }, "Blog" }
             GoBackButton {
                 span { class: "cursor-pointer", "Previous" }

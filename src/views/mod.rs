@@ -33,3 +33,6 @@ pub use section::Section;
 
 mod subheader;
 pub use subheader::Subheader;
+
+mod page;
+pub use page::Page;
