@@ -94,6 +94,19 @@ pub fn Content() -> Element {
             {text_command("no logging monitor")}
             " and so on )."
         }
-        img { src: asset!("/assets/static/v2p3c9s1sh3t9-2.png", AssetOptions::image().with_avif()) }
+        img {
+            class: "mb-4",
+            src: asset!("/assets/static/v2p3c9s1sh3t9-2.png", AssetOptions::image().with_avif()),
+        }
+
+        h3 { class: "font-semibold mb-1", "REMEMBER" }
+        ul { class: "list-disc pl-4",
+            li {
+                "By default, on cisco IOS version 03.16.05.S, in Packet Tracer, both the console and Telnet & SSH users receive messages from levels 0-7"
+            }
+            li {
+                "Storing syslog messages in RAM and Syslog Server is disabled by default based on the said IOS version."
+            }
+        }
     }
 }

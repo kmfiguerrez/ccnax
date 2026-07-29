@@ -12,7 +12,7 @@ pub fn Content() -> Element {
             "However, clearly, it would be useful to keep a copy of the log messages for later review, so IOS provides two
             primary means to keep a copy."
         }
-        ol { class: "list-decimal pl-4",
+        ol { class: "list-decimal pl-4 mb-4",
             li {
                 "IOS can store copies of the log messages in RAM by virtue of the "
                 {text_command("logging buffered")}
@@ -41,5 +41,12 @@ pub fn Content() -> Element {
             }
         }
 
+        h3 { class: "font-semibold mb-1", "REMEMBER" }
+        ul { class: "list-disc pl-4",
+            li { "IOS provides two primary means to keep a copy: using RAM and a Syslog Server" }
+            li {
+                "RFC 5424 defines the syslog protocol which uses UDP to send messages a syslog server for storage."
+            }
+        }
     }
 }
