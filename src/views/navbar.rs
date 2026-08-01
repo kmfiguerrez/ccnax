@@ -1,4 +1,4 @@
-use crate::Route;
+use crate::{Route, components::demo::Demo};
 use dioxus::prelude::*;
 
 const NAVBAR_CSS: Asset = asset!("/assets/styling/navbar.css");
@@ -20,6 +20,7 @@ pub fn Navbar() -> Element {
             GoBackButton {
                 span { class: "cursor-pointer", "Previous" }
             }
+            Demo {}
         }
 
         // The `Outlet` component is used to render the next component inside the layout. In this case, it will render either
