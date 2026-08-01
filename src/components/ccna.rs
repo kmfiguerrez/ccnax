@@ -10,7 +10,7 @@ pub fn CcnaBookPage() -> Element {
     rsx! {
         // Will replicate the dioxus card component.
         // Card Wrapper
-        div { class: "flex flex-col gap-[1.5rem] p-[1.5rem] border border-[#a1a1a1] rounded-lg  w-full max-w-min",
+        div { class: "flex flex-col gap-[1.5rem] p-[1.5rem] border border-[#a1a1a1] rounded-lg  w-full sm:w-sm",
             // Card Header
             div {
                 // Card title
@@ -22,12 +22,13 @@ pub fn CcnaBookPage() -> Element {
             }
             // Card content
             div { class: "",
-                div { class: "flex mb-4",
-                    div { class: "flex flex-col w-40",
+                div { class: "flex flex-col mb-4 sm:flex-row sm:justify-between",
+                    // Only this div has sm:w-full because the Volume input shrinks in width when the max attribute is in place.
+                    div { class: "flex flex-col sm:base-1/2 sm:w-full",
                         label { r#for: "volume", "Volume" }
                         input {
                             id: "volume",
-                            class: "border",
+                            class: "border sm:w-full",
                             r#type: "number",
                             min: 1,
                             max: 2,
@@ -39,7 +40,7 @@ pub fn CcnaBookPage() -> Element {
                             },
                         }
                     }
-                    div { class: "flex flex-col w-40",
+                    div { class: "flex flex-col sm:base-1/2",
                         label { r#for: "page", "Page" }
                         input {
                             id: "page",
