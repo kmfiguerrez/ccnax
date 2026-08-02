@@ -1,4 +1,4 @@
-use dioxus::prelude::*;
+use dioxus::{logger::tracing, prelude::*};
 
 use crate::components::{button::Button, card::{Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle}, input::Input};
 
@@ -7,10 +7,28 @@ pub fn CcnaBookPage() -> Element {
     let mut volume: Signal<u8> = use_signal(|| 1);
     let mut book_page: Signal<u16> = use_signal(|| 1);
     let mut result_page: Signal<u16> = use_signal(|| 0);
+    let mut disable_button: Signal<bool> = use_signal(|| true);
 
+    let is_volume_valid: Memo<bool> = use_memo(move || {
+        let v = volume();
+        if v < 1 || v > 2 {
+            // Reset the result_page to 0 if the volume is invalid
+            result_page.set(0);
+            return false;
+        }
+        true
+    });
+    let is_book_page_valid: Memo<bool> = use_memo(move || {
+        if book_page() < 1 {
+            // Reset the result_page to 0 if the book page is invalid
+            result_page.set(0);
+            return false;
+        }
+        true
+    });
 
     rsx! {
-        Card {
+        Card { style: "width: 100%; max-width: 24rem;",
             CardHeader {
                 CardTitle { "CCNA Book Page" }
                 CardDescription {
@@ -20,52 +38,58 @@ pub fn CcnaBookPage() -> Element {
             CardContent {
                 div { class: "flex flex-col gap-y-4 mb-4 sm:flex-row sm:justify-between sm:gap-x-4",
                     div { class: "flex flex-col sm:w-1/2",
-                        label { r#for: "volume", "Volume" }
+                        label {
+                            class: if !is_volume_valid() { "text-red-500 font-semibold" },
+                            r#for: "volume",
+                            "Volume"
+                        }
                         Input {
-                            class: "",
+                            class: "invalid:outline! invalid:outline-offset-2! invalid:outline-red-500!",
                             id: "volume",
                             r#type: "number",
                             min: 1,
                             max: 2,
-                            value: volume,
-
+                            name: "volume",
                             oninput: move |e: FormEvent| {
                                 if let Ok(parsed) = e.value().parse::<u8>() {
                                     volume.set(parsed);
+                                    // tracing::info!("Book page updated to {}", * is_book_page_valid.peek());
                                 }
                             },
                         }
+                        // Validator
+                        if !is_volume_valid() {
+                            span { class: "text-red-500 text-sm", "Volume must be 1 or 2" }
+                        }
                     }
                     div { class: "flex flex-col sm:w-1/2",
-                        label { r#for: "page", "Page" }
-                        // input {
-                        //     id: "page",
-                        //     class: "border",
-                        //     r#type: "number",
-                        //     min: 1,
-                        //     value: book_page,
-                        //     oninput: move |e: FormEvent| {
-                        //         if let Ok(parsed) = e.value().parse::<u16>() {
-                        //             book_page.set(parsed);
-                        //         }
-                        //     },
-                        // }
+                        label {
+                            class: if !is_book_page_valid() { "text-red-500 font-semibold" },
+                            r#for: "page",
+                            "Page"
+                        }
                         Input {
-                            class: "",
+                            class: "invalid:outline! invalid:outline-offset-2! invalid:outline-red-500!",
                             id: "page",
                             r#type: "number",
                             min: 1,
-                            // max: 2,
-                            value: book_page,
+                            name: "page",
                             oninput: move |e: FormEvent| {
                                 if let Ok(parsed) = e.value().parse::<u16>() {
                                     book_page.set(parsed);
                                 }
+                                else {
+                                    book_page.set(0);
+                                }
                             },
                         }
-                    
+                        // Validator
+                        if !is_book_page_valid() {
+                            span { class: "text-red-500 text-sm", "Page must be positive integers" }
+                        }
                     }
                 }
+                // Result
                 div { class: "flex flex-col items-center",
                     span { class: "text-xl", "Result:" }
                     span {
@@ -77,9 +101,12 @@ pub fn CcnaBookPage() -> Element {
             }
             CardFooter {
                 Button {
+                    class: "max-sm:w-full",
+                    // disabled: if !is_volume_valid() || !is_book_page_valid() { true } else { false },
+                    disabled: disable_button(),
                     onclick: move |_e| {
                         if volume() == 1 as u8 {
-                            return result_page.set(book_page + 54);
+                            return result_page.set(book_page + 54 as u16);
                         }
 
                         result_page.set(book_page + 46);
@@ -88,92 +115,5 @@ pub fn CcnaBookPage() -> Element {
                 }
             }
         }
-
-        // Will replicate the dioxus card component.
-        // Card Wrapper
-        // div { class: "flex flex-col gap-[1.5rem] p-[1.5rem] border border-[#a1a1a1] rounded-lg  w-full sm:w-sm",
-        //     // Card Header
-        //     div {
-        //         // Card title
-        //         div { class: "text-base font-semibold", "CCNA Book Page" }
-        //         // Card description
-        //         div { class: "text-sm text-[#a1a1a1]",
-        //             "Enter a volume and a book page number to get the page number to use in page navigator."
-        //         }
-        //     }
-        //     // Card content
-        //     div { class: "",
-        //         div { class: "flex flex-col gap-y-4 mb-4 sm:flex-row sm:justify-between sm:gap-x-4",
-        //             div { class: "flex flex-col sm:w-1/2",
-        //                 label { r#for: "volume", "Volume" }
-        //                 Input {
-        //                     class: "",
-        //                     id: "volume",
-        //                     r#type: "number",
-        //                     min: 1,
-        //                     max: 2,
-        //                     value: volume,
-
-        //                     oninput: move |e: FormEvent| {
-        //                         if let Ok(parsed) = e.value().parse::<u8>() {
-        //                             volume.set(parsed);
-        //                         }
-        //                     },
-        //                 }
-        //             }
-        //             div { class: "flex flex-col sm:w-1/2",
-        //                 label { r#for: "page", "Page" }
-        //                 // input {
-        //                 //     id: "page",
-        //                 //     class: "border",
-        //                 //     r#type: "number",
-        //                 //     min: 1,
-        //                 //     value: book_page,
-        //                 //     oninput: move |e: FormEvent| {
-        //                 //         if let Ok(parsed) = e.value().parse::<u16>() {
-        //                 //             book_page.set(parsed);
-        //                 //         }
-        //                 //     },
-        //                 // }
-        //                 Input {
-        //                     class: "",
-        //                     id: "page",
-        //                     r#type: "number",
-        //                     min: 1,
-        //                     // max: 2,
-        //                     value: book_page,
-        //                     oninput: move |e: FormEvent| {
-        //                         if let Ok(parsed) = e.value().parse::<u16>() {
-        //                             book_page.set(parsed);
-        //                         }
-        //                     },
-        //                 }
-
-        //             }
-        //         }
-        //         div { class: "flex flex-col items-center",
-        //             span { class: "text-xl", "Result:" }
-        //             span {
-        //                 class: "text-xl",
-        //                 class: if result_page() == 0 { "invisible" },
-        //                 "{result_page}"
-        //             }
-        //         }
-        //     }
-        //     // Card footer
-        //     div {
-        //         button {
-        //             class: "px-4 py-2 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 disabled:pointer-events-none disabled:opacity-50  w-full sm:w-auto bg-zinc-100 text-zinc-950 hover:bg-zinc-200 active:bg-zinc-300",
-        //             onclick: move |_e| {
-        //                 if volume() == 1 as u8 {
-        //                     return result_page.set(book_page + 54);
-        //                 }
-
-        //                 result_page.set(book_page + 46);
-        //             },
-        //             "Get Page"
-        //         }
-        //     }
-        // }
     }
 }
