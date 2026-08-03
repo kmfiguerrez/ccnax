@@ -7,7 +7,7 @@ pub fn CcnaBookPage() -> Element {
     let mut volume: Signal<u8> = use_signal(|| 1);
     let mut book_page: Signal<u16> = use_signal(|| 1);
     let mut result_page: Signal<u16> = use_signal(|| 0);
-    let mut disable_button: Signal<bool> = use_signal(|| true);
+    // let mut disable_button: Signal<bool> = use_signal(|| true);
 
     let is_volume_valid: Memo<bool> = use_memo(move || {
         let v = volume();
@@ -50,6 +50,7 @@ pub fn CcnaBookPage() -> Element {
                             min: 1,
                             max: 2,
                             name: "volume",
+                            value: volume,
                             oninput: move |e: FormEvent| {
                                 if let Ok(parsed) = e.value().parse::<u8>() {
                                     volume.set(parsed);
@@ -74,6 +75,7 @@ pub fn CcnaBookPage() -> Element {
                             r#type: "number",
                             min: 1,
                             name: "page",
+                            value: book_page,
                             oninput: move |e: FormEvent| {
                                 if let Ok(parsed) = e.value().parse::<u16>() {
                                     book_page.set(parsed);
@@ -102,8 +104,8 @@ pub fn CcnaBookPage() -> Element {
             CardFooter {
                 Button {
                     class: "max-sm:w-full",
-                    // disabled: if !is_volume_valid() || !is_book_page_valid() { true } else { false },
-                    disabled: disable_button(),
+                    disabled: if !is_volume_valid() || !is_book_page_valid() { true } else { false },
+                    // disabled: disable_button(),
                     onclick: move |_e| {
                         if volume() == 1 as u8 {
                             return result_page.set(book_page + 54 as u16);

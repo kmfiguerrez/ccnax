@@ -1,3 +1,4 @@
+use crate::components::CcnaBookPage;
 use crate::components::button::Button;
 
 use crate::components::dialog::{Dialog, DialogDescription, DialogTitle};
@@ -29,7 +30,8 @@ pub fn Demo() -> Element {
             }
             DialogTitle { "Item information" }
             DialogDescription { "Here is some additional information about the item." }
-            Input {}
+            // Input {}
+            CcnaBookPage {}
         }
     }
 }
