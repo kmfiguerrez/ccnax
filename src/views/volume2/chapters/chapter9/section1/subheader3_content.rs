@@ -6,7 +6,8 @@ pub fn Content() -> Element {
         p { class: "mb-4",
             "IOS defines the format of log messages."
             br {}
-            "The message begins with some data fields about the message, followed by some text more easily read by humans."
+            strong { "The message begins with some data fields about the message," }
+            " followed by some text more easily read by humans."
             br {}
             "For example, take a close look at this sample message:"
             br {}
@@ -18,25 +19,25 @@ pub fn Content() -> Element {
         p { class: "mb-1", "Notice that by default on this particular device, we see the following:" }
         ol { class: "mb-4",
             li {
-                span { class: "font-semibold mr-1", "A timestamp:" }
+                strong { class: "text-sky-600 mr-2", "A timestamp:" }
                 span { "*Dec 18 17:10:15.079" }
             }
             li {
-                span { class: "font-semibold mr-1",
+                strong { class: "text-sky-600 mr-2",
                     "The facility on the router that generated the message:"
                 }
                 span { "%LINEPROTO" }
             }
             li {
-                span { class: "font-semibold mr-1", "The severity level:" }
+                strong { class: "text-sky-600 mr-2", "The severity level:" }
                 span { "5" }
             }
             li {
-                span { class: "font-semibold mr-1", "A mnemonic for the message:" }
+                strong { class: "text-sky-600 mr-2", "A mnemonic for the message:" }
                 span { "UPDOWN" }
             }
             li {
-                span { class: "font-semibold mr-1", "The description of the message:" }
+                strong { class: "text-sky-600 mr-2", "The description of the message:" }
                 span { "Line protocol on Interface FastEthernet0/0, changed state to down" }
             }
         }

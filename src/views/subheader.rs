@@ -1,9 +1,9 @@
 use dioxus::prelude::*;
+use crate::components::separator::Separator;
 
 use crate::{
-    utils::db_models::Database, views::volume2::chapter9::section1::{
-        subheader1_content, subheader2_content, subheader3_content, subheader4_content, subheader5_content, subheader6_content
-    }
+    utils::db_models::Database, 
+    views::volume2::chapter9::{section1, section3}
 };
 
 #[component]
@@ -41,22 +41,33 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
                     h3 { "sucker" }
                 },
                 (2, 3, 9, 1, 1) => rsx! {
-                    subheader1_content::Content {}
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section1::subheader1_content::Content {}
                 },
                 (2, 3, 9, 1, 2) => rsx! {
-                    subheader2_content::Content {}
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section1::subheader2_content::Content {}
                 },
                 (2, 3, 9, 1, 3) => rsx! {
-                    subheader3_content::Content {}
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section1::subheader3_content::Content {}
                 },
                 (2, 3, 9, 1, 4) => rsx! {
-                    subheader4_content::Content {}
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section1::subheader4_content::Content {}
                 },
                 (2, 3, 9, 1, 5) => rsx! {
-                    subheader5_content::Content {}
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section1::subheader5_content::Content {}
                 },
                 (2, 3, 9, 1, 6) => rsx! {
-                    subheader6_content::Content {}
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section1::subheader6_content::Content {}
+                },
+                // Start of volume 2, part 3, chapter 9, section 3
+                (2, 3, 9, 3, 1) => rsx! {
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section3::subheader1_content::Content {}
                 },
                 _ => rsx! {
                     h3 { "get lost" }

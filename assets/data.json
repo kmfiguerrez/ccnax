@@ -116,18 +116,15 @@
                                 "name": "Analyzing Topology Using CDP and LLDP",
                                 "subheaders": {
                                     "1": {
-                                        "name": "Section Introduction"
-                                    },
-                                    "2": {
                                         "name": "Examining Information Learned by CDP"
                                     },
-                                    "3": {
+                                    "2": {
                                         "name": "Configuring and Verifying CDP"
                                     },
-                                    "4": {
+                                    "3": {
                                         "name": "Examining Information Learned by LLDP"
                                     },
-                                    "5": {
+                                    "4": {
                                         "name": "Configuring and Verifying LLDP"
                                     }
                                 }

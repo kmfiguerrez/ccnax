@@ -24,11 +24,25 @@ pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -
     
     rsx! {
         if let Some(section) = section {
-            h1 { class: "text-lg font-bold mb-4", "Section {chapter_id}.{section_id}: {section.name}" }
+            // Section Title
+            h1 { class: "text-lg text-blue-500 font-bold mb-4",
+                "Section {chapter_id}.{section_id}: {section.name}"
+            }
+            // Section Introduction
+            p { class: "mb-4",
+                "The first two major sections of this chapter showed two features—syslog and NTP—that
+                work the same way on both routers and switches."
+                br {}
+                "This final section shows yet another feature common to both routers and switches, with two similar protocols: 
+                the Cisco Discovery Protocol (CDP) and the Link Layer Discovery Protocol (LLDP)."
+                br {}
+                "This section focuses on CDP, followed by LLDP."
+            }
             ol {
                 for (idx , subheader) in section.subheaders.iter() {
                     li { key: "{idx}",
                         Link {
+                            class: "font-semibold",
                             to: Route::Subheader {
                                 volume_id,
                                 part_id,
