@@ -11,7 +11,6 @@ use views::{
     Chapter,
     Section,
     Subheader,
-    Page
 };
 
 
@@ -45,9 +44,6 @@ enum Route {
         // an `id` prop of type `i32`.
         Blog { id: i32 },
     // #[end_layout]
-
-    #[route("/ccna-book-page")]
-    Page {},
 
     #[nest("/volume/:volume_id")]
         #[route("/")]
