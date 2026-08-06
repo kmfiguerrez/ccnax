@@ -9,6 +9,7 @@ mod ccna;
 pub use ccna::CcnaBookPage;
 
 pub mod green_div;
+pub mod red_div;
 
 pub mod input;
 pub mod dialog;
