@@ -17,3 +17,4 @@ pub mod button;
 pub mod demo;
 pub mod card;
 pub mod separator;
+pub mod tooltip;

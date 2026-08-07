@@ -202,6 +202,8 @@ pub fn Content() -> Element {
                 "For switches, any switch port connected to another switch, a router, or to an IP phone should use CDP."
             }
             li { "CDP only shows information about directly connected neighbors." }
+            li { "CDP is a Cisco-proprietary layer 2 protocol." }
+        
         }
     }
 }

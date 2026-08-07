@@ -83,6 +83,7 @@ pub fn Content() -> Element {
                 and subconfiguration commands."
             }
             li { "The send time and hold time can also be overriden by global commands." }
+            li { "CDP is a Cisco-proprietary layer 2 protocol." }
         }
     }
 }
