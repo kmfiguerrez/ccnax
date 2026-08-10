@@ -77,6 +77,10 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
                     Separator { class: "mb-4", horizontal: true, decorative: true }
                     section3::subheader3_content::Content {}
                 },
+                (2, 3, 9, 3, 4) => rsx! {
+                    Separator { class: "mb-4", horizontal: true, decorative: true }
+                    section3::subheader4_content::Content {}
+                },
                 _ => rsx! {
                     h3 { "get lost" }
                 },
