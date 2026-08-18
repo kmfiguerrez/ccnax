@@ -8,6 +8,8 @@ pub use hero::Hero;
 mod ccna;
 pub use ccna::CcnaBookPage;
 
+pub mod volume_card;
+
 pub mod green_div;
 pub mod red_div;
 

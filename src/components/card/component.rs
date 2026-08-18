@@ -1,4 +1,6 @@
 use dioxus::prelude::*;
+use dioxus_primitives::dioxus_attributes::attributes;
+use dioxus_primitives::merge_attributes;
 
 #[css_module("/src/components/card/style.css")]
 struct Styles;
@@ -8,13 +10,15 @@ pub fn Card(
     #[props(extends=GlobalAttributes)] attributes: Vec<Attribute>,
     children: Element,
 ) -> Element {
+    // Let's make card accept a class input without deleting the base style dx_card.
+    let base = attributes!(div {
+        class: Styles::dx_card,
+        "data-slot": "card",
+    });
+    let merged = merge_attributes(vec![base, attributes]);
+
     rsx! {
-        div {
-            class: Styles::dx_card,
-            "data-slot": "card",
-            ..attributes,
-            {children}
-        }
+        div { ..merged,{children} }
     }
 }
 
@@ -83,13 +87,15 @@ pub fn CardContent(
     #[props(extends=GlobalAttributes)] attributes: Vec<Attribute>,
     children: Element,
 ) -> Element {
+    // Let's make card content accept a class input without deleting the base style dx_card_content.
+    let base = attributes!(div {
+        class: Styles::dx_card_content,
+        "data-slot": "card-content",
+    });
+    let merged = merge_attributes(vec![base, attributes]);
+
     rsx! {
-        div {
-            class: Styles::dx_card_content,
-            "data-slot": "card-content",
-            ..attributes,
-            {children}
-        }
+        div { ..merged,{children} }
     }
 }
 
