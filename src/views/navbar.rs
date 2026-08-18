@@ -1,7 +1,7 @@
-use crate::{Route, components::{CcnaBookPage, demo::Demo}};
 use dioxus::prelude::*;
+use crate::{Route, components::{CcnaBookPage}};
 
-const NAVBAR_CSS: Asset = asset!("/assets/styling/navbar.css");
+// const NAVBAR_CSS: Asset = asset!("/assets/styling/navbar.css");
 
 /// The Navbar component that will be rendered on all pages of our app since every page is under the layout.
 ///
@@ -11,9 +11,8 @@ const NAVBAR_CSS: Asset = asset!("/assets/styling/navbar.css");
 #[component]
 pub fn Navbar() -> Element {
     rsx! {
-        document::Link { rel: "stylesheet", href: NAVBAR_CSS }
-
-        nav { id: "navbar", class: "mb-4",
+        // document::Link { rel: "stylesheet", href: NAVBAR_CSS }
+        nav { id: "navbar", class: "py-4 mb-4 flex gap-x-3",
             Link { to: Route::Home {}, "Home" }
             // Link { to: Route::Blog { id: 5 }, "Blog" }
             GoBackButton {

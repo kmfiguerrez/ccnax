@@ -38,13 +38,11 @@ pub fn CcnaBookPage() -> Element {
     });
 
     rsx! {
-        Button {
-            r#type: "button",
-            "data-style": "outline",
-            onclick: move |_| open.set(true),
-            "Page"
-        }
-        Dialog { open: open(), on_open_change: move |v| open.set(v),
+        button { onclick: move |_| open.set(true), "Page" }
+        Dialog {
+            open: open(),
+            on_open_change: move |v| open.set(v),
+            class: "bg-zinc-800! border! border-zinc-600!",
             button {
                 class: Styles::dx_dialog_close,
                 r#type: "button",
@@ -63,7 +61,7 @@ pub fn CcnaBookPage() -> Element {
                         "Volume"
                     }
                     Input {
-                        class: "invalid:outline! invalid:outline-offset-2! invalid:outline-red-500!",
+                        class: "invalid:outline! invalid:outline-offset-2! invalid:outline-red-500! ",
                         id: "volume",
                         r#type: "number",
                         min: 1,
@@ -89,7 +87,7 @@ pub fn CcnaBookPage() -> Element {
                         "Page"
                     }
                     Input {
-                        class: "invalid:outline! invalid:outline-offset-2! invalid:outline-red-500!",
+                        class: "invalid:outline! invalid:outline-offset-2! invalid:outline-red-500! ",
                         id: "page",
                         r#type: "number",
                         min: 1,

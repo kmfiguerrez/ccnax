@@ -5,14 +5,15 @@ use dioxus::prelude::*;
 #[component]
 pub fn Home() -> Element {
     rsx! {
-        // Hero {}
-        h1 { "CCNA topics" }
-        button {
-            Link { to: Route::Volume { volume_id: 1 }, "Volume 1" }
-        }
-        br {}
-        button {
-            Link { to: Route::Volume { volume_id: 2 }, "Volume 2" }
+        div { class: "container-x",
+            h1 { class: "text-center", "CCNA topics" }
+            button {
+                Link { to: Route::Volume { volume_id: 1 }, "Volume 1" }
+            }
+            br {}
+            button {
+                Link { to: Route::Volume { volume_id: 2 }, "Volume 2" }
+            }
         }
 
     }
