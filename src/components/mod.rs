@@ -12,6 +12,7 @@ pub mod volume_card;
 
 pub mod green_div;
 pub mod red_div;
+pub mod svg;
 
 pub mod input;
 pub mod dialog;

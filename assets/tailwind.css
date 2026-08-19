@@ -260,11 +260,32 @@
   .table {
     display: table;
   }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
   .h-15 {
     height: calc(var(--spacing) * 15);
   }
+  .w-7 {
+    width: calc(var(--spacing) * 7);
+  }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
   .w-15 {
     width: calc(var(--spacing) * 15);
+  }
+  .w-fit {
+    width: fit-content;
   }
   .max-w-fit {
     max-width: fit-content;
@@ -272,11 +293,17 @@
   .max-w-max {
     max-width: max-content;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .list-inside {
     list-style-position: inside;
@@ -299,21 +326,37 @@
   .gap-x-3 {
     column-gap: calc(var(--spacing) * 3);
   }
+  .gap-y-1 {
+    row-gap: calc(var(--spacing) * 1);
+  }
   .gap-y-4 {
     row-gap: calc(var(--spacing) * 4);
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
   .rounded-xl\! {
     border-radius: var(--radius-xl) !important;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border\! {
     border-style: var(--tw-border-style) !important;
     border-width: 1px !important;
   }
+  .border-zinc-500 {
+    border-color: var(--color-zinc-500);
+  }
   .border-zinc-500\! {
     border-color: var(--color-zinc-500) !important;
+  }
+  .border-zinc-600 {
+    border-color: var(--color-zinc-600);
   }
   .border-zinc-600\! {
     border-color: var(--color-zinc-600) !important;
@@ -324,8 +367,14 @@
   .bg-red-400 {
     background-color: var(--color-red-400);
   }
+  .bg-transparent {
+    background-color: transparent;
+  }
   .bg-transparent\! {
     background-color: transparent !important;
+  }
+  .bg-zinc-800 {
+    background-color: var(--color-zinc-800);
   }
   .bg-zinc-800\! {
     background-color: var(--color-zinc-800) !important;
@@ -395,6 +444,9 @@
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .outline {
     outline-style: var(--tw-outline-style);

@@ -1,6 +1,8 @@
 use dioxus::prelude::*;
 
 use crate::{Route, utils::{db_models::Database}};
+use crate::components::{svg::CaretRightSVG};
+
 
 #[component]
 pub fn Part(volume_id: u32, part_id: u32) -> Element {
@@ -23,9 +25,12 @@ pub fn Part(volume_id: u32, part_id: u32) -> Element {
     rsx! {
         if let Some(part) = part {
             h1 { class: "text-lg font-bold mb-4", "Part {part_id}: {part.name}" }
-            ol {
+            ol { class: "flex flex-col gap-y-1",
                 for (idx , chapter) in part.chapters.iter() {
-                    li { key: "{idx}",
+                    li {
+                        key: "{idx}",
+                        class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
+                        CaretRightSVG {}
                         Link {
                             to: Route::Chapter {
                                 volume_id,

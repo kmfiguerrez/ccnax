@@ -1,6 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{Route, utils::db_models::Database};
+use crate::components::{svg::CaretRightSVG};
 
 #[component]
 pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -> Element {
@@ -29,18 +30,23 @@ pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -
                 "Section {chapter_id}.{section_id}: {section.name}"
             }
             // Section Introduction
-            p { class: "mb-4",
-                "The first two major sections of this chapter showed two features—syslog and NTP—that
+            if section_id == 3 {
+                p { class: "mb-4",
+                    "The first two major sections of this chapter showed two features—syslog and NTP—that
                 work the same way on both routers and switches."
-                br {}
-                "This final section shows yet another feature common to both routers and switches, with two similar protocols: 
+                    br {}
+                    "This final section shows yet another feature common to both routers and switches, with two similar protocols: 
                 the Cisco Discovery Protocol (CDP) and the Link Layer Discovery Protocol (LLDP)."
-                br {}
-                "This section focuses on CDP, followed by LLDP."
+                    br {}
+                    "This section focuses on CDP, followed by LLDP."
+                }
             }
-            ol {
+            ol { class: "flex flex-col gap-y-1",
                 for (idx , subheader) in section.subheaders.iter() {
-                    li { key: "{idx}",
+                    li {
+                        key: "{idx}",
+                        class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
+                        CaretRightSVG {}
                         Link {
                             class: "font-semibold",
                             to: Route::Subheader {
