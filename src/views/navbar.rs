@@ -9,15 +9,17 @@ use crate::{Route, components::{CcnaBookPage}};
 /// This layout component wraps the UI of [Route::Home] and [Route::Blog] in a common navbar. The contents of the Home and Blog
 /// routes will be rendered under the outlet inside this component
 #[component]
-pub fn Navbar() -> Element {
+pub fn Navbar(volume_id: u32) -> Element {
     rsx! {
         // document::Link { rel: "stylesheet", href: NAVBAR_CSS }
-        nav { id: "navbar", class: "py-4 mb-4 flex gap-x-3",
-            Link { to: Route::Home {}, "Home" }
+        nav {
+            id: "navbar",
+            class: "flex justify-between py-4 sm:justify-start sm gap-x-4",
             // Link { to: Route::Blog { id: 5 }, "Blog" }
             GoBackButton {
                 span { class: "cursor-pointer", "Previous" }
             }
+            Link { to: Route::Home {}, "Home" }
             CcnaBookPage {}
         }
 

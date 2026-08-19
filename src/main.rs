@@ -32,7 +32,7 @@ mod utils;
 enum Route {
     // The layout attribute defines a wrapper for all routes under the layout. Layouts are great for wrapping
     // many routes with a common UI like a navbar.
-    #[layout(Navbar)]
+    // #[layout(Navbar)]
         // The route attribute defines the URL pattern that a specific route matches. If that pattern matches the URL,
         // the component for that route will be rendered. The component name that is rendered defaults to the variant name.
         #[route("/")]
@@ -46,6 +46,7 @@ enum Route {
     // #[end_layout]
 
     #[nest("/volume/:volume_id")]
+        #[layout(Navbar)]
         #[route("/")]
         Volume { volume_id: u32 },
         #[nest("/part/:part_id")]
@@ -103,7 +104,7 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: DX_THEME }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
 
-        div { class: "container-x",
+        div { class: "container-x px-1",
             // The router component renders the route enum we defined above. It will handle synchronization of the URL and render
             // the layouts and components for the active route.
             Router::<Route> {}
