@@ -4,6 +4,7 @@
 
 # HTML title tag content
 title = "ccnax"
+base_path = "ccnax"
 
 # include `assets` in web platform
 [web.resource]
