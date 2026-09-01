@@ -10,5 +10,6 @@
         "rust-lang.rust-analyzer"
       ]
     }
-  }
+  },
+  "postCreateCommand": ".devcontainer/postCreate.sh"
 }
