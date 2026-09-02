@@ -191,6 +191,7 @@ pub fn Content() -> Element {
         h3 { class: "font-semibold text-lg mb-1", "REMEMBER" }
         ul { class: "list-disc pl-4",
             li { "Network devices use CDP to advertise informations about themselves." }
+            li { "CDP uses a multicast destination MAC address (0100.0CCC.CCCC)." }
             li {
                 "CDP plays two general roles: to provide information to the devices to support some function and to provide information 
                 to the network engineers that manage the devices."
@@ -203,7 +204,6 @@ pub fn Content() -> Element {
             }
             li { "CDP only shows information about directly connected neighbors." }
             li { "CDP is a Cisco-proprietary layer 2 protocol." }
-        
         }
     }
 }
