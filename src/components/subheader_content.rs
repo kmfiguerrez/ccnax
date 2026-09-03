@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use crate::views::volume2::chapter9::{section1, section3};
+use crate::views::{volume1, volume2::chapter9::{section1, section3}};
 
 /// Display subheader content based on the provided identifiers.
 #[component]
@@ -11,6 +11,10 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
             match (volume_id, part_id, chapter_id, section_id, subheader_id) {
                 (1, 1, 1, 1, 1) => rsx! {
                     h3 { "sucker" }
+                },
+                // Start of volume 1, part 2, chapter 6, section 1
+                (1, 2, 6, 1, 1) => rsx! {
+                    volume1::chapters::chapter6::section1::subheader1_content::Content {}
                 },
                 (2, 3, 9, 1, 1) => rsx! {
                     section1::subheader1_content::Content {}
