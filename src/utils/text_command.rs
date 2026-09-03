@@ -1,6 +1,5 @@
 use dioxus::prelude::*;
 
-
 /// Returns an HTML span element.
 /// The text is colored gold.
 pub fn text_command(text: &str) -> Element {
