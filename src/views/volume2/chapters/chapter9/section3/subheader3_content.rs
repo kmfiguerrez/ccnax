@@ -44,7 +44,9 @@ pub fn Content() -> Element {
             src: asset!("/assets/static/v2p3c9s3sh3ex9-18.png", AssetOptions::image().with_avif()),
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "The Ouput similarities of CDP and LLDP" }
+        h3 { class: "font-semibold text-lg underline underline-offset-4 mb-1",
+            "The Ouput similarities of CDP and LLDP"
+        }
         p { class: "mb-4",
             "The most important take-away from the output is the consistency between CDP and LLDP
             in how they refer to the interfaces."
@@ -58,7 +60,9 @@ pub fn Content() -> Element {
             "These columns refer to the local device's interface and the neighboring device's interface, respectively."
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "The Ouput differences of CDP and LLDP" }
+        h3 { class: "font-semibold text-lg underline underline-offset-4 mb-1",
+            "The Ouput differences of CDP and LLDP"
+        }
         p { "However, the LLDP output in the example does differ from CDP in a few important ways:" }
         ol { class: "list-inside list-disc mb-4",
             li {

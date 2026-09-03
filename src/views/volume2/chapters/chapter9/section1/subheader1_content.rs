@@ -11,7 +11,7 @@ pub fn Content() -> Element {
             br {}
             "if some user is logged in, the router or switch benefits by making the network engineer aware of any issues."
         }
-        h3 { class: "font-semibold mb-1", "Console users" }
+        h3 { class: "font-semibold underline underline-offset-4 mb-1", "Console users" }
         p { class: "mb-4",
             "By default, IOS shows log messages to console users for all severity levels of messages."
             br {}
@@ -23,7 +23,7 @@ pub fn Content() -> Element {
             or going down."
         }
 
-        h3 { class: "font-semibold mb-1", "Telnet and SSH users" }
+        h3 { class: "font-semibold underline underline-offset-4 mb-1", "Telnet and SSH users" }
         p {
             "For other users (that is, Telnet and SSH users), the device requires a two-step process before
             the user sees the messages."
@@ -44,7 +44,7 @@ pub fn Content() -> Element {
             }
         }
 
-        h3 { class: "font-semibold mb-1", "REMEMBER" }
+        h3 { class: "font-semibold underline underline-offset-4 mb-1", "REMEMBER" }
         ul { class: "list-disc pl-4",
             li {
                 "Both the "
