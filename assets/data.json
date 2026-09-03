@@ -58,6 +58,41 @@
                         }
                     }
                 }
+            },
+            "2": {
+                "name": "Implementing Ethernet LANs",
+                "chapters": {
+                    "6": {
+                        "name": "Configuring Basic Switch Management",
+                        "sections": {
+                            "1": {
+                                "name": "Securing the Switch CLI",
+                                "subheaders": {
+                                    "1": { "name": "Securing user mode and privileged mode with simple passwords" },
+                                    "2": { "name": "Securing user mode access with local usernames" },
+                                    "3": { "name": "Securing user mode access with external authentication servers" },
+                                    "4": { "name": "Securing remote access with Secure Shell (SSH)" }
+                                }
+                            },
+                            "2": {
+                                "name": "Enabling IPv4 for Remote Access",
+                                "subheaders": {
+                                    "1": { "name": "Host and Switch IP Settings" },
+                                    "2": { "name": "Configuring IPv4 on a Switch" },
+                                    "3": { "name": "Configuring a Switch to Learn Its IP Address with DHCP" },
+                                    "4": { "name": "Verifying IPv4 on a Switch" }
+                                }
+                            },
+                            "3": {
+                                "name": "Miscellaneous Settings Useful in the Lab",
+                                "subheaders": {
+                                    "1": { "name": "History Buffer Commands" },
+                                    "2": { "name": "The logging synchronous, exec-timeout, and no ip domain-lookup Commands" }
+                                }
+                            }                            
+                        }
+                    }
+                }
             }
         }
     },
