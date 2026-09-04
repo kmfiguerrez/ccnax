@@ -3,7 +3,7 @@ use crate::components::separator::Separator;
 
 use crate::{
     utils::db_models::Database, 
-    components::subheader_content::SubheaderContent,
+    components::SubheaderContent,
 };
 
 #[component]

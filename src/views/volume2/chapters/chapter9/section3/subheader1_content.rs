@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::green_div::GreenNote, utils::text_command::text_command};
+use crate::{components::GreenNote, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -50,12 +50,12 @@ pub fn Content() -> Element {
             on the access switch."
             br {}
             "For that second role, CDP has "
-            {text_command("show")}
+            {text_command("show", TextCommandColor::Gold)}
             " commands that list information about neighboring devices, as well as 
             information about how CDP is working."
             br {}
             "Table 9-3 describes the three "
-            {text_command("show")}
+            {text_command("show", TextCommandColor::Gold)}
             " commands that list the most important CDP information."
         }
         img {
@@ -75,7 +75,7 @@ pub fn Content() -> Element {
             "The next example shows the power of the information in CDP commands."
             br {}
             "The example uses the network shown in Figure 9-8, with Example 9-15 listing the output of several "
-            {text_command("show cdp")}
+            {text_command("show cdp", TextCommandColor::Gold)}
             " commands."
         }
         img {
@@ -86,7 +86,7 @@ pub fn Content() -> Element {
 
         p {
             "The "
-            {text_command("show cdp neighbors")}
+            {text_command("show cdp neighbors", TextCommandColor::Gold)}
             " command lists one line per neighbor."
             br {}
             "(Look for the Device ID column and the list that includes SW1 and R1.)"
@@ -105,7 +105,7 @@ pub fn Content() -> Element {
             comparing the example to the figure."
             br {}
             "For example, SW2's "
-            {text_command("show cdp neighbors")}
+            {text_command("show cdp neighbors", TextCommandColor::Gold)}
             " command lists an entry for SW1, with SW2's local interface 
             of Gi0/2 and SW1's interface of Gi0/1 under the heading “Port ID .”"
         }
@@ -120,7 +120,7 @@ pub fn Content() -> Element {
             }
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "The CDP encapsulation" }
+        {h3_heading("The CDP encapsulation")}
         p { class: "mb-4",
             "Figure 9-8 and Example 9-15 provide a good backdrop as to why devices learn about direct
             neighbors with CDP, but not other neighbors."
@@ -138,10 +138,10 @@ pub fn Content() -> Element {
             CDP neighbor."
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "The show cdp neighbors detail" }
+        {h3_heading("The show cdp neighbors detail")}
         p { class: "mb-4",
             "Next, consider the "
-            {text_command("show cdp neighbors detail")}
+            {text_command("show cdp neighbors detail", TextCommandColor::Gold)}
             " command as shown in Example 9-16, again taken from switch SW2."
             br {}
             "This command lists more detail, as you might have guessed."
@@ -160,10 +160,10 @@ pub fn Content() -> Element {
             p {
                 strong { "NOTE" }
                 " The "
-                {text_command("show cdp entry")}
+                {text_command("show cdp entry", TextCommandColor::Black)}
                 i { " name" }
                 " command lists the exact same details shown in the output of the "
-                {text_command("show cdp neighbors detail")}
+                {text_command("show cdp neighbors detail", TextCommandColor::Black)}
                 " command, but for only the one neighbor listed in the command."
             }
         }
@@ -183,12 +183,12 @@ pub fn Content() -> Element {
             "Finally, note that CDP shows information about directly connected neighbors."
             br {}
             "For instance, "
-            {text_command("show cdp neighbors")}
+            {text_command("show cdp neighbors", TextCommandColor::Gold)}
             " on SW1 would list an entry for SW2 in this case, but not R1, because
             R1 is not directly connected to SW1."
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "REMEMBER" }
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li { "Network devices use CDP to advertise informations about themselves." }
             li { "CDP uses a multicast destination MAC address (0100.0CCC.CCCC)." }

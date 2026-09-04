@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::{green_div::GreenNote, red_div::RedNote}, utils::text_command::text_command};
+use crate::{components::{GreenNote, RedNote}, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -23,7 +23,7 @@ pub fn Content() -> Element {
             same general features as CDP."
             br {}
             "LLDP has similar configuration and practically identical "
-            {text_command("show")}
+            {text_command("show", TextCommandColor::Gold)}
             " commands as compared with CDP. "
         }
 
@@ -35,7 +35,7 @@ pub fn Content() -> Element {
             "ports in that figure."
             br {}
             "The example highlights the items that match the similar output from the "
-            {text_command("show cdp neighbors")}
+            {text_command("show cdp neighbors", TextCommandColor::Gold)}
             " command listed at the end of the example, also from switch SW2."
         }
         img {
@@ -44,25 +44,21 @@ pub fn Content() -> Element {
             src: asset!("/assets/static/v2p3c9s3sh3ex9-18.png", AssetOptions::image().with_avif()),
         }
 
-        h3 { class: "font-semibold text-lg underline underline-offset-4 mb-1",
-            "The Ouput similarities of CDP and LLDP"
-        }
+        {h3_heading("The Output similarities of CDP and LLDP")}
         p { class: "mb-4",
             "The most important take-away from the output is the consistency between CDP and LLDP
             in how they refer to the interfaces."
             br {}
             "Both the "
-            {text_command("show cdp neighbors")}
+            {text_command("show cdp neighbors", TextCommandColor::Gold)}
             " and "
-            {text_command("show lldp neighbors")}
+            {text_command("show lldp neighbors", TextCommandColor::Gold)}
             " commands have “local intf” (interface) and “port ID” columns."
             br {}
             "These columns refer to the local device's interface and the neighboring device's interface, respectively."
         }
 
-        h3 { class: "font-semibold text-lg underline underline-offset-4 mb-1",
-            "The Ouput differences of CDP and LLDP"
-        }
+        {h3_heading("The Output differences of CDP and LLDP")}
         p { "However, the LLDP output in the example does differ from CDP in a few important ways:" }
         ol { class: "list-inside list-disc mb-4",
             li {
@@ -89,22 +85,22 @@ pub fn Content() -> Element {
             requires a closer look with more detail."
             br {}
             "Interestingly, CDP lists all the capabilities of the neighbor in the "
-            {text_command("show cdp neighbors")}
+            {text_command("show cdp neighbors", TextCommandColor::Gold)}
             " command output, 
             no matter whether the device currently enables all those features."
             br {}
             "LLDP instead lists the enables (configured) capabilities, rather than all supported capabilities, in the output 
             from "
-            {text_command("show lldp neighbors")}
+            {text_command("show lldp neighbors", TextCommandColor::Gold)}
             " command. "
         }
 
         p { class: "mb-3",
             "LLDP makes the difference in a neighbor's total capabilities and configured capabilities with
             the "
-            {text_command("show lldp neighbors detail")}
+            {text_command("show lldp neighbors detail", TextCommandColor::Gold)}
             " and "
-            {text_command("show lldp entry")}
+            {text_command("show lldp entry", TextCommandColor::Gold)}
             i { " hostname" }
             " commands."
             br {}
@@ -172,7 +168,7 @@ pub fn Content() -> Element {
             }
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "REMEMBER" }
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li { "Link Layer Discovery Protocol (LLDP), is defined in IEEE standard 802.1AB." }
             li {

@@ -1,17 +1,17 @@
 use dioxus::prelude::*;
 
-use crate::{components::red_div::RedNote, utils::text_command::text_command};
+use crate::{components::RedNote, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
     rsx! {
         p { class: "mb-4",
             "Most of the work you do with CDP relates to what CDP can tell you with "
-            {text_command("show")}
+            {text_command("show", TextCommandColor::Gold)}
             " commands."
             br {}
             "However, it is an IOS feature, so you can configure CDP and use some "
-            {text_command("show")}
+            {text_command("show", TextCommandColor::Gold)}
             " commands to
             examine the status of CDP itself."
         }
@@ -20,16 +20,16 @@ pub fn Content() -> Element {
             "IOS typically enables CDP globally and on each interface by default."
             br {}
             "You can then disable CDP per interface with the "
-            {text_command("no cdp enable")}
+            {text_command("no cdp enable", TextCommandColor::Gold)}
             " interface subcommand and later re-enable it
             with the "
-            {text_command("cdp enable")}
+            {text_command("cdp enable", TextCommandColor::Gold)}
             " interface subcommand."
             br {}
             "To disable and re-enable CDP globally on the device, use the "
-            {text_command("no cdp run")}
+            {text_command("no cdp run", TextCommandColor::Gold)}
             " and "
-            {text_command("cdp run")}
+            {text_command("cdp run", TextCommandColor::Gold)}
             " global commands, respectively."
         }
 
@@ -68,15 +68,15 @@ pub fn Content() -> Element {
             hearing from a device before removing those details from the CDP tables."
             br {}
             "You can override the defaults with the "
-            {text_command("cdp timer")}
+            {text_command("cdp timer", TextCommandColor::Gold)}
             i { " seconds" }
             " and "
-            {text_command("cdp holdtime")}
+            {text_command("cdp holdtime", TextCommandColor::Gold)}
             i { " seconds" }
             " global commands, respectively."
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "REMEMBER" }
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li {
                 "IOS typically enables CDP globally and on each interface by default, but can be overriden by global 

@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::utils::text_command::text_command;
+use crate::utils::{TextCommandColor, h3_heading, text_command};
 
 #[component]
 pub fn Content() -> Element {
@@ -66,12 +66,12 @@ pub fn Content() -> Element {
             h3 { class: "font-semibold", "The Normal section" }
             p {
                 " Finally, the last level in the figure is used for messages requested by the "
-                {text_command("debug")}
+                {text_command("debug", TextCommandColor::Gold)}
                 " command, as shown in an example later in this chapter."
             }
         }
 
-        h3 { class: "font-semibold", "The Configuration logging commands" }
+        {h3_heading("The Configuration logging commands")}
         p { class: "mb-3",
             " Table 9-2 summarizes the configuration commands used to enable logging and to set the severity level for each type."
             br {}
@@ -81,7 +81,7 @@ pub fn Content() -> Element {
             }
             br {}
             "For example, the command "
-            {text_command("logging console 4")}
+            {text_command("logging console 4", TextCommandColor::Gold)}
             " causes IOS to send severity level 0-4 messages to the console."
             br {}
             "Also, note that the command to disable each service is the "
@@ -89,9 +89,9 @@ pub fn Content() -> Element {
             " version of the command, with "
             i { "no" }
             " in front of the command ( "
-            {text_command("no logging console")}
+            {text_command("no logging console", TextCommandColor::Gold)}
             ", "
-            {text_command("no logging monitor")}
+            {text_command("no logging monitor", TextCommandColor::Gold)}
             " and so on )."
         }
         img {
@@ -99,7 +99,8 @@ pub fn Content() -> Element {
             src: asset!("/assets/static/v2p3c9s1sh3t9-2.png", AssetOptions::image().with_avif()),
         }
 
-        h3 { class: "font-semibold mb-1", "REMEMBER" }
+        {h3_heading("RECAP")}
+
         ul { class: "list-disc pl-4",
             li {
                 "By default, on cisco IOS version 03.16.05.S, in Packet Tracer, both the console and Telnet & SSH users receive messages from levels 0-7"

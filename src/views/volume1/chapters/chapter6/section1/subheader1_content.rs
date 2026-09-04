@@ -1,8 +1,8 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{green_div::GreenNote, config_checklist::ConfigChecklist, key_topic::KeyTopic}, 
-    utils::{h3_heading, text_command}};
+    components::{GreenNote, ConfigChecklist}, 
+    utils::{h3_heading, text_command, TextCommandColor}};
 
 #[component]
 pub fn Content() -> Element {
@@ -62,7 +62,7 @@ pub fn Content() -> Element {
             br {}
             "From the perspective of the network engineer connecting to the CLI of the switch, once in user mode, the user types 
             the "
-            {text_command("enable")}
+            {text_command("enable", TextCommandColor::Gold)}
             " EXEC command."
             br {}
             "This command prompts the user for this enable password; if the user types the correct password, IOS moves the user 
@@ -81,7 +81,7 @@ pub fn Content() -> Element {
 
         p { class: "mb-4",
             "Note that the example shows the password text as if typed (faith and love), along with the "
-            {text_command("enable")}
+            {text_command("enable", TextCommandColor::Gold)}
             " command that moves the user from user mode to enable mode."
             br {}
             "In reality, the switch hides the passwords when typed, to prevent someone from reading over your shoulder 
@@ -114,12 +114,12 @@ pub fn Content() -> Element {
         }
         ol { class: "list-disc list-inside mb-4",
             li {
-                {text_command("password")}
+                {text_command("password", TextCommandColor::Gold)}
                 i { " password-value:" }
                 " Defines the actual password used on the console or vty"
             }
             li {
-                {text_command("login:")}
+                {text_command("login:", TextCommandColor::Gold)}
                 " Tells IOS to enable the use of a simple shared password (with no username) on this
                 line (console or vty), so that the switch asks the user for a password"
             }
@@ -137,30 +137,31 @@ pub fn Content() -> Element {
             no matter whether they connect to user mode via the console, Telnet, or otherwise."
             br {}
             "The command to configure the enable password is a global configuration command: "
-            {text_command("enable secret")}
+            {text_command("enable secret", TextCommandColor::Gold)}
             i { " password-value" }
         }
 
         GreenNote {
             strong { "Note" }
             " Older IOS versions used the command "
-            {text_command("enable password")}
+            {text_command("enable password", TextCommandColor::Black)}
             i { " password-value" }
             " to set the enable password, and that command 
             still exists in IOS."
             "However, the "
-            {text_command("enable secret")}
+            {text_command("enable secret", TextCommandColor::Black)}
             " command is much more secure."
             "In real networks, use "
-            {text_command("enable secret")}
+            {text_command("enable secret", TextCommandColor::Black)}
             " Chapter 5, “Securing Network Devices,” in the CCNA 200-301 Official Cert Guide, Volume 2, explains more about the
             security levels of various password mechanisms, including a comparison of the "
-            {text_command("enable secret")}
+            {text_command("enable secret", TextCommandColor::Black)}
             " and "
-            {text_command("enable password")}
+            {text_command("enable password", TextCommandColor::Black)}
             " commands."
         }
 
+        {h3_heading("Configuration Checklist")}
         p { class: "mb-4",
             "To help you follow the process, and for easier study later, use the configuration checklist before the example."
             br {}
@@ -173,15 +174,17 @@ pub fn Content() -> Element {
 
         ConfigChecklist {}
         ol { class: "mb-4",
+            // Step 1
             li {
                 span { class: "text-sky-500 font-semibold mr-4", "Step 1." }
                 "Configure the enable password with the "
-                {text_command("enable secret")}
+                {text_command("enable secret", TextCommandColor::Gold)}
                 i { " password-value" }
                 " command in the config mode."
             }
+            // Step 2
             li { class: "flex flex-col md:flex-row md:gap-x-4",
-                span { class: "text-sky-500 font-semibold", "Step 2." }
+                span { class: "text-sky-500 font-semibold shrink-0", "Step 2." }
                 div {
                     span { "Configure the console password:" }
                     ol {
@@ -190,7 +193,7 @@ pub fn Content() -> Element {
                                 "a."
                             }
                             "Use the "
-                            {text_command("line con 0")}
+                            {text_command("line con 0", TextCommandColor::Gold)}
                             " command to enter console configuration mode."
                         }
                         li {
@@ -198,7 +201,7 @@ pub fn Content() -> Element {
                                 "b."
                             }
                             "Use the "
-                            {text_command("password")}
+                            {text_command("password", TextCommandColor::Gold)}
                             i { " password-value" }
                             " subcommand to set the value of the console password."
                         }
@@ -207,7 +210,7 @@ pub fn Content() -> Element {
                                 "c."
                             }
                             "Use the "
-                            {text_command("login")}
+                            {text_command("login", TextCommandColor::Gold)}
                             i { " password-value" }
                             " subcommand to enable console password security using a simple password."
                         }
@@ -215,8 +218,9 @@ pub fn Content() -> Element {
                 }
             
             }
+            // Step 3
             li { class: "flex flex-col md:flex-row md:gap-x-4",
-                span { class: "text-sky-500 font-semibold", "Step 3." }
+                span { class: "text-sky-500 font-semibold shrink-0", "Step 3." }
                 div {
                     span { "Configure the Telnet (vty) password:" }
                     ol {
@@ -225,7 +229,7 @@ pub fn Content() -> Element {
                                 "a."
                             }
                             "Use the "
-                            {text_command("line vty 0 15")}
+                            {text_command("line vty 0 15", TextCommandColor::Gold)}
                             " command to enter vty configuration mode for all 16 vty lines (numbered 0 through 15)."
                         }
                         li {
@@ -233,7 +237,7 @@ pub fn Content() -> Element {
                                 "b."
                             }
                             "Use the "
-                            {text_command("password")}
+                            {text_command("password", TextCommandColor::Gold)}
                             i { " password-value" }
                             " subcommand to set the value of the vty password."
                         }
@@ -242,7 +246,7 @@ pub fn Content() -> Element {
                                 "c."
                             }
                             "Use the "
-                            {text_command("login")}
+                            {text_command("login", TextCommandColor::Gold)}
                             i { " password-value" }
                             " subcommand to enable vty password security using a simple password."
                         }
@@ -252,9 +256,40 @@ pub fn Content() -> Element {
             }
         }
 
-        KeyTopic {}
+        p { class: "mb-4",
+            "Example 6-2 shows the configuration process as noted in the configuration checklist, along with setting the enable 
+            secret password."
+            br {}
+            "Note that the lines which begin with a ! are comment lines; they are there to guide you through the configuration"
+        }
 
-        {h3_heading("REMEMBER")}
+        p { class: "mb-4", "See Example 6-2 in volume 1 book on page 132." }
+
+        p { class: "mb-4",
+            "Example 6-3 shows the resulting configuration in the switch per the "
+            {text_command("show running-config", TextCommandColor::Gold)}
+            " command."
+            br {}
+            "The gray lines highlight the new configuration."
+            br {}
+            "Note that many unrelated lines of
+            output have been deleted from the output to keep focused on the password configuration."
+        }
+
+        p { class: "mb-4", "See Example 6-3 in volume 1 book on page 133." }
+
+        GreenNote {
+            p {
+                strong { "Note" }
+                " For historical reasons, the output of the "
+                {text_command("show running-config", TextCommandColor::Black)}
+                " command, in the
+                last six lines of Example 6-3, separates the first five vty lines (0 through 4) from the rest (5
+                through 15)."
+            }
+        }
+
+        {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {
                 "By default, Cisco Catalyst switches allow full access from the console but no access via Telnet or SSH."
