@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::green_div::GreenNote, utils::{text_command, TextCommandColor, h3_heading}};
+use crate::{components::GreenNote, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -188,7 +188,7 @@ pub fn Content() -> Element {
             R1 is not directly connected to SW1."
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li { "Network devices use CDP to advertise informations about themselves." }
             li { "CDP uses a multicast destination MAC address (0100.0CCC.CCCC)." }

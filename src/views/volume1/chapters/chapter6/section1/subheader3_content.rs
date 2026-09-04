@@ -56,7 +56,9 @@ pub fn Content() -> Element {
         p { class: "mb-4",
             "While the figure shows the general idea, note that the information flows with a couple
             of different protocols."
+            br {}
             "On the left, the connection between the user and the switch or router uses Telnet or SSH."
+            br {}
             "On the right, the switch and AAA server typically use either the
             RADIUS or TACACS+ protocol, both of which encrypt the passwords as they traverse the
             network."

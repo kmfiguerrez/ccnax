@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::{green_div::GreenNote, red_div::RedNote}, utils::{text_command, TextCommandColor, h3_heading}};
+use crate::{components::{GreenNote, RedNote}, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -168,7 +168,7 @@ pub fn Content() -> Element {
             }
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li { "Link Layer Discovery Protocol (LLDP), is defined in IEEE standard 802.1AB." }
             li {

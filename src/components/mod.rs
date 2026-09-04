@@ -10,12 +10,17 @@ pub use ccna::CcnaBookPage;
 
 pub mod volume_card;
 
-pub mod green_div;
-pub mod red_div;
+mod green_div;
+pub use green_div::GreenNote;
+mod red_div;
+pub use red_div::RedNote;
 pub mod svg;
-pub mod config_checklist;
-pub mod key_topic;
-pub mod subheader_content;
+mod config_checklist;
+pub use config_checklist::ConfigChecklist;
+mod key_topic;
+pub use key_topic::KeyTopic;
+mod subheader_content;
+pub use subheader_content::SubheaderContent;
 
 pub mod input;
 pub mod dialog;

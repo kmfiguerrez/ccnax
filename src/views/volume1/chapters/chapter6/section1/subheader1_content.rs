@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{green_div::GreenNote, config_checklist::ConfigChecklist}, 
+    components::{GreenNote, ConfigChecklist}, 
     utils::{h3_heading, text_command, TextCommandColor}};
 
 #[component]
@@ -161,6 +161,7 @@ pub fn Content() -> Element {
             " commands."
         }
 
+        {h3_heading("Configuration Checklist")}
         p { class: "mb-4",
             "To help you follow the process, and for easier study later, use the configuration checklist before the example."
             br {}
@@ -173,6 +174,7 @@ pub fn Content() -> Element {
 
         ConfigChecklist {}
         ol { class: "mb-4",
+            // Step 1
             li {
                 span { class: "text-sky-500 font-semibold mr-4", "Step 1." }
                 "Configure the enable password with the "
@@ -180,8 +182,9 @@ pub fn Content() -> Element {
                 i { " password-value" }
                 " command in the config mode."
             }
+            // Step 2
             li { class: "flex flex-col md:flex-row md:gap-x-4",
-                span { class: "text-sky-500 font-semibold", "Step 2." }
+                span { class: "text-sky-500 font-semibold shrink-0", "Step 2." }
                 div {
                     span { "Configure the console password:" }
                     ol {
@@ -215,8 +218,9 @@ pub fn Content() -> Element {
                 }
             
             }
+            // Step 3
             li { class: "flex flex-col md:flex-row md:gap-x-4",
-                span { class: "text-sky-500 font-semibold", "Step 3." }
+                span { class: "text-sky-500 font-semibold shrink-0", "Step 3." }
                 div {
                     span { "Configure the Telnet (vty) password:" }
                     ol {
@@ -285,7 +289,7 @@ pub fn Content() -> Element {
             }
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {
                 "By default, Cisco Catalyst switches allow full access from the console but no access via Telnet or SSH."

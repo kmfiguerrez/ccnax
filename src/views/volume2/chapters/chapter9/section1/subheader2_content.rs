@@ -41,7 +41,7 @@ pub fn Content() -> Element {
             }
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li { "IOS provides two primary means to keep a copy: using RAM and a Syslog Server" }
             li {

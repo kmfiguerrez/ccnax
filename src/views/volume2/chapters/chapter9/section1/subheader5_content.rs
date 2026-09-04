@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::red_div::RedNote, utils::{text_command, TextCommandColor, h3_heading}};
+use crate::{components::RedNote, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -165,7 +165,7 @@ pub fn Content() -> Element {
             }
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li {
                 "It's best to know all the eight log messages to understand the output of the commands."

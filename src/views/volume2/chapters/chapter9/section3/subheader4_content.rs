@@ -128,7 +128,7 @@ pub fn Content() -> Element {
             " global commands , respectively."
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li { "Cisco devices default to disable LLDP." }
             li { "LLDP separates the sending and receiving of LLDP messages as separate functions." }

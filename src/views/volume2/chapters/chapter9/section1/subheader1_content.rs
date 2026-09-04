@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::utils::{text_command, TextCommandColor};
+use crate::utils::{text_command, TextCommandColor, h3_heading};
 
 #[component]
 pub fn Content() -> Element {
@@ -44,7 +44,7 @@ pub fn Content() -> Element {
             }
         }
 
-        h3 { class: "font-semibold underline underline-offset-4 mb-1", "REMEMBER" }
+        {h3_heading("RECAP")}
         ul { class: "list-disc pl-4",
             li {
                 "Both the "

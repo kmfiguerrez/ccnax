@@ -99,7 +99,7 @@ pub fn Content() -> Element {
             src: asset!("/assets/static/v2p3c9s1sh3t9-2.png", AssetOptions::image().with_avif()),
         }
 
-        {h3_heading("REMEMBER")}
+        {h3_heading("RECAP")}
 
         ul { class: "list-disc pl-4",
             li {

@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{config_checklist::ConfigChecklist, green_div::GreenNote}, utils::{TextCommandColor, h3_heading, text_command}
+    components::{ConfigChecklist, GreenNote}, utils::{TextCommandColor, h3_heading, text_command}
 };
 
 #[component]
@@ -55,6 +55,7 @@ pub fn Content() -> Element {
             when using local usernames and passwords."
         }
 
+        {h3_heading("Configuration Checklist")}
         p {
             "The following checklist details the commands to configure local username login, mainly as a
             method for easier study and review:"
@@ -74,7 +75,7 @@ pub fn Content() -> Element {
             }
             // Step 2
             li { class: "flex flex-col md:flex-row md:gap-x-4",
-                span { class: "text-sky-500 font-semibold", "Step 2." }
+                span { class: "text-sky-500 font-semibold shrink-0", "Step 2." }
                 div {
                     span { "Configure the console to use locally configured username/password pairs:" }
                     ol {
@@ -113,7 +114,7 @@ pub fn Content() -> Element {
             }
             // Step 3
             li { class: "flex flex-col md:flex-row md:gap-x-4",
-                span { class: "text-sky-500 font-semibold", "Step 3." }
+                span { class: "text-sky-500 font-semibold shrink-0", "Step 3." }
                 div {
                     span { "Configure Telnet (vty) to use locally configured username/password pairs." }
                     ol {
