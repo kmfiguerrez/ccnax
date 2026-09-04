@@ -174,6 +174,17 @@ pub fn Content() -> Element {
             switches do not display the typed password for security reasons."
         }
 
+        p { class: "mb-4",
+            "The end of Example 6-4 points out one of the many security improvements when requiring
+            each user to log in with their own username."
+            br {}
+            "The end of the example shows the user entering configuration mode (configure terminal) and then immediately leaving (end). Note that
+            when a user exits configuration mode, the switch generates a log message."
+            br {}
+            "If the user logged in with a username, the log message identifies that username; note the “wendell” in the log
+            message."
+        }
+
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li { "Cisco also uses local username/passwords for securing user mode access." }
