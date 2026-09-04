@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{green_div::GreenNote, config_checklist::ConfigChecklist, key_topic::KeyTopic}, 
+    components::{green_div::GreenNote, config_checklist::ConfigChecklist}, 
     utils::{h3_heading, text_command, TextCommandColor}};
 
 #[component]
