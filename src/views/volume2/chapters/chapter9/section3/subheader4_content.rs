@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::{green_div::GreenNote, red_div::RedNote}, utils::text_command::text_command};
+use crate::{utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -22,38 +22,38 @@ pub fn Content() -> Element {
         p { "The three LLDP configuration commands are as follows:" }
         ol { class: "list-inside list-disc mb-4",
             li {
-                {text_command("[no] lldp run:")}
+                {text_command("[no] lldp run:", TextCommandColor::Gold)}
                 " A global configuration command that sets the default mode of LLDP
                 operation for any interface that does not have more specific LLDP subcommands
                 ("
-                {text_command("lldp transmit, lldp receive")}
+                {text_command("lldp transmit, lldp receive", TextCommandColor::Gold)}
                 "). The "
-                {text_command("lldp run")}
+                {text_command("lldp run", TextCommandColor::Gold)}
                 " global command enables LLDP in both
                 directions on those interfaces, while "
-                {text_command("no lldp run")}
+                {text_command("no lldp run", TextCommandColor::Gold)}
                 " disables LLDP."
             }
             li {
-                {text_command("[no] lldp transmit:")}
+                {text_command("[no] lldp transmit:", TextCommandColor::Gold)}
                 " An interface subcommand that defines the operation of LLDP on the
                 interface regardless of the global "
-                {text_command("[no] lldp run")}
+                {text_command("[no] lldp run", TextCommandColor::Gold)}
                 " command. The "
-                {text_command("lldp transmit")}
+                {text_command("lldp transmit", TextCommandColor::Gold)}
                 " interface subcommand causes the device to transmit LLDP messages, while "
-                {text_command("no lldp transmit")}
+                {text_command("no lldp transmit", TextCommandColor::Gold)}
                 " causes it to not transmit LLDP messages."
             }
             li {
-                {text_command("[no] lldp receive:")}
+                {text_command("[no] lldp receive:", TextCommandColor::Gold)}
                 " An interface subcommand that defines the operation of LLDP on the
                 interface regardless of the global "
-                {text_command("[no] lldp run")}
+                {text_command("[no] lldp run", TextCommandColor::Gold)}
                 " command. The "
-                {text_command("lldp receive")}
+                {text_command("lldp receive", TextCommandColor::Gold)}
                 " interface subcommand causes the device to process received LLDP messages, while "
-                {text_command("no lldp receive")}
+                {text_command("no lldp receive", TextCommandColor::Gold)}
                 " causes it to not process received LLDP messages."
             }
         }
@@ -63,7 +63,7 @@ pub fn Content() -> Element {
             br {}
             "Example 9-20 adds a configuration that first enables LLDP for all interfaces (in both directions) with
             the "
-            {text_command("lldp run")}
+            {text_command("lldp run", TextCommandColor::Gold)}
             " global command."
             br {}
             "It then shows how to disable LLDP in both directions on Gi1/0/17 and how to disable LLDP in one direction on Gi1/0/18. "
@@ -79,7 +79,7 @@ pub fn Content() -> Element {
             settings."
             br {}
             "In this case, the configuration does not enable LLDP for all interfaces with the "
-            {text_command("lldp run")}
+            {text_command("lldp run", TextCommandColor::Gold)}
             " command, meaning that all interfaces default to not transmit and not receive LLDP
             messages."
             br {}
@@ -95,17 +95,17 @@ pub fn Content() -> Element {
         p { class: "mb-3",
             "Finally, checking LLDP status uses the exact same commands as CDP as listed in Table 9-4,
             other than the fact that you use the "
-            {text_command("lldp")}
+            {text_command("lldp", TextCommandColor::Gold)}
             " keyword instead of "
-            {text_command("cdp.")}
+            {text_command("cdp.", TextCommandColor::Gold)}
             br {}
             "For instance, "
-            {text_command("show lldp interface")}
+            {text_command("show lldp interface", TextCommandColor::Gold)}
             " lists the interfaces on which LLDP is enabled."
             br {}
             "Example 9-22 shows some examples from switch SW2 based on earlier Figure 9-8 (the same figure used in the CDP examples),
             with LLDP enabled in both directions on all interfaces with the "
-            {text_command("cdp run")}
+            {text_command("cdp run", TextCommandColor::Gold)}
             " global command."
         }
         img {
@@ -120,15 +120,15 @@ pub fn Content() -> Element {
             "The example shows the default settings of 30 seconds for the send timer and 120 seconds for the hold timer."
             br {}
             "You can override the defaults with the "
-            {text_command("lldp timer")}
+            {text_command("lldp timer", TextCommandColor::Gold)}
             i { " seconds" }
             " and "
-            {text_command("lldp holdtime")}
+            {text_command("lldp holdtime", TextCommandColor::Gold)}
             i { " seconds" }
             " global commands , respectively."
         }
 
-        h3 { class: "font-semibold text-lg mb-1", "REMEMBER" }
+        {h3_heading("REMEMBER")}
         ul { class: "list-disc pl-4",
             li { "Cisco devices default to disable LLDP." }
             li { "LLDP separates the sending and receiving of LLDP messages as separate functions." }

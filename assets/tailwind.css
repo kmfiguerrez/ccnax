@@ -14,12 +14,7 @@
     --color-green-700: oklch(52.7% 0.154 150.069);
     --color-sky-500: oklch(68.5% 0.169 237.323);
     --color-sky-600: oklch(58.8% 0.158 241.966);
-    --color-sky-800: oklch(44.3% 0.11 240.79);
     --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-blue-800: oklch(42.4% 0.199 265.638);
-    --color-violet-600: oklch(54.1% 0.281 293.009);
-    --color-violet-800: oklch(43.2% 0.232 292.759);
     --color-purple-900: oklch(38.1% 0.176 304.987);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-zinc-500: oklch(55.2% 0.016 285.938);
@@ -297,17 +292,11 @@
   .max-w-max {
     max-width: max-content;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .list-inside {
     list-style-position: inside;
@@ -342,9 +331,6 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-xl {
-    border-radius: var(--radius-xl);
-  }
   .rounded-xl\! {
     border-radius: var(--radius-xl) !important;
   }
@@ -358,9 +344,6 @@
   }
   .border-black {
     border-color: var(--color-black);
-  }
-  .border-zinc-500 {
-    border-color: var(--color-zinc-500);
   }
   .border-zinc-500\! {
     border-color: var(--color-zinc-500) !important;
@@ -383,14 +366,8 @@
   .bg-red-400 {
     background-color: var(--color-red-400);
   }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .bg-transparent\! {
     background-color: transparent !important;
-  }
-  .bg-zinc-800 {
-    background-color: var(--color-zinc-800);
   }
   .bg-zinc-800\! {
     background-color: var(--color-zinc-800) !important;
@@ -445,17 +422,9 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
-  .leading-1 {
-    --tw-leading: calc(var(--spacing) * 1);
-    line-height: calc(var(--spacing) * 1);
-  }
   .leading-4 {
     --tw-leading: calc(var(--spacing) * 4);
     line-height: calc(var(--spacing) * 4);
-  }
-  .leading-5 {
-    --tw-leading: calc(var(--spacing) * 5);
-    line-height: calc(var(--spacing) * 5);
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);

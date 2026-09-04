@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::red_div::RedNote, utils::text_command::text_command};
+use crate::{components::red_div::RedNote, utils::{text_command, TextCommandColor, h3_heading}};
 
 #[component]
 pub fn Content() -> Element {
@@ -71,7 +71,7 @@ pub fn Content() -> Element {
 
         p { class: "mb-3",
             "The "
-            {text_command("show logging")}
+            {text_command("show logging", TextCommandColor::Gold)}
             " command confirms those same configuration settings and also lists the
             log messages per the logging buffered configuration."
             br {}
@@ -112,7 +112,7 @@ pub fn Content() -> Element {
             "In this case, the router just booted, and no messages has been buffered yet."
             br {}
             "(You could also clear out the old messages from the log with the "
-            {text_command("clear logging")}
+            {text_command("clear logging", TextCommandColor::Gold)}
             " EXEC command.)"
         }
 
@@ -129,20 +129,20 @@ pub fn Content() -> Element {
             "The next example shows the difference between the current severity levels."
             br {}
             "This example shows the user disabling interface G0/1 on R1 with the "
-            {text_command("shutdown")}
+            {text_command("shutdown", TextCommandColor::Gold)}
             " command and then reenabling it with the "
-            {text_command("no shutdown")}
+            {text_command("no shutdown", TextCommandColor::Gold)}
             " command."
             br {}
             "If you look closely at the highlighted messages, you will see several severity 5 messages and one severity 3 message."
             br {}
             "The "
-            {text_command("logging buffered 4")}
+            {text_command("logging buffered 4", TextCommandColor::Gold)}
             " global configuration command on R1 (see Example 9-2) means that R1 will not buffer the
             severity level 5 log messages, but it will buffer the severity level 3 message and more severe messages."
             br {}
             "Example 9-4 ends by showing that log message at the end of the output of the "
-            {text_command("show logging")}
+            {text_command("show logging", TextCommandColor::Gold)}
             " command."
         }
 
@@ -165,7 +165,7 @@ pub fn Content() -> Element {
             }
         }
 
-        h3 { class: "font-semibold mb-1", "REMEMBER" }
+        {h3_heading("REMEMBER")}
         ul { class: "list-disc pl-4",
             li {
                 "It's best to know all the eight log messages to understand the output of the commands."
@@ -173,7 +173,7 @@ pub fn Content() -> Element {
             li { "Most of the show commands list the log message levels by name, not by number." }
             li {
                 "You could also clear out the old messages from the log with the "
-                {text_command("clear logging")}
+                {text_command("clear logging", TextCommandColor::Gold)}
                 " EXEC command."
             }
         }

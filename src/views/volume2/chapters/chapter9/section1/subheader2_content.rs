@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::utils::text_command::text_command;
+use crate::utils::{text_command, TextCommandColor, h3_heading};
 
 #[component]
 pub fn Content() -> Element {
@@ -15,11 +15,11 @@ pub fn Content() -> Element {
         ol { class: "list-decimal pl-4 mb-4",
             li {
                 "IOS can store copies of the log messages in RAM by virtue of the "
-                {text_command("logging buffered")}
+                {text_command("logging buffered", TextCommandColor::Gold)}
                 " global configuration command."
                 br {}
                 "Then any user can come back later and see the old log messages by using the "
-                {text_command("show logging")}
+                {text_command("show logging", TextCommandColor::Gold)}
                 " EXEC command."
             }
             li {
@@ -35,13 +35,13 @@ pub fn Content() -> Element {
                 from various devices"
                 br {}
                 "To configure a router or switch to send log messages to a syslog server, add the "
-                {text_command("logging host")}
+                {text_command("logging host", TextCommandColor::Gold)}
                 " {{address | hostname}} global command, referencing the IP address or host name of the syslog server."
             
             }
         }
 
-        h3 { class: "font-semibold mb-1", "REMEMBER" }
+        {h3_heading("REMEMBER")}
         ul { class: "list-disc pl-4",
             li { "IOS provides two primary means to keep a copy: using RAM and a Syslog Server" }
             li {
