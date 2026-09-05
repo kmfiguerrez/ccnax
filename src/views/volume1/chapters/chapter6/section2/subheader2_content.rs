@@ -99,9 +99,7 @@ pub fn Content() -> Element {
 
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
-            li {
-                "A switch configures its IPv4 address and mask on this special NIC-like VLAN interface."
-            }
+            li { "A switch configures its IP settings on this special NIC-like VLAN interface." }
         }
     }
 }
