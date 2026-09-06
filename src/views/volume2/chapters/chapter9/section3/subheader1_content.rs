@@ -154,7 +154,7 @@ pub fn Content() -> Element {
             with gray highlight to help you find the dividing point between groups of messages "
         }
 
-        p { class: "mb-4", "See Example 9-16 on page 192 in the book." }
+        p { class: "mb-4", "See Example 9-16 on page 192 in the volume 2 book." }
 
         GreenNote {
             p {
