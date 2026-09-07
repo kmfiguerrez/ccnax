@@ -24,6 +24,9 @@ pub use subheader_content::SubheaderContent;
 mod section_introduction;
 pub use section_introduction::SectionIntroduction;
 
+mod chapter_introduction;
+pub use chapter_introduction::ChapterIntroduction;
+
 pub mod input;
 pub mod dialog;
 pub mod button;

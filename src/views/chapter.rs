@@ -1,7 +1,10 @@
 use dioxus::prelude::*;
 
-use crate::{Route, utils::{db_models::Database}};
-use crate::components::{svg::CaretRightSVG};
+use crate::{
+    Route, 
+    utils::{db_models::Database}, 
+    components::{svg::CaretRightSVG, separator::Separator, ChapterIntroduction}
+};
 
 #[component]
 pub fn Chapter(volume_id: u32, part_id: u32, chapter_id: u32) -> Element {
@@ -21,7 +24,12 @@ pub fn Chapter(volume_id: u32, part_id: u32, chapter_id: u32) -> Element {
     
     rsx! {
         if let Some(chapter) = chapter {
+            // Chapter title
             h1 { class: "text-lg font-bold mb-4", "Chapter {chapter_id}: {chapter.name}" }
+            // Chapter Introduction
+            ChapterIntroduction { volume_id, part_id, chapter_id }
+            Separator { class: "my-4", horizontal: true, decorative: true }
+            // Sections list
             ol { class: "flex flex-col gap-y-1",
                 for (idx , section) in chapter.sections.iter() {
                     li {

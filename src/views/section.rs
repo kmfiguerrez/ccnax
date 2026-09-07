@@ -40,7 +40,7 @@ pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -
                 section_id,
             }
             Separator { class: "my-4", horizontal: true, decorative: true }
-            // Sections list
+            // Subheaders list
             ol { class: "flex flex-col gap-y-1",
                 for (idx , subheader) in section.subheaders.iter() {
                     li {
