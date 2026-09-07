@@ -1,9 +1,8 @@
 use dioxus::prelude::*;
-use crate::components::separator::Separator;
 
 use crate::{
     utils::db_models::Database, 
-    components::SubheaderContent,
+    components::{SubheaderContent, separator::Separator},
 };
 
 #[component]
