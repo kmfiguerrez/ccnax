@@ -58,6 +58,9 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                 (1, 2, 7, 1, 4) => rsx! {
                     volume1::chapter7::section1::subheader4_content::Content {}
                 },
+                (1, 2, 7, 1, 5) => rsx! {
+                    volume1::chapter7::section1::subheader5_content::Content {}
+                },
                 (2, 3, 9, 1, 1) => rsx! {
                     section1::subheader1_content::Content {}
                 },
