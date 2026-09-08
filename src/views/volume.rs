@@ -11,7 +11,9 @@ pub fn Volume(volume_id: u32) -> Element {
     let volume = db.read().get(&volume_id).cloned();
 
     rsx! {
-        h1 { class: "text-lg font-bold mb-4", "Volume: {volume_id}" }
+        // Volume title.
+        h1 { class: "text-lg font-bold mb-4 text-blue-500", "Volume: {volume_id}" }
+        // Parts list.
         if let Some(volume) = volume {
             ol { class: "flex flex-col gap-y-1",
                 for (idx , part) in volume.parts {

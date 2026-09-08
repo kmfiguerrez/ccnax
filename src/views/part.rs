@@ -24,7 +24,9 @@ pub fn Part(volume_id: u32, part_id: u32) -> Element {
 
     rsx! {
         if let Some(part) = part {
-            h1 { class: "text-lg font-bold mb-4", "Part {part_id}: {part.name}" }
+            // Part title.
+            h1 { class: "text-lg font-bold mb-4 text-blue-500", "Part {part_id}: {part.name}" }
+            // Chapters list.
             ol { class: "flex flex-col gap-y-1",
                 for (idx , chapter) in part.chapters.iter() {
                     li {

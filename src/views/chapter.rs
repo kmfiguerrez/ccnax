@@ -25,7 +25,7 @@ pub fn Chapter(volume_id: u32, part_id: u32, chapter_id: u32) -> Element {
     rsx! {
         if let Some(chapter) = chapter {
             // Chapter title
-            h1 { class: "text-lg font-bold mb-4", "Chapter {chapter_id}: {chapter.name}" }
+            h1 { class: "text-lg font-bold mb-4 text-blue-500", "Chapter {chapter_id}: {chapter.name}" }
             // Chapter Introduction
             ChapterIntroduction { volume_id, part_id, chapter_id }
             Separator { class: "my-4", horizontal: true, decorative: true }
