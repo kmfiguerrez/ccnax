@@ -27,6 +27,8 @@ pub use section_introduction::SectionIntroduction;
 mod chapter_introduction;
 pub use chapter_introduction::ChapterIntroduction;
 
+pub mod my_accordion;
+
 pub mod input;
 pub mod dialog;
 pub mod button;

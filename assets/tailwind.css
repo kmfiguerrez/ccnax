@@ -271,11 +271,17 @@
   .table {
     display: table;
   }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
   .h-7 {
     height: calc(var(--spacing) * 7);
   }
   .h-15 {
     height: calc(var(--spacing) * 15);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
   }
   .w-7 {
     width: calc(var(--spacing) * 7);
@@ -318,6 +324,9 @@
   }
   .justify-between {
     justify-content: space-between;
+  }
+  .gap-x-1 {
+    column-gap: calc(var(--spacing) * 1);
   }
   .gap-x-2 {
     column-gap: calc(var(--spacing) * 2);
@@ -545,6 +554,23 @@
   button {
     cursor: pointer;
   }
+}
+.accordion-expand-icon {
+  transition: rotate 200ms ease;
+}
+.accordion-item[data-open="true"] .accordion-expand-icon {
+  rotate: 90deg;
+}
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease;
+}
+.accordion-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.accordion-content > * {
+  overflow: hidden;
 }
 @property --tw-rotate-x {
   syntax: "*";
