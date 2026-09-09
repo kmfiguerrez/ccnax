@@ -120,7 +120,7 @@ pub fn Content() -> Element {
             ul { class: "list-disc list-inside",
                 li {
                     "When the speed and duplex are manually configured, the specified values will be listed
-                    with "
+                    with the prefix of "
                     span { class: "font-bold", "a-" }
                     " next to those values under the Duplex and Speed headings."
                 }
@@ -129,12 +129,12 @@ pub fn Content() -> Element {
                     texts respectively."
                 }
                 li {
-                    "The book from 2020 says otherwise. The text "
+                    "The book from 2020 says otherwise. The prefix "
                     span { class: "font-bold", "a-" }
                     " next to a value means the value was autonegotiated and 
                     manually configured values are listed without the "
                     span { class: "font-bold", "a-" }
-                    " text."
+                    " prefix."
                 }
             }
         }

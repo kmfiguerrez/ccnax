@@ -148,7 +148,11 @@ pub fn Content() -> Element {
             }
             li {
                 "An interface in an up/up (connected) state could be working in a degraded state, so make sure to also
-                examine it."
+                examine it because it could be in a half duplex state."
+            }
+            li {
+                "If different speeds are manually on configured on both ends, both switches would list the port in 
+                a down/down or notconnect state."
             }
         }
     }

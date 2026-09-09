@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 
 use crate::{
     utils::{TextCommandColor, h3_heading, text_command, h4_heading},
-    components::{GreenNote, my_accordion::{Accordion, AccordionItem, AccordionTrigger, AccordionContent}}
+    components::{GreenNote, RedNote, my_accordion::{Accordion, AccordionItem, AccordionTrigger, AccordionContent}}
 };
 
 #[component]
@@ -166,6 +166,24 @@ pub fn Content() -> Element {
                         p {
                             strong { "NOTE" }
                             " Configuring both the speed and duplex on a Cisco Catalyst switch interface disables autonegotiation."
+                        }
+                    }
+
+                    RedNote {
+                        p {
+                            strong { "NOTE" }
+                            " In Packet Tracer version 8.2.2.0400."
+                            br {}
+                            "Manually configuring the speed and duplex settings (disabling autonegotiation) on one end and use 
+                            autonegotiation on the other end, switches would list  the port in a down/down or notconnect state. 
+                            Just like manually configuring different speeds to both ends."
+                            br {}
+                            "In other words, the link is unsuable or disabled!"
+                            br {}
+                            "So it's either both ends manually configured exact values for speed and duplex settings or both use 
+                            autonegotiation."
+                            br {}
+                            "Otherwise the link is dead!"
                         }
                     }
 
