@@ -37,8 +37,6 @@
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -304,23 +302,14 @@
   .max-w-max {
     max-width: max-content;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .shrink-0 {
     flex-shrink: 0;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .list-inside {
     list-style-position: inside;
@@ -355,9 +344,6 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-xl {
-    border-radius: var(--radius-xl);
-  }
   .rounded-xl\! {
     border-radius: var(--radius-xl) !important;
   }
@@ -371,9 +357,6 @@
   }
   .border-black {
     border-color: var(--color-black);
-  }
-  .border-zinc-500 {
-    border-color: var(--color-zinc-500);
   }
   .border-zinc-500\! {
     border-color: var(--color-zinc-500) !important;
@@ -396,14 +379,8 @@
   .bg-red-400 {
     background-color: var(--color-red-400);
   }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .bg-transparent\! {
     background-color: transparent !important;
-  }
-  .bg-zinc-800 {
-    background-color: var(--color-zinc-800);
   }
   .bg-zinc-800\! {
     background-color: var(--color-zinc-800) !important;
@@ -509,11 +486,6 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .invalid\:outline\! {
     &:invalid {

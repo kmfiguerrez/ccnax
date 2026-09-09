@@ -61,6 +61,10 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                 (1, 2, 7, 1, 5) => rsx! {
                     volume1::chapter7::section1::subheader5_content::Content {}
                 },
+                // Start of volume 1, part 2, chapter 7, section 2
+                (1, 2, 7, 2, 1) => rsx! {
+                    volume1::chapter7::section2::subheader1_content::Content {}
+                },
                 (2, 3, 9, 1, 1) => rsx! {
                     section1::subheader1_content::Content {}
                 },
