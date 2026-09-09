@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 @layer base {
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,6 +38,17 @@
 
 .accordion-item[data-open="true"] .accordion-expand-icon {
   rotate: 90deg;
+}
+
+@media (width >= 40rem) {
+  .accordion-trigger {
+      /* width: 100%; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding: 1rem; */
+      /* cursor: pointer; */
+  }
 }
 
 .accordion-content {

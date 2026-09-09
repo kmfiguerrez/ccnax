@@ -28,7 +28,7 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
     
     rsx! {
         if let Some(subheader) = subheader {
-            h1 { class: "text-xl font-bold", "{subheader.name}" }
+            h1 { class: "text-2xl font-bold", "{subheader.name}" }
             Separator { class: "my-4", horizontal: true, decorative: true }
             // Display subheader content.
             SubheaderContent {

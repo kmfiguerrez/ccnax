@@ -4,6 +4,10 @@ use dioxus::prelude::*;
 /// The text is colored gold.
 pub fn h3_heading(text: &str) -> Element {
     rsx! {
-        h3 { class: "font-semibold underline underline-offset-4 mb-1", "{text}" }
+        // I make the display properties responsive because this heading is being used inside
+        // the accordion trigger.
+        h3 { class: "text-lg font-semibold underline underline-offset-4 mb-1 inline sm:block",
+            "{text}"
+        }
     }
 }
