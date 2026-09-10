@@ -151,7 +151,7 @@ pub fn Content() -> Element {
                 examine it because it could be in a half duplex state."
             }
             li {
-                "If different speeds are manually on configured on both ends, both switches would list the port in 
+                "If different speeds are manually configured on both ends, both switches would list the port in 
                 a down/down or notconnect state."
             }
         }
