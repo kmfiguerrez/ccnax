@@ -21,6 +21,13 @@ mod key_topic;
 pub use key_topic::KeyTopic;
 mod subheader_content;
 pub use subheader_content::SubheaderContent;
+mod section_introduction;
+pub use section_introduction::SectionIntroduction;
+
+mod chapter_introduction;
+pub use chapter_introduction::ChapterIntroduction;
+
+pub mod my_accordion;
 
 pub mod input;
 pub mod dialog;

@@ -104,10 +104,8 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: DX_THEME }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
 
-        div { class: "container-x px-1",
-            // The router component renders the route enum we defined above. It will handle synchronization of the URL and render
-            // the layouts and components for the active route.
-            Router::<Route> {}
-        }
+        // The router component renders the route enum we defined above. It will handle synchronization of the URL and render
+        // the layouts and components for the active route.
+        Router::<Route> {}
     }
 }

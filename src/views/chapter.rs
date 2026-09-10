@@ -1,7 +1,10 @@
 use dioxus::prelude::*;
 
-use crate::{Route, utils::{db_models::Database}};
-use crate::components::{svg::CaretRightSVG};
+use crate::{
+    Route, 
+    utils::{db_models::Database}, 
+    components::{svg::CaretRightSVG, separator::Separator, ChapterIntroduction}
+};
 
 #[component]
 pub fn Chapter(volume_id: u32, part_id: u32, chapter_id: u32) -> Element {
@@ -20,28 +23,38 @@ pub fn Chapter(volume_id: u32, part_id: u32, chapter_id: u32) -> Element {
         .and_then(|p| p.chapters.get(&chapter_id));
     
     rsx! {
-        if let Some(chapter) = chapter {
-            h1 { class: "text-lg font-bold mb-4", "Chapter {chapter_id}: {chapter.name}" }
-            ol { class: "flex flex-col gap-y-1",
-                for (idx , section) in chapter.sections.iter() {
-                    li {
-                        key: "{idx}",
-                        class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
-                        CaretRightSVG {}
-                        Link {
-                            to: Route::Section {
-                                volume_id,
-                                part_id,
-                                chapter_id,
-                                section_id: *idx,
-                            },
-                            "Section {chapter_id}.{idx}: {section.name}"
+        // I put pt-15 in the class prop because the navbar is set to fixed position.
+        div { class: "container-x pt-15",
+            if let Some(chapter) = chapter {
+                // Chapter title
+                h1 { class: "text-lg font-bold mb-4 text-blue-500",
+                    "Chapter {chapter_id}: {chapter.name}"
+                }
+                // Chapter Introduction
+                ChapterIntroduction { volume_id, part_id, chapter_id }
+                Separator { class: "my-4", horizontal: true, decorative: true }
+                // Sections list
+                ol { class: "flex flex-col gap-y-1",
+                    for (idx , section) in chapter.sections.iter() {
+                        li {
+                            key: "{idx}",
+                            class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
+                            CaretRightSVG {}
+                            Link {
+                                to: Route::Section {
+                                    volume_id,
+                                    part_id,
+                                    chapter_id,
+                                    section_id: *idx,
+                                },
+                                "Section {chapter_id}.{idx}: {section.name}"
+                            }
                         }
                     }
                 }
+            } else {
+                h2 { "Chapter {chapter_id} not found." }
             }
-        } else {
-            h2 { "Chapter {chapter_id} not found." }
         }
     }
 }

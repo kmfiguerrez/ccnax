@@ -31,3 +31,36 @@
       /* @apply mx-auto; */
     }
 }
+
+.accordion-expand-icon {
+  transition: rotate 200ms ease;
+}
+
+.accordion-item[data-open="true"] .accordion-expand-icon {
+  rotate: 90deg;
+}
+
+@media (width >= 40rem) {
+  .accordion-trigger {
+      /* width: 100%; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding: 1rem; */
+      /* cursor: pointer; */
+  }
+}
+
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms ease;
+}
+
+.accordion-content[data-open="true"] {
+    grid-template-rows: 1fr;
+}
+
+.accordion-content > * {
+    overflow: hidden;
+}

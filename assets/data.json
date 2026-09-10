@@ -91,6 +91,29 @@
                                 }
                             }                            
                         }
+                    },
+                    "7": {
+                        "name": "Configuring and Verifying Switch Interfaces",
+                        "sections": {
+                            "1": {
+                                "name": "Configuring Switch Interfaces",
+                                "subheaders": {
+                                    "1": {"name": "Configuring Speed, Duplex, and Description"},
+                                    "2": {"name": "Configuring Multiple Interfaces with the interface range Command"},
+                                    "3": {"name": "Administratively Controlling Interface State with shutdown"},
+                                    "4": {"name": "Removing Configuration with the no Command"},
+                                    "5": {"name": "Autonegotiation"}
+                                }
+                            },
+                            "2": {
+                                "name": "Analyzing Switch Interface Status and Statistics",
+                                "subheaders": {
+                                    "1": {"name": "Interface Status Codes and Reasons for Nonworking States"},
+                                    "2": {"name": "Interface Speed and Duplex Issues"},
+                                    "3": {"name": "Common Layer 1 Problems on Working Interfaces"}
+                                }
+                            }
+                        }
                     }
                 }
             }
