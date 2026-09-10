@@ -27,42 +27,45 @@ pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -
         .and_then(|s| s.sections.get(&section_id));    
     
     rsx! {
-        if let Some(section) = section {
-            // Section Title
-            h1 { class: "text-lg text-blue-500 font-bold mb-4",
-                "Section {chapter_id}.{section_id}: {section.name}"
-            }
-            // Section Introduction
-            SectionIntroduction {
-                volume_id,
-                part_id,
-                chapter_id,
-                section_id,
-            }
-            Separator { class: "my-4", horizontal: true, decorative: true }
-            // Subheaders list
-            ol { class: "flex flex-col gap-y-1",
-                for (idx , subheader) in section.subheaders.iter() {
-                    li {
-                        key: "{idx}",
-                        class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
-                        CaretRightSVG {}
-                        Link {
-                            class: "font-semibold",
-                            to: Route::Subheader {
-                                volume_id,
-                                part_id,
-                                chapter_id,
-                                section_id,
-                                subheader_id: *idx,
-                            },
-                            "{subheader.name}"
+        // I put pt-15 in the class prop because the navbar is set to fixed position.
+        div { class: "container-x pt-15",
+            if let Some(section) = section {
+                // Section Title
+                h1 { class: "text-lg text-blue-500 font-bold mb-4",
+                    "Section {chapter_id}.{section_id}: {section.name}"
+                }
+                // Section Introduction
+                SectionIntroduction {
+                    volume_id,
+                    part_id,
+                    chapter_id,
+                    section_id,
+                }
+                Separator { class: "my-4", horizontal: true, decorative: true }
+                // Subheaders list
+                ol { class: "flex flex-col gap-y-1",
+                    for (idx , subheader) in section.subheaders.iter() {
+                        li {
+                            key: "{idx}",
+                            class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
+                            CaretRightSVG {}
+                            Link {
+                                class: "font-semibold",
+                                to: Route::Subheader {
+                                    volume_id,
+                                    part_id,
+                                    chapter_id,
+                                    section_id,
+                                    subheader_id: *idx,
+                                },
+                                "{subheader.name}"
+                            }
                         }
                     }
                 }
+            } else {
+                h2 { "Section {section_id} not found." }
             }
-        } else {
-            h2 { "Section {section_id} not found." }
         }
     }
 }

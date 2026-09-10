@@ -14,13 +14,15 @@ pub fn Navbar(volume_id: u32) -> Element {
         // document::Link { rel: "stylesheet", href: NAVBAR_CSS }
         nav {
             id: "navbar",
-            class: "flex justify-between py-4 sm:justify-start sm gap-x-4",
+            class: "fixed w-full bg-zinc-900 bg-linear-to-b from-zinc-400/30",
             // Link { to: Route::Blog { id: 5 }, "Blog" }
-            GoBackButton {
-                span { class: "cursor-pointer", "Previous" }
+            div { class: "flex justify-between px-1 py-4 container-x sm:justify-start sm:gap-x-4",
+                GoBackButton {
+                    span { class: "cursor-pointer", "Previous" }
+                }
+                Link { to: Route::Home {}, "Home" }
+                CcnaBookPage {}
             }
-            Link { to: Route::Home {}, "Home" }
-            CcnaBookPage {}
         }
 
         // The `Outlet` component is used to render the next component inside the layout. In this case, it will render either

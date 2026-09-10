@@ -27,19 +27,22 @@ pub fn Subheader(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32,
         .and_then(|sh| sh.subheaders.get(&subheader_id));
     
     rsx! {
-        if let Some(subheader) = subheader {
-            h1 { class: "text-2xl font-bold", "{subheader.name}" }
-            Separator { class: "my-4", horizontal: true, decorative: true }
-            // Display subheader content.
-            SubheaderContent {
-                volume_id,
-                part_id,
-                chapter_id,
-                section_id,
-                subheader_id,
+        // I put pt-15 in the class prop because the navbar is set to fixed position.
+        div { class: "container-x pt-15",
+            if let Some(subheader) = subheader {
+                h1 { class: "text-2xl font-bold", "{subheader.name}" }
+                Separator { class: "my-4", horizontal: true, decorative: true }
+                // Display subheader content.
+                SubheaderContent {
+                    volume_id,
+                    part_id,
+                    chapter_id,
+                    section_id,
+                    subheader_id,
+                }
+            } else {
+                h1 { "Subheader {subheader_id} not found." }
             }
-        } else {
-            h1 { "Subheader {subheader_id} not found." }
         }
     }
 }

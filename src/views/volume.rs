@@ -11,28 +11,31 @@ pub fn Volume(volume_id: u32) -> Element {
     let volume = db.read().get(&volume_id).cloned();
 
     rsx! {
-        // Volume title.
-        h1 { class: "text-lg font-bold mb-4 text-blue-500", "Volume: {volume_id}" }
-        // Parts list.
-        if let Some(volume) = volume {
-            ol { class: "flex flex-col gap-y-1",
-                for (idx , part) in volume.parts {
-                    li {
-                        key: "{idx}",
-                        class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
-                        CaretRightSVG {}
-                        Link {
-                            to: Route::Part {
-                                volume_id,
-                                part_id: idx,
-                            },
-                            "Part {idx}: {part.name}"
+        // I put pt-15 in the class prop because the navbar is set to fixed position.
+        div { class: "container-x pt-15",
+            // Volume title.
+            h1 { class: "text-lg font-bold mb-4 text-blue-500", "Volume: {volume_id}" }
+            // Parts list.
+            if let Some(volume) = volume {
+                ol { class: "flex flex-col gap-y-1",
+                    for (idx , part) in volume.parts {
+                        li {
+                            key: "{idx}",
+                            class: "border border-zinc-600 w-fit py-2 px-4 rounded-lg flex items-center",
+                            CaretRightSVG {}
+                            Link {
+                                to: Route::Part {
+                                    volume_id,
+                                    part_id: idx,
+                                },
+                                "Part {idx}: {part.name}"
+                            }
                         }
                     }
                 }
+            } else {
+                h2 { "Volume {volume_id} not found." }
             }
-        } else {
-            h2 { "Volume {volume_id} not found." }
         }
     }
 }
