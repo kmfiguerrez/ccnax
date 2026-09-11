@@ -28,7 +28,7 @@ pub fn Section(volume_id: u32, part_id: u32, chapter_id: u32, section_id: u32) -
     
     rsx! {
         // I put pt-15 in the class prop because the navbar is set to fixed position.
-        div { class: "container-x pt-15",
+        div { class: "container-x pt-15 pb-1",
             if let Some(section) = section {
                 // Section Title
                 h1 { class: "text-lg text-blue-500 font-bold mb-4",

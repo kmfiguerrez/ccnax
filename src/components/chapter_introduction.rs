@@ -13,6 +13,10 @@ pub fn ChapterIntroduction(volume_id: u32, part_id: u32, chapter_id: u32) -> Ele
                 (1, 2, 7) => rsx! {
                     volume1::chapter7::ChapterIntroductionContent {}
                 },
+                // Start of volume 1, part 3, chapter 8
+                (1, 3, 8) => rsx! {
+                    volume1::chapter8::ChapterIntroductionContent {}
+                },
                 _ => rsx! {
                     h3 { "Chapter Introduction not found!" }
                 },

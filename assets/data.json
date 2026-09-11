@@ -116,6 +116,41 @@
                         }
                     }
                 }
+            },
+            "3": {
+                "name": "Implementing VLANs and STP",
+                "chapters": {
+                    "8": {
+                        "name": "Implementing Ethernet Virtual LANs",
+                        "sections": {
+                            "1": {
+                                "name": "Virtual LAN Concepts",
+                                "subheaders": {
+                                    "1": {"name": "Creating Multiswitch VLANs Using Trunking"},
+                                    "2": {"name": "Forwarding Data Between VLANs"}
+                                }
+                            },
+                            "2": {
+                                "name": "VLAN and VLAN Trunking Configuration and Verification",
+                                "subheaders": {
+                                    "1": {"name": "Creating VLANs and Assigning Access VLANs to an Interface"},
+                                    "2": {"name": "VLAN Trunking Protocol"},
+                                    "3": {"name": "VLAN Trunking Configuration"},
+                                    "4": {"name": "Implementing Interfaces Connected to Phones"}
+                                }
+                            },
+                            "3": {
+                                "name": "Troubleshooting VLANs and VLAN Trunks",
+                                "subheaders": {
+                                    "1": {"name": "Access VLANs Undefined or Disabled"},
+                                    "2": {"name": "Mismatched Trunking Operational States"},
+                                    "3": {"name": "The Supported VLAN List on Trunks"},
+                                    "4": {"name": "Mismatched Native VLAN on a Trunk"}
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
