@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use crate::{
     components::{
         KeyTopic, my_accordion::{Accordion, AccordionContent, AccordionItem, AccordionTrigger}
-    }, utils::{TextCommandColor, h3_heading, h4_heading, text_command}
+    }, utils::{h3_heading, h4_heading}
 };
 
 #[component]
@@ -74,7 +74,7 @@ pub fn Content() -> Element {
             AccordionItem {
                 AccordionTrigger { {h3_heading("VLAN Tagging Concepts")} }
                 AccordionContent {
-                    p {
+                    p { class: "mb-4",
                         "VLAN trunking creates one link between switches that supports as many VLANs as you need."
                         br {}
                         "As a VLAN trunk, the switches treat the link as if it were a part of all the VLANs."
