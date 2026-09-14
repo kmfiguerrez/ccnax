@@ -312,7 +312,7 @@ pub fn Content() -> Element {
                 {text_command("show vlan/show vlan brief", TextCommandColor::Gold)}
                 " and "
                 {text_command("show running-config", TextCommandColor::Gold)}
-                " commands to verify VLANs configuration."
+                " commands can be used to verify VLANs configuration."
             }
             li {
                 "For ports that should always act as access ports, add the optional interface subcommand "
