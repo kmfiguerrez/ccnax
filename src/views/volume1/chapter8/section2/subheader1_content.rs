@@ -253,7 +253,48 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("VLAN Configuration Example 2: Shorter VLAN Configuration")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        "Example 8-2 shows how to configure a VLAN and add two ports to the VLAN as access ports."
+                        br {}
+                        "Example 8-4 does the same, this time with VLAN 3, and this time with a much briefer
+                        alternative configuration."
+                        br {}
+                        "The configuration completes the configuration of the design shown in Figure 8-9, by adding two ports to 
+                        VLAN 3. "
+                    }
+
+                    p { class: "mb-4", "See Example 8-4 in volume 1 on page 189." }
+
+                    p {
+                        "Example 8-2 shows how a switch can dynamically create a VLAN—the equivalent of the "
+                        {text_command("vlan", TextCommandColor::Gold)}
+                        i { " vlan-id" }
+                        " global config command—when the "
+                        {text_command("switchport access vlan", TextCommandColor::Gold)}
+                        " interface subcommand refers to a 
+                        currently unconfigured VLAN."
+                        br {}
+                        "This example begins with SW1 not knowing about VLAN 3."
+                        br {}
+                        "With the addition of the "
+                        {text_command("switchport access vlan 3", TextCommandColor::Gold)}
+                        " interface subcommand, the switch realized that VLAN 3 
+                        did not exist, and as noted in the shaded message in the example, the switch created VLAN 3, 
+                        using a default name (VLAN0003)."
+                        br {}
+                        "The engineer did not need to type the "
+                        {text_command("vlan 3", TextCommandColor::Gold)}
+                        " global command to create VLAN 3; the switch did that 
+                        automatically."
+                        br {}
+                        "No other steps are required to create the VLAN."
+                        br {}
+                        "At the end of the process, VLAN 3 exists in the switch, 
+                        and interfaces Fa0/15 and Fa0/16 are in VLAN 3, as noted in the shaded part of the show vlan brief command 
+                        output."
+                    }
+                }
             }
         }
 
@@ -271,13 +312,20 @@ pub fn Content() -> Element {
                 {text_command("show vlan/show vlan brief", TextCommandColor::Gold)}
                 " and "
                 {text_command("show running-config", TextCommandColor::Gold)}
-                " commands to verify VLANs configuration."
+                " commands can be used to verify VLANs configuration."
             }
             li {
                 "For ports that should always act as access ports, add the optional interface subcommand "
                 {text_command("switchport mode access.", TextCommandColor::Gold)}
                 " This command tells the switch to always be an access interface and disables the protocol that negotiates trunking 
                 (Dynamic Trunking Protocol [DTP]) with the device on the other end of the link."
+            }
+            li {
+                "The "
+                {text_command("switchport access vlan", TextCommandColor::Gold)}
+                i { " vlan-id" }
+                " interface subcommand can dynamically create the VLAN listed in the command if that VLAN is not created 
+                yet in the global configuration mode."
             }
         }
     }

@@ -75,9 +75,13 @@ pub fn Content() -> Element {
                 AccordionTrigger { {h3_heading("VLAN Tagging Concepts")} }
                 AccordionContent {
                     p { class: "mb-4",
-                        "VLAN trunking creates one link between switches that supports as many VLANs as you need."
+                        strong {
+                            "VLAN trunking creates one link between switches that supports as many VLANs as you need."
+                        }
                         br {}
-                        "As a VLAN trunk, the switches treat the link as if it were a part of all the VLANs."
+                        strong {
+                            "As a VLAN trunk, the switches treat the link as if it were a part of all the VLANs."
+                        }
                         br {}
                         "At the same time, the trunk keeps the VLAN traffic separate, so frames in VLAN 10 would not
                         go to devices in VLAN 20, and vice versa, because each frame is identified by VLAN number as it crosses 
@@ -94,8 +98,10 @@ pub fn Content() -> Element {
                     }
 
                     p { class: "mb-4",
-                        "The use of trunking allows switches to forward frames from multiple VLANs over a single
+                        strong {
+                            "The use of trunking allows switches to forward frames from multiple VLANs over a single
                         physical connection by adding a small header to the Ethernet frame."
+                        }
                         br {}
                         "For example, Figure 8-5 shows PC11 sending a broadcast frame on interface Fa0/1 at Step 1."
                         br {}
@@ -141,8 +147,10 @@ pub fn Content() -> Element {
                 AccordionTrigger { {h3_heading("The 802.1Q and ISL VLAN Trunking Protocols")} }
                 AccordionContent {
                     p { class: "mb-4",
-                        "Cisco has supported two different trunking protocols over the years: Inter-Switch Link (ISL)
+                        strong {
+                            "Cisco has supported two different trunking protocols over the years: Inter-Switch Link (ISL)
                         and IEEE 802.1Q."
+                        }
                         br {}
                         "Cisco created the ISL years before 802.1Q, in part because the IEEE had not yet defined a 
                         VLAN trunking standard."
