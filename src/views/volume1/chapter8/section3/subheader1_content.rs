@@ -1,10 +1,8 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{
-        KeyTopic,
-        GreenNote,
-    }, utils::{TextCommandColor, h3_heading, text_command}
+    components::GreenNote,
+    utils::{TextCommandColor, h3_heading, text_command}
 };
 
 #[component]
