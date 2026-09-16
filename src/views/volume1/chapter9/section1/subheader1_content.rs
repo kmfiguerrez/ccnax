@@ -39,7 +39,7 @@ pub fn Content() -> Element {
 
         img {
             class: "mb-4 rounded-lg",
-            alt: "Example 8-12 Operational Trunking State",
+            alt: "Figure 9-1 Broadcast Storm",
             loading: "lazy",
             src: asset!("/assets/static/v1p3c9s1sh1f9-1.png", AssetOptions::image().with_avif()),
         }
@@ -135,7 +135,7 @@ pub fn Content() -> Element {
         KeyTopic {}
         img {
             class: "mb-4 rounded-lg",
-            alt: "Example 8-12 Operational Trunking State",
+            alt: "Table 9-2 Three Classes of Problems Caused by Not Using STP in Redundant LANs",
             loading: "lazy",
             src: asset!("/assets/static/v1p3c9s1sh1t9-2.png", AssetOptions::image().with_avif()),
         }
