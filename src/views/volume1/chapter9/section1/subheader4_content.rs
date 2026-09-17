@@ -25,8 +25,10 @@ pub fn Content() -> Element {
             "Network engineers often want to change the STP/RSTP settings to then change the choices
             STP/RSTP makes in a given LAN."
             br {}
-            "Two main tools available to the engineer are to configure
-            the bridge ID and to change STP/RSTP port costs."
+            strong {
+                "Two main tools available to the engineer are to configure
+                the bridge ID and to change STP/RSTP port costs."
+            }
         }
         ul { class: "list-disc list-inside mb-4",
             li {
