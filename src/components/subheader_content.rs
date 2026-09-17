@@ -104,6 +104,15 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                         },
                                     }
                                 },
+
+                                _ => rsx! {
+                                    h3 { "Chapter {chapter_id} does not exist!" }
+                                },
+                            }
+                        },
+                        // part 3
+                        3 => rsx! {
+                            match chapter_id {
                                 // chapter 8
                                 8 => rsx! {
                                     match (section_id, subheader_id) {
@@ -145,18 +154,10 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                         },
                                     }
                                 },
-                                _ => rsx! {
-                                    h3 { "Chapter {chapter_id} does not exist!" }
-                                },
-                            }
-                        },
-                        // part 3
-                        3 => rsx! {
-                            match chapter_id {
                                 // chapter 9
                                 9 => rsx! {
                                     match (section_id, subheader_id) {
-                                        // start of volume 1 part 3 chapter 9 section 1
+                                        // start of chapter 9 section 1
                                         (1, 1) => rsx! {
                                             volume1::chapter9::section1::subheader1_content::Content {}
                                         },
@@ -168,6 +169,10 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                         },
                                         (1, 4) => rsx! {
                                             volume1::chapter9::section1::subheader4_content::Content {}
+                                        },
+                                        // start of chapter 9 section 2
+                                        (2, 1) => rsx! {
+                                            volume1::chapter9::section2::subheader1_content::Content {}
                                         },
                                         _ => rsx! {
                                             h3 { "Subheader content not found!" }
