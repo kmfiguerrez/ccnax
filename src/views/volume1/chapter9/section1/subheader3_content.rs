@@ -422,7 +422,92 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Choosing the Designated Port on Each LAN Segment")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        "STP/RSTP's final step to choose the STP/RSTP topology is to choose the designated port on
+                        each LAN segment."
+                        br {}
+                        strong {
+                            "The designated port (DP) on each LAN segment is the switch port that advertises the lowest-cost Hello 
+                            onto a LAN segment."
+                        }
+                        br {}
+                        strong {
+                            "When a nonroot switch forwards a Hello, the nonroot switch sets the root cost field in the Hello to that 
+                            switch's cost to reach the root."
+                        }
+                        br {}
+                        "In effect, the switch with the lower cost to reach the root, among all switches connected to a segment, 
+                        becomes the DP on that segment."
+                    }
+
+                    p { class: "mb-4",
+                        "For example, earlier Figure 9-4 shows in bold text the parts of the Hello messages from both
+                        SW2 and SW3 that determine the choice of DP on that segment."
+                        br {}
+                        "Note that both SW2 and SW3 list their respective cost to reach the root switch 
+                        (cost 4 on SW2 and cost 5 on SW3)."
+                        br {}
+                        "SW2 lists the lower cost, so SW2's Gi0/1 port is the designated port on that LAN segment."
+                    }
+
+                    p { class: "mb-4",
+                        "All DPs are placed into a forwarding state; so in this case, SW2's Gi0/1 interface will be in a
+                        forwarding state."
+                    }
+
+                    {h4_heading("Advertised costs tiebraker")}
+                    p { class: "mb-4",
+                        "If the advertised costs tie, the switches break the tie by choosing the switch with the lower BID."
+                        br {}
+                        "In this case, SW2 would also have won, with a BID of 32769:0200.0002.0002 versus
+                        SW3's 32769:0200.0003.0003."
+                    }
+
+                    GreenNote {
+                        p {
+                            strong { "NOTE" }
+                            " Two additional tiebreakers are needed in some cases, although these would be
+                            unlikely today."
+                            " A single switch can connect two or more interfaces to the same collision
+                            domain by connecting to a hub."
+                            " In that case, the one switch hears its own BPDUs."
+                            " So, if a switch ties with itself, two additional tiebreakers are used: the lowest interface 
+                            STP/RSTP priority and, if that ties, the lowest internal interface number."
+                        }
+                    }
+
+                    p { class: "mb-4",
+                        "The only interface that does not have a reason to be in a forwarding state on the three
+                        switches in the examples shown in Figures 9-3 through 9-6 is SW3's Gi0/2 port."
+                        br {}
+                        "So, the STP/RSTP process is now complete. Table 9-5 outlines the state of each port and shows why
+                        it is in that state."
+                    }
+
+                    img {
+                        class: "mb-4 rounded-lg",
+                        alt: "Table 9-5 State of Each Interface",
+                        loading: "lazy",
+                        src: asset!("/assets/static/v1p3c9s1sh3t9-5.png", AssetOptions::image().with_avif()),
+                    }
+
+                    p { class: "mb-4",
+                        "Note that the examples in this section focus on the links between the switches, but "
+                        strong {
+                            "switch ports connected to endpoint devices should become DPs and settle into a forwarding state."
+                        }
+                        br {}
+                        "Working through the logic, each switch will forward BPDUs on each port as part of the
+                        process to determine the DP on that LAN."
+                        br {}
+                        strong {
+                            "Endpoints should ignore those messages because
+                        they do not run STP/RSTP, so the switch will win and become DP on every access port."
+                        }
+                    }
+                
+                }
             }
         }
 
@@ -493,6 +578,15 @@ pub fn Content() -> Element {
             li {
                 "The root switch sends Hellos, with a listed root cost of 0.
                 The idea is that the root's cost to reach itself is 0."
+            }
+            li {
+                "The designated port (DP) on each LAN segment is the switch port that advertises the lowest-cost Hello onto a 
+                LAN segment."
+            }
+            li {
+                "Switch ports connected to endpoint devices should become DPs and settle into a forwarding state."
+                " Endpoints should ignore those messages because they do not run STP/RSTP, so the switch will win and 
+                become DP on every access port"
             }
         }
 
