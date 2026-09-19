@@ -1,9 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{
-    components::KeyTopic,
-    utils::h3_heading
-};
+use crate::utils::h3_heading;
 
 #[component]
 pub fn Content() -> Element {
