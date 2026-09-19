@@ -85,7 +85,7 @@ pub fn Content() -> Element {
 
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
-            li { " RSTP does not define a listening state, finding it unnecessary." }
+            li { "RSTP does not define a listening state, finding it unnecessary." }
             li {
                 "RSTP uses the discarding state for what STP defines as two states: disabled state and
                 blocking state."

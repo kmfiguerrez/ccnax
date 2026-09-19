@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{KeyTopic, GreenNote},
+    components::KeyTopic,
     utils::h3_heading
 };
 
