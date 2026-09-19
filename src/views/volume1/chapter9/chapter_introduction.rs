@@ -22,9 +22,8 @@ pub fn ChapterIntroductionContent() -> Element {
         {h3_heading("IEEE 802.1D")}
         p { class: "mb-4",
             "Historically, "
-            strong { "the IEEE first standardized STP as part of the IEEE 802.1D" }
-            " standard back in
-            1990, with pre-standard versions working even before that time."
+            strong { "the IEEE first standardized STP as part of the IEEE 802.1D standard back in 1990" }
+            ", with pre-standard versions working even before that time."
             br {}
             "Over time, the industry and IEEE improved STP, with the eventual replacement of STP with an improved 
             protocol: Rapid Spanning Tree Protocol (RSTP)."
