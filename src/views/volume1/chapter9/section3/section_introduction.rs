@@ -12,8 +12,10 @@ pub fn SectionIntroductionContent() -> Element {
             "The original STP worked well given the assumptions about networks and networking devices
             in that era."
             br {}
-            "However, as with any computing or networking standard, as time passes, hardware and software capabilities improve, 
-            so new protocols emerge to take advantage of those new capabilities."
+            strong {
+                "However, as with any computing or networking standard, as time passes, hardware and software capabilities improve, 
+                so new protocols emerge to take advantage of those new capabilities."
+            }
             br {}
             "For STP, one of the most significant improvements over time has been the
             introduction of Rapid Spanning Tree Protocol (RSTP), introduced as standard IEEE 802.1w."
