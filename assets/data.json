@@ -149,6 +149,39 @@
                                 }
                             }
                         }
+                    },
+                    "9": {
+                        "name": "Spanning Tree Protocol Concepts",
+                        "sections": {
+                            "1": {
+                                "name": "STP and RSTP Basics",
+                                "subheaders": {
+                                    "1": {"name": "The Need for Spanning Tree"},
+                                    "2": {"name": "What Spanning Tree Does"},
+                                    "3": {"name": "How Spanning Tree Works"},
+                                    "4": {"name": "Configuring to Influence the STP Topology"}
+                                }
+                            },
+                            "2": {
+                                "name": "Details Specific to STP (and Not RSTP)",
+                                "subheaders": {
+                                    "1": {"name": "STP Activity When the Network Remains Stable"},
+                                    "2": {"name": "STP Timers That Manage STP Convergence"},
+                                    "3": {"name": "Changing Interface States with STP"}
+                                }
+                            },
+                            "3": {
+                                "name": "Rapid STP Concepts",
+                                "subheaders": {
+                                    "1": {"name": "Comparing STP and RSTP"},
+                                    "2": {"name": "RSTP and the Alternate (Root) Port Role"},
+                                    "3": {"name": "RSTP States and Processes"},
+                                    "4": {"name": "RSTP and the Backup (Designated) Port Role"},
+                                    "5": {"name": "RSTP Port Types"},
+                                    "6": {"name": "Optional STP Features"}
+                                }
+                            }
+                        }
                     }
                 }
             }
