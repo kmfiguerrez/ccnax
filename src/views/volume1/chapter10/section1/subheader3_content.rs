@@ -47,7 +47,7 @@ pub fn Content() -> Element {
             "It also plugs in the VLAN ID of a VLAN in the 12-bit system ID extension field; you cannot 
             change that behavior either."
             br {}
-            "The only part configurable by the network engineer is the 4-bit priority field."
+            strong { "The only part configurable by the network engineer is the 4-bit priority field." }
         }
 
         {h3_heading("Priority field value")}
