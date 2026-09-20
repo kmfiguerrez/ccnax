@@ -1,7 +1,5 @@
 use dioxus::prelude::*;
 
-use crate::utils::h3_heading;
-
 #[component]
 pub fn ChapterIntroductionContent() -> Element {
     rsx! {
