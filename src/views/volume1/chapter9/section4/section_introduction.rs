@@ -44,31 +44,27 @@ pub fn SectionIntroductionContent() -> Element {
         ul { class: "list-disc list-inside mb-4",
             li {
                 {text_command("show spanning-tree", TextCommandColor::Gold)}
-                ": General RSTP/STP information on VLANs."
+                ": Lists general RSTP/STP information on VLANs."
             }
             li {
                 {text_command("show spanning-tree active", TextCommandColor::Gold)}
-                ": General RSTP/STP information on active VLANs."
+                ": Lists general RSTP/STP information on active VLANs."
             }
             li {
                 {text_command("show spanning-tree detail", TextCommandColor::Gold)}
-                ": Detail RSTP/STP information on VLANs."
-            }
-            li {
-                {text_command("show spanning-tree inconsistentports", TextCommandColor::Gold)}
-                ": Show inconsistent ports."
+                ": Lists detail RSTP/STP information on VLANs."
             }
             li {
                 {text_command("show spanning-tree interface", TextCommandColor::Gold)}
-                ": Spanning Tree interface status and configuration."
+                ": Lists Spanning Tree interface status and configuration."
             }
             li {
                 {text_command("show spanning-tree summary", TextCommandColor::Gold)}
-                ": RSTP/STP summary information."
+                ": Lists RSTP/STP summary information."
             }
             li {
                 {text_command("show spanning-tree vlan", TextCommandColor::Gold)}
-                ": General RSTP/STP information for a particular VLAN."
+                ": Lists general RSTP/STP information for a particular VLAN."
             }
         }
 
@@ -85,18 +81,14 @@ pub fn SectionIntroductionContent() -> Element {
             " commands."
             br {}
             "The second heading talks about the "
-            {text_command("show spanning-tree inconsistentports", TextCommandColor::Gold)}
-            "."
-            br {}
-            "The third heading talks about the "
             {text_command("show spanning-tree detail", TextCommandColor::Gold)}
             "."
             br {}
-            "The fourth heading talks about the "
+            "The third heading talks about the "
             {text_command("show spanning-tree interface", TextCommandColor::Gold)}
             "."
             br {}
-            "The fifth heading talks about the "
+            "The fourth heading talks about the "
             {text_command("show spanning-tree summary", TextCommandColor::Gold)}
             "."
             br {}

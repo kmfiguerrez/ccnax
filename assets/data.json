@@ -185,10 +185,9 @@
                                 "name": "RSTP/STP verification commands",
                                 "subheaders": {
                                     "1": {"name": "The RSTP/STP general information"},
-                                    "2": {"name": "RSTP/STP incosistent ports"},
-                                    "3": {"name": "Detail RSTP/STP information on VLANs"},
-                                    "4": {"name": "RSTP/STP interface status and configuration"},
-                                    "5": {"name": "RSTP/STP summary information"}
+                                    "2": {"name": "Detail RSTP/STP information on VLANs"},
+                                    "3": {"name": "RSTP/STP interface status and configuration"},
+                                    "4": {"name": "RSTP/STP summary information"}
                                 }
                             }
                         }
