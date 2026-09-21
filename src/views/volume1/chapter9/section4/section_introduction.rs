@@ -4,7 +4,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::RedNote, utils::{TextCommandColor, text_command}
+    components::{RedNote, GreenNote}, utils::{TextCommandColor, text_command}
 };
 
 #[component]
@@ -40,35 +40,35 @@ pub fn SectionIntroductionContent() -> Element {
             }
         }
 
-        p { "The list of verification commands (useful for CCNA) we're going to examine are:" }
+        p { "The list of verification commands we're going to examine are:" }
         ul { class: "list-disc list-inside mb-4",
             li {
                 {text_command("show spanning-tree", TextCommandColor::Gold)}
-                ": Lists general RSTP/STP information on VLANs."
+                ": General RSTP/STP information on VLANs."
             }
             li {
                 {text_command("show spanning-tree active", TextCommandColor::Gold)}
-                ": Lists general RSTP/STP information on active VLANs."
+                ": General RSTP/STP information on active VLANs."
             }
             li {
                 {text_command("show spanning-tree detail", TextCommandColor::Gold)}
-                ": Lists detail RSTP/STP information on VLANs."
+                ": Detail RSTP/STP information on VLANs."
             }
             li {
                 {text_command("show spanning-tree interface", TextCommandColor::Gold)}
-                ": Lists Spanning Tree interface status and configuration."
+                ": Spanning Tree interface status and configuration."
             }
             li {
                 {text_command("show spanning-tree summary", TextCommandColor::Gold)}
-                ": Lists RSTP/STP summary information."
+                ": RSTP/STP summary information."
             }
             li {
                 {text_command("show spanning-tree vlan", TextCommandColor::Gold)}
-                ": Lists general RSTP/STP information for a particular VLAN."
+                ": General RSTP/STP information for a particular VLAN."
             }
         }
 
-        p {
+        p { class: "mb-4",
             "The following headings talk about the commands."
             br {}
             "The first heading talks about the "
@@ -92,7 +92,16 @@ pub fn SectionIntroductionContent() -> Element {
             {text_command("show spanning-tree summary", TextCommandColor::Gold)}
             "."
             br {}
-        
+        }
+
+        GreenNote {
+            p {
+                strong { "NOTE" }
+                " The "
+                {text_command("show spanning-tree", TextCommandColor::Black)}
+                " enable mode command is already suffice for the CCNA exam."
+            
+            }
         }
 
     }
