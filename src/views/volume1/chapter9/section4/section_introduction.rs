@@ -64,12 +64,43 @@ pub fn SectionIntroductionContent() -> Element {
             }
             li {
                 {text_command("show spanning-tree summary", TextCommandColor::Gold)}
-                ": RSTP/STP summary."
+                ": RSTP/STP summary information."
             }
             li {
                 {text_command("show spanning-tree vlan", TextCommandColor::Gold)}
-                ": general RSTP/STP information for a particular VLAN."
+                ": General RSTP/STP information for a particular VLAN."
             }
+        }
+
+        p {
+            "The following headings talk about the commands."
+            br {}
+            "The first heading talks about the "
+            {text_command("show spanning-tree", TextCommandColor::Gold)}
+            ", "
+            {text_command("show spanning-tree active", TextCommandColor::Gold)}
+            " and the "
+            {text_command("show spanning-tree vlan", TextCommandColor::Gold)}
+            i { " x" }
+            " commands."
+            br {}
+            "The second heading talks about the "
+            {text_command("show spanning-tree inconsistentports", TextCommandColor::Gold)}
+            "."
+            br {}
+            "The third heading talks about the "
+            {text_command("show spanning-tree detail", TextCommandColor::Gold)}
+            "."
+            br {}
+            "The fourth heading talks about the "
+            {text_command("show spanning-tree interface", TextCommandColor::Gold)}
+            "."
+            br {}
+            "The fifth heading talks about the "
+            {text_command("show spanning-tree summary", TextCommandColor::Gold)}
+            "."
+            br {}
+        
         }
 
     }
