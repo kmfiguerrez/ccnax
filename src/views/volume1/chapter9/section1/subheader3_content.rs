@@ -224,11 +224,12 @@ pub fn Content() -> Element {
                         }
                     }
 
-                    {h4_heading("The Root switch electrion process")}
+                    {h4_heading("The Root switch election process")}
                     p { class: "mb-4",
                         "Figure 9-3 shows the beginning of the root election process."
                         br {}
                         "In this case, SW1 has advertised itself as root, as have SW2 and SW3."
+                        br {}
                         "However, SW2 now believes that SW1 is a better root, so SW2 is now forwarding the Hello 
                         originating at SW1."
                         br {}

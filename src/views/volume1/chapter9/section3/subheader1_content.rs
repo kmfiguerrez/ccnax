@@ -157,6 +157,9 @@ pub fn Content() -> Element {
                 " Note that backup ports apply only to designs that use hubs, so they are unlikely to be useful today."
             }
             li { "With RSTP, each switch independently generates its own Hellos." }
+            li {
+                "RSTP/STP ignores VLANs! Meaning both sends frames in the native VLAN (No VLAN Tagging)."
+            }
         }
     }
 }
