@@ -180,6 +180,10 @@
                                     "5": {"name": "RSTP Port Types"},
                                     "6": {"name": "Optional STP Features"}
                                 }
+                            },
+                            "4": {
+                                "name": "RSTP/STP verification commands",
+                                "subheaders": {}
                             }
                         }
                     },
