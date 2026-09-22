@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{KeyTopic, ConfigChecklist}, utils::{h3_heading, text_command, TextCommandColor}
+    components::{KeyTopic, ConfigChecklist, RedNote}, utils::{h3_heading, text_command, TextCommandColor}
 };
 
 #[component]
@@ -96,15 +96,17 @@ pub fn Content() -> Element {
             {text_command("channel-group", TextCommandColor::Gold)}
             " commands using the 1 parameter."
             br {}
-            "STP no longer operates on physical interfaces Fa0/14 and Fa0/15, instead
-            operating on the PortChannel1 interface, so only that interface is listed in the output."
+            strong {
+                "STP no longer operates on physical interfaces Fa0/14 and Fa0/15, instead
+                operating on the PortChannel1 interface, so only that interface is listed in the output."
+            }
         }
 
         {h3_heading("The show etherchannel command")}
         p { class: "mb-4",
             "Next, note the output of the "
-            {text_command("show etherchannel 1", TextCommandColor::Gold)}
-            " summary command."
+            {text_command("show etherchannel 1 summary", TextCommandColor::Gold)}
+            " command."
             br {}
             "It lists as a heading “Port-channel,” with Po1 below it."
             br {}
@@ -112,6 +114,17 @@ pub fn Content() -> Element {
             br {}
             "Per the legend, the P means that the ports are bundled in the port channel, which is a code that means these 
             ports have passed all the configuration checks and are valid to be included in the channel."
+        }
+
+        RedNote {
+            p {
+                strong { "NOTE" }
+                " In Packet Tracer version 8.2.2.0400."
+                br {}
+                " You cannot specified the channel group for the verification etherchannel "
+                {text_command("show", TextCommandColor::Black)}
+                " command."
+            }
         }
 
         {h3_heading("RECAP")}
@@ -140,6 +153,11 @@ pub fn Content() -> Element {
                 ", and "
                 i { "Channel-group" }
                 "."
+            }
+            li {
+                "Note that in order for the interface etherChannels to reach the up/up or connected state,
+                all link members should have matching interface configurations. Otherwise links will not be part
+                of the EtherChannel."
             }
         }
     }
