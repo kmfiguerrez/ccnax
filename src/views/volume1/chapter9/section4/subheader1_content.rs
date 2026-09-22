@@ -97,7 +97,9 @@ pub fn Content() -> Element {
 
         {h3_heading("The priority field value")}
         p { class: "mb-4",
-            "The output also confirms a few default values. First, each switch lists the priority part of
+            "The output also confirms a few default values."
+            br {}
+            "First, each switch lists the priority part of
             the BID as a separate number: 32778."
             br {}
             "This value comes from the default priority of 32768, plus VLAN 10, for a total of 32778."

@@ -391,9 +391,6 @@
   .border-black {
     border-color: var(--color-black);
   }
-  .border-gray-600 {
-    border-color: var(--color-gray-600);
-  }
   .border-gray-700 {
     border-color: var(--color-gray-700);
   }
