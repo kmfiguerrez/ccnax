@@ -42,7 +42,7 @@ pub fn Content() -> Element {
                 class: "mb-4 border border-gray-700 rounded-lg",
                 alt: "Example O-2 Output of the show spanning-tree interface gigabitEhternet 0/1 command",
                 loading: "lazy",
-                src: asset!("/assets/static/v1p3c9s4sh2exo-2.png", AssetOptions::image().with_avif()),
+                src: asset!("/assets/static/v1p3c9s4sh3exo-2.png", AssetOptions::image().with_avif()),
             }
         }
     }
