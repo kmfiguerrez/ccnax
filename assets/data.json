@@ -218,6 +218,40 @@
                         }
                     }
                 }
+            },
+            "5": {
+                "name": "IPv4 Routing",
+                "chapters": {
+                    "17": {
+                        "name": "IP Routing in the LAN",
+                        "sections": {
+                            "1": {
+                                "name": "VLAN Routing with Router 802.1Q Trunks",
+                                "subheaders": {
+                                    "1": {"name": "Configuring ROAS" },
+                                    "2": {"name": "Verifying ROAS" },
+                                    "3": {"name": "Troubleshooting ROAS" }
+                                }
+                            },
+                            "2": {
+                                "name": "VLAN Routing with Layer 3 Switch SVIs",
+                                "subheaders": {
+                                    "1": {"name": "Configuring Routing Using Switch SVIs"},
+                                    "2": {"name": "Verifying Routing with SVIs"},
+                                    "3": {"name": "Troubleshooting Routing with SVIs"}
+                                }
+                            },
+                            "3": {
+                                "name": "VLAN Routing with Layer 3 Switch Routed Ports",
+                                "subheaders": {
+                                    "1": {"name": "Implementing Routed Interfaces on Switches"},
+                                    "2": {"name": "Implementing Layer 3 EtherChannels"},
+                                    "3": {"name": "Troubleshooting Layer 3 EtherChannels"}
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
