@@ -130,6 +130,16 @@ pub fn Content() -> Element {
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {
+                "Before getting into the configuration and verification, however, you need to start using
+                three terms as synonyms: "
+                i { "EtherChannel" }
+                ", "
+                i { "PortChannel" }
+                ", and "
+                i { "Channel-group" }
+                "."
+            }
+            li {
                 "To configure a Layer 2 EtherChannel so that all the ports always attempt to be part of the
                 channel, simply add the correct "
                 {text_command("channel-group", TextCommandColor::Gold)}
@@ -145,19 +155,12 @@ pub fn Content() -> Element {
                 the PortChannel interface number that the interface should be a part of."
             }
             li {
-                "Before getting into the configuration and verification, however, you need to start using
-                three terms as synonyms: "
-                i { "EtherChannel" }
-                ", "
-                i { "PortChannel" }
-                ", and "
-                i { "Channel-group" }
-                "."
+                "The non-matching interfaces will be put in a notconnect or up/down state."
+                " They remain configured as part of the PortChannel but it will not be used and be put in a nonworking state."
             }
             li {
-                "Note that in order for the interface etherChannels to reach the up/up or connected state,
-                all link members should have matching interface configurations. Otherwise links will not be part
-                of the EtherChannel."
+                "In addition, switches check the settings on the neighboring switch, using Cisco Discovery Protocol (CDP) 
+                if using manual configuration. When checking neighbors, all settings except the STP settings must match."
             }
         }
     }
