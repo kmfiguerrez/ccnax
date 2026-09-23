@@ -59,8 +59,10 @@ pub fn Content() -> Element {
         p { class: "mb-4",
             "When a switch fails to receive a Hello, it knows a problem might be occurring in the network."
             br {}
-            "Each switch relies on these periodically received Hellos from the root as a way to
-            know that its path to the root is still working."
+            strong {
+                "Each switch relies on these periodically received Hellos from the root as a way to
+                know that its path to the root is still working."
+            }
             br {}
             "When a switch ceases to receive the Hellos, or receives a Hello that lists different details, something has failed, 
             so the switch reacts and starts the process of changing the spanning-tree topology."

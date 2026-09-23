@@ -180,6 +180,40 @@
                                     "5": {"name": "RSTP Port Types"},
                                     "6": {"name": "Optional STP Features"}
                                 }
+                            },
+                            "4": {
+                                "name": "RSTP/STP verification commands",
+                                "subheaders": {
+                                    "1": {"name": "The RSTP/STP general information"},
+                                    "2": {"name": "Detail RSTP/STP information on VLANs"},
+                                    "3": {"name": "RSTP/STP interface status and configuration"},
+                                    "4": {"name": "RSTP/STP summary information"}
+                                }
+                            }
+                        }
+                    },
+                    "10": {
+                        "name": "RSTP and EtherChannel Configuration",
+                        "sections": {
+                            "1": {
+                                "name": "Understanding RSTP Through Configuration",
+                                "subheaders": {
+                                    "1": {"name": "The Need for Multiple Spanning Trees"},
+                                    "2": {"name": "STP Modes and Standards"},
+                                    "3": {"name": "The Bridge ID and System ID Extension"},
+                                    "4": {"name": "How Switches Use the Priority and System ID Extension"},
+                                    "5": {"name": "RSTP Methods to Support Multiple Spanning Trees"},
+                                    "6": {"name": "Other RSTP Configuration Options"}
+                                }
+                            },
+                            "2": {
+                                "name": "Configuring Layer 2 EtherChannel",
+                                "subheaders": {
+                                    "1": {"name": "Configuring a Manual Layer 2 EtherChannel"},
+                                    "2": {"name": "Configuring Dynamic EtherChannels"},
+                                    "3": {"name": "Physical Interface Configuration and EtherChannels"},
+                                    "4": {"name": "EtherChannel Load Distribution"}
+                                }
                             }
                         }
                     }
