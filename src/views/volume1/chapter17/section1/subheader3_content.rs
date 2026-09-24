@@ -33,7 +33,7 @@ pub fn Content() -> Element {
             li {
                 "Is each non-native VLAN configured on the router with an "
                 {text_command("encapsulation dot1q", TextCommandColor::Gold)}
-                i { "vlan-id" }
+                i { " vlan-id" }
                 " command on a subinterface?"
             }
             li {
