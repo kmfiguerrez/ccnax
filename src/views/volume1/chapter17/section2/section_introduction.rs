@@ -1,14 +1,14 @@
 use dioxus::prelude::*;
 
-use crate::utils::h3_heading;
-
 #[component]
 pub fn SectionIntroductionContent() -> Element {
     rsx! {
         p { class: "mb-4",
             "Using a router with ROAS to route packets makes sense in some cases, particularly at small remote sites."
             br {}
-            "In sites with a larger LAN, network designers choose to use Layer 3 switches for most inter-VLAN routing."
+            strong {
+                "In sites with a larger LAN, network designers choose to use Layer 3 switches for most inter-VLAN routing."
+            }
         }
 
         p { class: "mb-1",
@@ -22,7 +22,7 @@ pub fn SectionIntroductionContent() -> Element {
         p { class: "mb-4",
             "The Layer 2 switch function forwards frames inside each VLAN, but it will not forward frames between VLANs."
             br {}
-            "The Layer 3 forwarding (routing) logic forwards IP packets between VLANs."
+            strong { "The Layer 3 forwarding (routing) logic forwards IP packets between VLANs." }
         }
 
         p { class: "mb-4",
