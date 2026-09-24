@@ -1,8 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{
-    components::{KeyTopic, GreenNote, ConfigChecklist}, utils::{TextCommandColor, h3_heading, text_command}
-};
+use crate::utils::{TextCommandColor, h3_heading, text_command};
 
 #[component]
 pub fn Content() -> Element {
