@@ -178,7 +178,7 @@ pub fn Content() -> Element {
 
         img {
             class: "mb-4 rounded-lg",
-            alt: "Figure 17-3 Routing on VLAN Interfaces in a Layer 3 Switch",
+            alt: "Example 17-6 VLAN Interface Configuration for Layer 3 Switching",
             loading: "lazy",
             src: asset!("/assets/static/v1p3c17s2sh1ex17-6.png", AssetOptions::image().with_avif()),
         }
@@ -197,6 +197,13 @@ pub fn Content() -> Element {
             li {
                 "The Layer 3 switch has an IP routing table, with connected routes off each of these VLAN interfaces 
                 (also called switched virtual interfaces [SVI].)"
+            }
+            li {
+                "After configuring the "
+                {text_command("interface vlan", TextCommandColor::Gold)}
+                i { " vlan_id" }
+                " command, the VLAN interface reaches an up/down state only if there's a configured vlan of the same number."
+                " Then it reaches an up/up state only if at least there's one physical interface assigned to the vlan."
             }
         }
     }
