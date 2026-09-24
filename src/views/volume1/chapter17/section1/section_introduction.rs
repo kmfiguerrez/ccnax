@@ -94,6 +94,9 @@ pub fn SectionIntroductionContent() -> Element {
             li {
                 "Then the IP addresses on those routers or Layer 3 switches can serve as the default gateways in those subnets."
             }
+            li {
+                "Routers routing packets to subnets associated with VLANs over a trunk link is known as router-on-a-stick (ROAS)."
+            }
         }
 
     }

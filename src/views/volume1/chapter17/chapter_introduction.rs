@@ -91,7 +91,9 @@ pub fn ChapterIntroductionContent() -> Element {
                 "For two devices in different VLANs to communicate with each other, routers must connect to the subnets that exist 
                 on each VLAN, and then the routers forward IP packets between the devices in those subnets."
             }
-            li { "Routers routing over a trunk link is known as router-on-a-stick (ROAS)." }
+            li {
+                "Routers routing packets to subnets associated with VLANs over a trunk link is known as router-on-a-stick (ROAS)."
+            }
             li { "Switched virtual interfaces (SVI) are also called VLAN interfaces." }
         }
     }
