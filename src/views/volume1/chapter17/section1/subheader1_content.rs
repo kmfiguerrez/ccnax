@@ -234,7 +234,7 @@ pub fn Content() -> Element {
                 router-on-a-stick (ROAS)."
             }
             li {
-                "ROAS uses router VLAN trunking configuration to give the router a logical router interface (virtual interface) 
+                "ROAS uses router VLAN trunking configuration to give a router a logical router interface (virtual interface) 
                 connected to each VLAN."
             
             }
