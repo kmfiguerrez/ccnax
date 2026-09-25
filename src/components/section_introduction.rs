@@ -115,6 +115,9 @@ pub fn SectionIntroduction(volume_id: u32, part_id: u32, chapter_id: u32, sectio
                                     2 => rsx! {
                                         volume1::chapter17::section2::SectionIntroductionContent {}
                                     },
+                                    3 => rsx! {
+                                        volume1::chapter17::section3::SectionIntroductionContent {}
+                                    },
                                     _ => rsx! {
                                         h3 { "Section introduction content not found!" }
                                     },
