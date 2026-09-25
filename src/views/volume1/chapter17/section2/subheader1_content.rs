@@ -191,12 +191,16 @@ pub fn Content() -> Element {
                 i { "VLAN interfaces" }
                 " act like router interfaces, with an IP address and mask."
             }
-            li {
-                "The Layer 3 switching function needs a virtual interface connected to each VLAN internal to the switch."
-            }
+            li { "The VLAN interface is a switch's Layer 3 interface connected to the VLAN." }
             li {
                 "The Layer 3 switch has an IP routing table, with connected routes off each of these VLAN interfaces 
                 (also called switched virtual interfaces [SVI].)"
+            }
+            li {
+                "The "
+                {text_command("sdm prefer", TextCommandColor::Gold)}
+                " command changes how the switch forwarding chips allocate memory for
+                different forwarding tables, and changes to those tables require a reload of the switch."
             }
             li {
                 "After configuring the "
