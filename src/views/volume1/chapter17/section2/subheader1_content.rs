@@ -99,7 +99,6 @@ pub fn Content() -> Element {
                             }
                             "Use the "
                             {text_command("reload", TextCommandColor::Gold)}
-                            i { " name" }
                             " EXEC command in enable mode to reload (reboot) the
                             switch to pick up the new "
                             {text_command("sdm prefer", TextCommandColor::Gold)}
@@ -157,7 +156,7 @@ pub fn Content() -> Element {
                             span { class: "text-sky-500 font-semibold uppercase mr-2",
                                 "c."
                             }
-                            " (As needed) Use the "
+                            "(As needed) Use the "
                             {text_command("no shutdown", TextCommandColor::Gold)}
                             " command in interface configuration mode to enable the VLAN interface (if it is currently in a 
                             shutdown state)."
