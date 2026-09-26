@@ -253,6 +253,15 @@ pub fn Content() -> Element {
                 {text_command("no ip address", TextCommandColor::Gold)}
                 " command to the interface."
             }
+            li {
+                "Note that layer 3 EtherChannel configurations can be both static and dynamic. if static, using the "
+                {text_command("channel-group", TextCommandColor::Gold)}
+                i { " number " }
+                {text_command("mode on", TextCommandColor::Gold)}
+                " interface subcommand."
+                " if dynamic, using the protocols used to create layer 2 EtherChannel: LACP and PaGp."
+            
+            }
         }
     }
 }
