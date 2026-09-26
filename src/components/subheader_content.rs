@@ -260,7 +260,52 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                 _ => rsx! {
                                     h3 { "Chapter {chapter_id} does not exist!" }
                                 },
-
+                            }
+                        },
+                        // part 5
+                        5 => rsx! {
+                            match chapter_id {
+                                // chapter 17
+                                17 => rsx! {
+                                    match (section_id, subheader_id) {
+                                        // start of chapter 17 section 1
+                                        (1, 1) => rsx! {
+                                            volume1::chapter17::section1::subheader1_content::Content {}
+                                        },
+                                        (1, 2) => rsx! {
+                                            volume1::chapter17::section1::subheader2_content::Content {}
+                                        },
+                                        (1, 3) => rsx! {
+                                            volume1::chapter17::section1::subheader3_content::Content {}
+                                        },
+                                        // start of chapter 17 section 2
+                                        (2, 1) => rsx! {
+                                            volume1::chapter17::section2::subheader1_content::Content {}
+                                        },
+                                        (2, 2) => rsx! {
+                                            volume1::chapter17::section2::subheader2_content::Content {}
+                                        },
+                                        (2, 3) => rsx! {
+                                            volume1::chapter17::section2::subheader3_content::Content {}
+                                        },
+                                        // start of chapter 17 section 2
+                                        (3, 1) => rsx! {
+                                            volume1::chapter17::section3::subheader1_content::Content {}
+                                        },
+                                        (3, 2) => rsx! {
+                                            volume1::chapter17::section3::subheader2_content::Content {}
+                                        },
+                                        (3, 3) => rsx! {
+                                            volume1::chapter17::section3::subheader3_content::Content {}
+                                        },
+                                        _ => rsx! {
+                                            h3 { "Subheader content not found!" }
+                                        },
+                                    }
+                                },
+                                _ => rsx! {
+                                    h3 { "Chapter {chapter_id} does not exist!" }
+                                },
                             }
                         },
                         _ => rsx! {

@@ -60,7 +60,7 @@ pub fn SectionIntroduction(volume_id: u32, part_id: u32, chapter_id: u32, sectio
                                     2 => rsx! {
                                         volume1::chapter8::section2::SectionIntroductionContent {}
                                     },
-                                    2 => rsx! {
+                                    3 => rsx! {
                                         volume1::chapter8::section3::SectionIntroductionContent {}
                                     },
                                     _ => rsx! {
@@ -94,6 +94,29 @@ pub fn SectionIntroduction(volume_id: u32, part_id: u32, chapter_id: u32, sectio
                                     },
                                     2 => rsx! {
                                         volume1::chapter10::section2::SectionIntroductionContent {}
+                                    },
+                                    _ => rsx! {
+                                        h3 { "Section introduction content not found!" }
+                                    },
+                                }
+                            },
+                            _ => rsx! {
+                                h3 { "Chapter {chapter_id} does not exist!" }
+                            },
+                        }
+                    },
+                    5 => rsx! {
+                        match chapter_id {
+                            17 => rsx! {
+                                match section_id {
+                                    1 => rsx! {
+                                        volume1::chapter17::section1::SectionIntroductionContent {}
+                                    },
+                                    2 => rsx! {
+                                        volume1::chapter17::section2::SectionIntroductionContent {}
+                                    },
+                                    3 => rsx! {
+                                        volume1::chapter17::section3::SectionIntroductionContent {}
                                     },
                                     _ => rsx! {
                                         h3 { "Section introduction content not found!" }

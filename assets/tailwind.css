@@ -621,6 +621,11 @@
       padding-left: calc(var(--spacing) * 5);
     }
   }
+  .sm\:pl-17 {
+    @media (width >= 40rem) {
+      padding-left: calc(var(--spacing) * 17);
+    }
+  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
