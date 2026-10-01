@@ -1,64 +1,6 @@
 {
     "1": {
         "parts": {
-            "1": {
-                "name": "Introduction to Networking",
-                "chapters": {
-                    "1": {
-                        "name": "Introduction to TCP/IP Networking",
-                        "sections": {
-                            "1": {
-                                "name": "Perspectives on Networking",
-                                "subheaders": {
-                                    "1": {
-                                        "name": "Section Introduction"
-                                    }
-                                }
-                            },
-                            "2": {
-                                "name": "TCP/IP Networking Model",
-                                "subheaders": {
-                                    "1": {
-                                        "name": "Section Introduction"
-                                    },
-                                    "2": {
-                                        "name": "History Leading to TCP/IP"
-                                    },
-                                    "3": {
-                                        "name": "Overview of the TCP/IP Networking Model"
-                                    },
-                                    "4": {
-                                        "name": "TCP/IP Application Layer"
-                                    },
-                                    "5": {
-                                        "name": "TCP/IP Transport Layer"
-                                    },
-                                    "6": {
-                                        "name": "TCP/IP Network Layer"
-                                    },
-                                    "7": {
-                                        "name": "TCP/IP Data-Link and Physical Layers"
-                                    }
-                                }
-                            },
-                            "3": {
-                                "name": "Data Encapsulation Terminology",
-                                "subheaders": {
-                                    "1": {
-                                        "name": "Section Introduction"
-                                    },
-                                    "2": {
-                                        "name": "Names of TCP/IP Messages"
-                                    },
-                                    "3": {
-                                        "name": "OSI Networking Model and Terminology"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "2": {
                 "name": "Implementing Ethernet LANs",
                 "chapters": {
@@ -321,6 +263,36 @@
                                     "4": {
                                         "name": "Configuring and Verifying LLDP"
                                     }
+                                }
+                            }
+                        }
+                    },
+                    "10": {
+                        "name": "Network Address Translation",
+                        "sections": {
+                            "1": {
+                                "name": "Perspectives on IPv4 Address Scalability",
+                                "subheaders": {
+                                    "1": {"name": "CIDR"},
+                                    "2": {"name": "Private Addressing "}
+                                }
+                            },
+                            "2": {
+                                "name": "Network Address Translation Concepts",
+                                "subheaders": {
+                                    "1": {"name": "Static NAT"},
+                                    "2": {"name": "Dynamic NAT"},
+                                    "3": {"name": "Overloading NAT with Port Address Translation"}
+                                }
+                            },
+                            "3": {
+                                "name": "NAT Configuration and Troubleshooting",
+                                "subheaders": {
+                                    "1": {"name": "Static NAT Configuration"},
+                                    "2": {"name": "Dynamic NAT Configuration"},
+                                    "3": {"name": "Dynamic NAT Verification"},
+                                    "4": {"name": "NAT Overload (PAT) Configuration"},
+                                    "5": {"name": "NAT Troubleshooting"}
                                 }
                             }
                         }
