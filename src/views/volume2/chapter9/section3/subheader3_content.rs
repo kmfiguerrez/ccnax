@@ -40,6 +40,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "Example 9-18: a screentshot of the output of show lldp neighbors and show cdp neighbors",
             src: asset!("/assets/static/v2p3c9s3sh3ex9-18.png", AssetOptions::image().with_avif()),
         }
@@ -111,6 +112,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "Example 9-19: a screentshot of the output of show lldp entry",
             src: asset!("/assets/static/v2p3c9s3sh3ex9-19.png", AssetOptions::image().with_avif()),
         }

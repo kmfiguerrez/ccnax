@@ -20,16 +20,16 @@ pub fn Content() -> Element {
         }
 
         img {
-            class: "mb-3",
-            src: asset!("/assets/static/v2p3c9s1sh3f9-4.png", AssetOptions::image().with_avif()),
+            class: "mb-4 rounded-lg",
             alt: "Figurez 9-4: Sample Network Used in Logging Examples",
-        
+            loading: "lazy",
+            src: asset!("/assets/static/v2p3c9s1sh3f9-4.png", AssetOptions::image().with_avif()),
         }
         img {
-            class: "mb-4",
-            src: asset!("/assets/static/v2p3c9s1sh3ex9-2.png", AssetOptions::image().with_avif()),
+            class: "mb-4 rounded-lg",
             alt: "Example 9-2: Syslog configuration on Router 1",
-        
+            loading: "lazy",
+            src: asset!("/assets/static/v2p3c9s1sh3ex9-2.png", AssetOptions::image().with_avif()),
         }
 
         RedNote {
@@ -84,9 +84,10 @@ pub fn Content() -> Element {
                 "Viewing the Configured Log Settings per the Earlier Example"
             }
             img {
-                class: "mb-4",
-                src: asset!("/assets/static/v2p3c9s1sh3ex9-3a.png", AssetOptions::image().with_avif()),
+                class: "mb-4 rounded-lg",
                 alt: "Example 9-3: Ouput of the show logging command",
+                loading: "lazy",
+                src: asset!("/assets/static/v2p3c9s1sh3ex9-3a.png", AssetOptions::image().with_avif()),
             }
         }
 
@@ -152,9 +153,10 @@ pub fn Content() -> Element {
                 "Seeing Severity 3 and 5 Messages at the Console, and Severity 3 Only in the Buffer"
             }
             img {
-                class: "mb-4",
-                src: asset!("/assets/static/v2p3c9s1sh3ex9-4.png", AssetOptions::image().with_avif()),
+                class: "mb-4 rounded-lg",
                 alt: "Example 9-4: Ouput of the configuration and show logging commands",
+                loading: "lazy",
+                src: asset!("/assets/static/v2p3c9s1sh3ex9-4.png", AssetOptions::image().with_avif()),
             }
         }
 

@@ -58,9 +58,11 @@ pub fn Content() -> Element {
             {text_command("show", TextCommandColor::Gold)}
             " commands that list the most important CDP information."
         }
+
         img {
             class: "mb-4 rounded-lg",
-            alt: "Table 9-3 that lists options for the show dcp command",
+            alt: "Table 9-3 that lists options for the show cdp command",
+            loading: "lazy",
             src: asset!("/assets/static/v2p3c9s3sh1t9-3.png", AssetOptions::image().with_avif()),
         }
 
@@ -80,6 +82,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "A picture of a Figure 9-8 and a screentshot of the output of show cdp neighbors",
             src: asset!("/assets/static/v2p3c9s3sh1f9-3.png", AssetOptions::image().with_avif()),
         }

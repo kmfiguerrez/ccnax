@@ -49,7 +49,12 @@ pub fn Content() -> Element {
             br {}
             "Example 9-1 reverses those defaults by turning off timestamps and turning on sequence numbers."
         }
-        img { src: asset!("/assets/static/v2p3c9s1sh3ex9-1.png", AssetOptions::image().with_avif()) }
+        img {
+            class: "mb-4 rounded-lg",
+            alt: "Example 9-1",
+            loading: "lazy",
+            src: asset!("/assets/static/v2p3c9s1sh3ex9-1.png", AssetOptions::image().with_avif()),
+        }
 
     }
 }

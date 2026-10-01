@@ -70,6 +70,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "Example 9-20: a screentshot of Enabling LLDP on All Ports, Disabling on a Few Ports",
             src: asset!("/assets/static/v2p3c9s3sh4ex9-20.png", AssetOptions::image().with_avif()),
         }
@@ -88,6 +89,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "Example 9-21: a screentshot of Enabling LLDP on Limited Ports, Leaving Disabled on Most",
             src: asset!("/assets/static/v2p3c9s3sh4ex9-21.png", AssetOptions::image().with_avif()),
         }
@@ -110,6 +112,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "Example 9-21: a screentshot of Enabling LLDP on Limited Ports, Leaving Disabled on Most",
             src: asset!("/assets/static/v2p3c9s3sh4ex9-22.png", AssetOptions::image().with_avif()),
         }

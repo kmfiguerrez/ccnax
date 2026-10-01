@@ -36,6 +36,7 @@ pub fn Content() -> Element {
         p { class: "mb-3", "To examine the status of CDP itself, use the commands in Table 9-4." }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "A picture of table 9-4 of commands used to verify CDP Operations",
             src: asset!("/assets/static/v2p3c9s3sh2t9-4.png", AssetOptions::image().with_avif()),
         }
@@ -46,6 +47,7 @@ pub fn Content() -> Element {
         }
         img {
             class: "mb-4 rounded-lg",
+            loading: "lazy",
             alt: "Example 9-17: A screenshot of the show cdp command",
             src: asset!("/assets/static/v2p3c9s3sh2ex9-17.png", AssetOptions::image().with_avif()),
         }

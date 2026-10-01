@@ -21,7 +21,9 @@ pub fn Content() -> Element {
         }
 
         img {
-            class: "mb-4",
+            class: "mb-4 rounded-lg",
+            alt: "Example 9-3",
+            loading: "lazy",
             src: asset!("/assets/static/v2p3c9s1sh3f9-3.png", AssetOptions::image().with_avif()),
         }
 
@@ -94,8 +96,11 @@ pub fn Content() -> Element {
             {text_command("no logging monitor", TextCommandColor::Gold)}
             " and so on )."
         }
+
         img {
-            class: "mb-4",
+            class: "mb-4 rounded-lg",
+            alt: "Table 9-2",
+            loading: "lazy",
             src: asset!("/assets/static/v2p3c9s1sh3t9-2.png", AssetOptions::image().with_avif()),
         }
 
