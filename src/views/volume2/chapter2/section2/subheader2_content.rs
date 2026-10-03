@@ -381,12 +381,6 @@ pub fn Content() -> Element {
             }
         }
 
-        KeyTopic {}
-        p { class: "mb-4",
-            "In short, to filter a packet, you must enable an ACL on an interface that processes the packet, in the same direction 
-            the packet flows through that interface."
-        }
-
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {
