@@ -48,7 +48,7 @@ pub fn Content() -> Element {
             class: "mb-4 rounded-lg",
             loading: "lazy",
             alt: "Figure 2-1 Locations to Filter Packets from Hosts A and B Going Toward Server S1",
-            src: asset!("/assets/static/v2p3c2s1sh1f2-1.png", AssetOptions::image().with_avif()),
+            src: asset!("/assets/static/v2p1c2s1sh1f2-1.png", AssetOptions::image().with_avif()),
         }
 
         KeyTopic {}

@@ -199,8 +199,8 @@
     },
     "2": {
         "parts": {
-            "3": {
-                "name": "IP Services",
+            "1": {
+                "name": "IP Access Control Lists ",
                 "chapters": {
                     "2": {
                         "name": "Basic IPv4 Access Control Lists",
@@ -231,7 +231,12 @@
                                 }
                             }
                         }
-                    },
+                    }
+                }
+            },
+            "3": {
+                "name": "IP Services",
+                "chapters": {
                     "9": {
                         "name": "Device Management Protocols",
                         "sections": {

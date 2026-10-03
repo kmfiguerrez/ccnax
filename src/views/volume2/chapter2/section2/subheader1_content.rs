@@ -39,7 +39,7 @@ pub fn Content() -> Element {
             class: "mb-4 rounded-lg",
             loading: "lazy",
             alt: "Figure 2-4 Backdrop for Discussion of List Process with IP ACLs",
-            src: asset!("/assets/static/v2p3c2s2sh1f2-4.png", AssetOptions::image().with_avif()),
+            src: asset!("/assets/static/v2p1c2s2sh1f2-4.png", AssetOptions::image().with_avif()),
         }
 
         p { class: "mb-4",
@@ -57,7 +57,7 @@ pub fn Content() -> Element {
             class: "mb-4 rounded-lg",
             loading: "lazy",
             alt: "Figure 2-5 ACL Items Compared for Packets from Hosts A, B, and C in Figure 2-4",
-            src: asset!("/assets/static/v2p3c2s2sh1f2-5.png", AssetOptions::image().with_avif()),
+            src: asset!("/assets/static/v2p1c2s2sh1f2-5.png", AssetOptions::image().with_avif()),
         }
 
         p { class: "mb-4",

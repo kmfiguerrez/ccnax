@@ -38,7 +38,7 @@ pub fn Content() -> Element {
             class: "mb-4 rounded-lg",
             loading: "lazy",
             alt: "Figure 2-3 Comparisons of IP ACL Types",
-            src: asset!("/assets/static/v2p3c2s1sh4f2-3.png", AssetOptions::image().with_avif()),
+            src: asset!("/assets/static/v2p1c2s1sh4f2-3.png", AssetOptions::image().with_avif()),
         }
 
         {h3_heading("RECAP")}

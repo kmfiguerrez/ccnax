@@ -57,7 +57,7 @@ pub fn Content() -> Element {
             class: "mb-4 rounded-lg",
             loading: "lazy",
             alt: "Figure 2-2 Pseudocode to Demonstrate ACL Command-Matching Logic",
-            src: asset!("/assets/static/v2p3c2s1sh2f2-2.png", AssetOptions::image().with_avif()),
+            src: asset!("/assets/static/v2p1c2s1sh2f2-2.png", AssetOptions::image().with_avif()),
         }
 
         {h3_heading("RECAP")}
