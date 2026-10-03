@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::{components::KeyTopic, utils::{h3_heading, TextCommandColor, text_command}};
+use crate::{components::KeyTopic, utils::{TextCommandColor, text_command}};
 
 #[component]
 pub fn Content() -> Element {
