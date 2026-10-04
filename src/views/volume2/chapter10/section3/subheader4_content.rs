@@ -204,6 +204,9 @@ pub fn Content() -> Element {
                 {text_command("overload", TextCommandColor::Gold)}
                 " parameter in the PAT command, the router does not perform overload, just dynamic NAT."
             }
+            li {
+                "Note that the order of operations inside the router matters, ACLs take precedence over NAT."
+            }
         }
     }
 }
