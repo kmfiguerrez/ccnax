@@ -22,7 +22,7 @@ pub fn Content() -> Element {
             li { class: "flex gap-x-4",
                 span { class: "text-blue-500 font-bold shrink-0", "Step 1." }
                 span {
-                    " Use the "
+                    "Use the "
                     {text_command("ip nat inside", TextCommandColor::Gold)}
                     " command in interface configuration mode to configure
                     interfaces to be in the inside part of the NAT design."
@@ -31,7 +31,7 @@ pub fn Content() -> Element {
             li { class: "flex gap-x-4",
                 span { class: "text-blue-500 font-bold shrink-0", "Step 2." }
                 span {
-                    " Use the "
+                    "Use the "
                     {text_command("ip nat outside", TextCommandColor::Gold)}
                     " command in interface configuration mode to configure
                     interfaces to be in the outside part of the NAT design."
@@ -40,7 +40,7 @@ pub fn Content() -> Element {
             li { class: "flex gap-x-4",
                 span { class: "text-blue-500 font-bold shrink-0", "Step 3." }
                 span {
-                    " Use the "
+                    "Use the "
                     {text_command("ip nat inside source static", TextCommandColor::Gold)}
                     i { " inside-local inside-global" }
                     " command in interface configuration mode to configure
