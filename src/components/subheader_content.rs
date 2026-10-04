@@ -317,6 +317,55 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                 2 => rsx! {
                     // match parts
                     match part_id {
+                        // part 1
+                        1 => rsx! {
+                            match chapter_id {
+                                // chapter 2
+                                2 => rsx! {
+                                    match (section_id, subheader_id) {
+                                        // section 1
+                                        (1, 1) => rsx! {
+                                            volume2::chapter2::section1::subheader1_content::Content {}
+                                        },
+                                        (1, 2) => rsx! {
+                                            volume2::chapter2::section1::subheader2_content::Content {}
+                                        },
+                                        (1, 3) => rsx! {
+                                            volume2::chapter2::section1::subheader3_content::Content {}
+                                        },
+                                        (1, 4) => rsx! {
+                                            volume2::chapter2::section1::subheader4_content::Content {}
+                                        },
+                                        // section 2
+                                        (2, 1) => rsx! {
+                                            volume2::chapter2::section2::subheader1_content::Content {}
+                                        },
+                                        (2, 2) => rsx! {
+                                            volume2::chapter2::section2::subheader2_content::Content {}
+                                        },
+                                        (2, 3) => rsx! {
+                                            volume2::chapter2::section2::subheader3_content::Content {}
+                                        },
+                                        (2, 4) => rsx! {
+                                            volume2::chapter2::section2::subheader4_content::Content {}
+                                        },
+                                        // section 3
+                                        (3, 1) => rsx! {
+                                            volume2::chapter2::section3::subheader1_content::Content {}
+                                        },
+                                        (3, 2) => rsx! {
+                                            volume2::chapter2::section3::subheader2_content::Content {}
+                                        },
+                                        _ => rsx! {
+                                            h3 { "Subheader content not found!" }
+                                        },
+                                    }
+                                },
+                                _ => rsx! {
+                                    h3 { "Chapter {chapter_id} does not exist!" }
+                                },
+                            }
+                        },
                         // part 3
                         3 => rsx! {
                             match chapter_id {
