@@ -67,6 +67,7 @@ pub fn Content() -> Element {
             src: asset!("/assets/static/v2p3c10s2sh3f10-7.png", AssetOptions::image().with_avif()),
         }
 
+        {h3_heading("PAT with Layer 4 port numbers")}
         p { class: "mb-4",
             strong {
                 "NAT takes advantage of the fact that, from a transport layer perspective, the server doesn't
@@ -89,7 +90,6 @@ pub fn Content() -> Element {
             src: asset!("/assets/static/v2p3c10s2sh3f10-8.png", AssetOptions::image().with_avif()),
         }
 
-        {h3_heading("PAT with Layer 4 port numbers")}
         p { class: "mb-4",
             strong {
                 "When PAT creates the dynamic mapping, it selects not only an inside global IP address but
