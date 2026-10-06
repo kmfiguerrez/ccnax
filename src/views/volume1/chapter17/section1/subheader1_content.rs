@@ -125,7 +125,9 @@ pub fn Content() -> Element {
 
         {h3_heading("The encapsulation subcommand")}
         p { class: "mb-4",
-            "First, look at the subinterface numbers. The subinterface number begins with the period, like .10 and .20 in this case."
+            "First, look at the subinterface numbers."
+            br {}
+            "The subinterface number begins with the period, like .10 and .20 in this case."
             br {}
             "These numbers can be any number from 1 up through a very large number (over 4 billion)."
             br {}

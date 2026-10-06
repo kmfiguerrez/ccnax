@@ -35,6 +35,9 @@ pub fn ChapterIntroduction(volume_id: u32, part_id: u32, chapter_id: u32) -> Ele
                 (2, 3, 10) => rsx! {
                     volume2::chapter10::ChapterIntroductionContent {}
                 },
+                (2, 3, 12) => rsx! {
+                    volume2::chapter12::ChapterIntroductionContent {}
+                },
                 _ => rsx! {
                     h3 { "Chapter Introduction not found!" }
                 },

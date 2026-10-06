@@ -331,6 +331,37 @@
                                 }
                             }
                         }
+                    },
+                    "12": {
+                        "name": "Miscellaneous IP Services",
+                        "sections": {
+                            "1": {
+                                "name": "First Hop Redundancy Protocol",
+                                "subheaders": {
+                                    "1": {"name": "The Need for Redundancy in Networks"},
+                                    "2": {"name": "The Need for a First Hop Redundancy Protocol"},
+                                    "3": {"name": "The Three Solutions for First-Hop Redundancy"},
+                                    "4": {"name": "HSRP Concepts"}
+                                }
+                            },
+                            "2": {
+                                "name": "Simple Network Management Protocol",
+                                "subheaders": {
+                                    "1": {"name": "SNMP Variable Reading and Writing: SNMP Get and Set"},
+                                    "2": {"name": "SNMP Notifications: Traps and Informs"},
+                                    "3": {"name": "The Management Information Base"},
+                                    "4": {"name": "Securing SNMP"}
+                                }
+                            },
+                            "3": {
+                                "name": "FTP and TFTP",
+                                "subheaders": {
+                                    "1": {"name": "Managing Cisco IOS Images with FTP/TFTP"},
+                                    "2": {"name": "The FTP and TFTP Protocols"},
+                                    "3": {"name": "TFTP Protocol Basics"}
+                                }
+                            }
+                        }
                     }
                 }
             }
