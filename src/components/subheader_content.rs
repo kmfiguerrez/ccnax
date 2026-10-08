@@ -466,6 +466,9 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                         (1, 4) => rsx! {
                                             volume2::chapter12::section1::subheader4_content::Content {}
                                         },
+                                        (1, 5) => rsx! {
+                                            volume2::chapter12::section1::subheader5_content::Content {}
+                                        },
                                         _ => rsx! {
                                             h3 { "Subheader content not found!" }
                                         },

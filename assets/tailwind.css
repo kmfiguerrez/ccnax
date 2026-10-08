@@ -470,6 +470,9 @@
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
   }
+  .pl-16 {
+    padding-left: calc(var(--spacing) * 16);
+  }
   .text-center {
     text-align: center;
   }

@@ -341,7 +341,8 @@
                                     "1": {"name": "The Need for Redundancy in Networks"},
                                     "2": {"name": "The Need for a First Hop Redundancy Protocol"},
                                     "3": {"name": "The Three Solutions for First-Hop Redundancy"},
-                                    "4": {"name": "HSRP Concepts"}
+                                    "4": {"name": "HSRP Concepts"},
+                                    "5": {"name": "Implementing HSRP"}
                                 }
                             },
                             "2": {
