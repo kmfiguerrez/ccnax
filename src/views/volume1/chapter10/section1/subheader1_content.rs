@@ -16,7 +16,7 @@ pub fn Content() -> Element {
             time, and virtual LANs did not exist yet."
             br {}
             "Instead of multiple VLANs in a physical Ethernet LAN, the physical Ethernet LAN existed as one single 
-            broadcast domain, with one instance of STP"
+            broadcast domain, with one instance of STP."
         }
 
         {h3_heading("Existence of Switches and VLANs")}
