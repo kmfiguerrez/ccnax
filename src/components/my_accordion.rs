@@ -12,8 +12,16 @@ use crate::components::svg::{ChevronRightSVG};
 // Accordion
 
 
+#[derive(Clone, Copy)]
+struct AccordionState {
+    open_item: Signal<Option<String>>,
+}
 #[component]
 pub fn Accordion(#[props(default)] class: String, children: Element) -> Element {
+    let open_item = use_signal(|| None::<String>);
+
+    use_context_provider(|| AccordionState { open_item });
+
     rsx! {
         div { class: "{class}", {children} }
     }
@@ -22,8 +30,8 @@ pub fn Accordion(#[props(default)] class: String, children: Element) -> Element 
 
 #[derive(Clone, Copy)]
 struct AccordionItemState {
-    open: Signal<bool>,
-    content_id: Signal<String>,
+    id: Signal<String>,
+    accordion: AccordionState,
 }
 use std::sync::atomic::{AtomicUsize, Ordering};
 
@@ -36,30 +44,43 @@ fn next_accordion_id() -> String {
 }
 #[component]
 pub fn AccordionItem(children: Element) -> Element {
-    let open = use_signal(|| false);
-    let content_id = use_signal(next_accordion_id);
+    let accordion = use_context::<AccordionState>();
+    let id = use_signal(next_accordion_id);
+    let is_open = accordion.open_item.read().as_ref() == Some(&id());
 
     use_context_provider(|| AccordionItemState {
-        open,
-        content_id,
-    });  
+        id,
+        accordion,
+    });
 
     rsx! {
-        div { class: "accordion-item", "data-open": if open() { "true" } else { "false" }, {children} }
+        div { class: "accordion-item", "data-open": if is_open { "true" } else { "false" }, {children} }
     }
 }
 
 #[component]
 pub fn AccordionTrigger(children: Element) -> Element {
-    let mut state = use_context::<AccordionItemState>();
+    let item = use_context::<AccordionItemState>();
 
     // aria-controls map to accordion content id.
     rsx! {
         button {
-            "aria-expanded": (state.open)(), // state.open is inside a paranthesis because a signal is inside a struct.
-            "aria-controls": (state.content_id)(), // state.content_id is inside a paranthesis because a signal is inside a struct.
-            onclick: move |_| state.open.toggle(),
+            "aria-expanded": item.accordion.open_item.read().as_ref() == Some(&(item.id)()), // item.id is inside a paranthesis because a signal is inside a struct.
+            "aria-controls": (item.id)(), // item.id is inside a paranthesis because a signal is inside a struct.
             class: "accordion-trigger max-sm:text-left",
+            onclick: move |_| {
+                let current_id = (item.id)();
+
+                let mut open_item = item.accordion.open_item;
+
+                if open_item() == Some(current_id.clone()) {
+                    // Clicking the open item closes it.
+                    open_item.set(None);
+                } else {
+                    // Opening this item replaces the previous ID.
+                    open_item.set(Some(current_id));
+                }
+            },
             {children}
             ChevronRightSVG {}
         }
@@ -69,13 +90,14 @@ pub fn AccordionTrigger(children: Element) -> Element {
 
 #[component]
 pub fn AccordionContent(children: Element) -> Element {
-    let state = use_context::<AccordionItemState>();
+    let item = use_context::<AccordionItemState>();
+    let is_open = item.accordion.open_item.read().as_ref() == Some(&(item.id)());    
 
     rsx! {
         div {
-            id: (state.content_id)(),
+            id: (item.id)(),
             class: "accordion-content",
-            "data-open": if *state.open.read() { "true" } else { "false" },
+            "data-open": if is_open { "true" } else { "false" },
             div { {children} }
         }
     }
