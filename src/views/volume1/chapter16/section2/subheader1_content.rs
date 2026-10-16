@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{GreenNote, KeyTopic}, utils::{h3_heading, TextCommandColor, text_command}
+    components::KeyTopic, utils::{h3_heading, TextCommandColor, text_command}
 };
 
 #[component]
@@ -128,6 +128,10 @@ pub fn Content() -> Element {
 
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
+            li {
+                "A Cisco router automatically adds a route to its routing table for the subnet connected to each interface 
+                called connected route."
+            }
             li {
                 "Routers find the subnet ID of each a connected route by taking the interface IP address and mask and calculating 
                 the subnet ID."
