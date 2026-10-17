@@ -23,9 +23,14 @@ pub fn Content() -> Element {
             next-hop addresses, as follows:"
             br {}
             br {}
-            "ip route 10.1.1.0 255.255.255.0 10.2.2.2"
+            {text_command("ip route 10.1.1.0 255.255.255.0 10.2.2.2", TextCommandColor::Gold)}
             br {}
-            "ip route 10.1.1.9 255.255.255.255 10.9.9.9"
+            {
+                text_command(
+                    "ip route 10.1.1.9 255.255.255.255 10.9.9.9",
+                    TextCommandColor::Gold,
+                )
+            }
         }
 
         p { class: "mb-4",
