@@ -164,6 +164,43 @@
             "5": {
                 "name": "IPv4 Routing",
                 "chapters": {
+                    "16": {
+                        "name": "Configuring IPv4 Addresses and Static Routes",
+                        "sections": {
+                            "1": {
+                                "name": "IP Routing",
+                                "subheaders": {
+                                    "1": {"name": "IPv4 Routing Process Reference" },
+                                    "2": {"name": "An Example of IP Routing" }
+                                }
+                            },
+                            "2": {
+                                "name": "Configuring IP Addresses and Connected Routes",
+                                "subheaders": {
+                                    "1": {"name": "Connected Routes and the ip address Command"},
+                                    "2": {"name": "The ARP Table on a Cisco Router "}
+                                }
+                            },
+                            "3": {
+                                "name": "Configuring Static Routes",
+                                "subheaders": {
+                                    "1": {"name": "Static Network Routes"},
+                                    "2": {"name": "Static Host Routes"},
+                                    "3": {"name": "Floating Static Routes"},
+                                    "4": {"name": "Static Default Routes"},
+                                    "5": {"name": "Troubleshooting Static Routes"}
+                                }
+                            },
+                            "4": {
+                                "name": "IP Forwarding with the Longest Prefix Match",
+                                "subheaders": {
+                                    "1": {"name": "Using show ip route to Find the Best Route"},
+                                    "2": {"name": "Using show ip route address to Find the Best Route"},
+                                    "3": {"name": "Interpreting the IP Routing Table"}
+                                }
+                            }
+                        }
+                    },
                     "17": {
                         "name": "IP Routing in the LAN",
                         "sections": {
