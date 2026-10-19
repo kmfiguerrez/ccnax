@@ -67,9 +67,10 @@ pub fn Content() -> Element {
                 "Every SNMP agent has its own Management Information Base. 
                 The MIB defines variables whose values are set and updated by the agent."
             }
+            li { "More formally, the MIB defines each variable as an object ID (OID)." }
             li {
-                "More formally, the MIB defines each variable as an object ID (OID). 
-                The MIB organizes all the variables into a hierarchy of OIDs, usually shown as a tree."
+                "On most devices, the MIB then organizes the OIDs based in part on RFC standards, and in part with 
+                vendorproprietary variables.  The MIB organizes all the variables into a hierarchy of OIDs, usually shown as a tree."
             }
             li {
                 "Each node in the tree can be described based on the tree structure sequence, either by name or by number."
