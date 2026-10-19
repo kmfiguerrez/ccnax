@@ -73,8 +73,10 @@ pub fn SectionIntroductionContent() -> Element {
             "First, many companies sell SNMP management products—for example, the Cisco Prime series of management products 
             (www.cisco.com/go/prime) use SNMP (and other protocols) to manage networks."
             br {}
-            "IOS on routers and switches include an SNMP agent, with built-in MIB, that can be enabled with the configuration shown 
-            later in this chapter."
+            strong {
+                "IOS on routers and switches include an SNMP agent, with built-in MIB, that can be enabled with the configuration"
+            }
+            " shown later in this chapter."
         }
 
         img {
