@@ -159,6 +159,10 @@ pub fn Content() -> Element {
                 "Basically, both the SNMP agent and the SNMP manager need prior knowledge of the same SNMP community value 
                 (called a community string)."
             }
+            li {
+                "The read-only (RO) community allows Get messages, and the read-write (RW) community allows both reads and writes 
+                (Gets and Sets)."
+            }
         }
     }
 }
