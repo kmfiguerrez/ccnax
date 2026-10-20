@@ -2,7 +2,9 @@ use dioxus::prelude::*;
 
 use crate::{
     components::{
-        GreenNote, my_accordion::{Accordion, AccordionContent, AccordionItem, AccordionTrigger}
+        KeyTopic,
+        GreenNote, 
+        my_accordion::{Accordion, AccordionContent, AccordionItem, AccordionTrigger}
     }, utils::{h3_heading, text_command, TextCommandColor, h4_heading}
 };
 
@@ -172,7 +174,66 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Upgrading IOS Images")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        strong {
+                            "One of the first steps to upgrade a router's IOS to a new version is to obtain the new IOS
+                            image and put it in the right location."
+                        }
+                        br {}
+                        "Typically, Cisco routers have their IOS in one of the local physical file systems, most often in permanent 
+                        flash."
+                        br {}
+                        "The only requirement is that the IOS be in some reachable file system—even if the file sits on an external 
+                        server and the device loads the OS over the network."
+                        br {}
+                        strong {
+                            "However, the best practice is to store each device's IOS file in flash that will remain with the device 
+                            permanently."
+                        }
+                    }
+
+                    p { class: "mb-1",
+                        "Figure 12-13 illustrates the process to upgrade an IOS image into flash memory, using the following steps:"
+                    }
+                    ol { class: "mb-4",
+                        li { class: "flex gap-x-4",
+                            span { class: "font-bold text-blue-500 shrink-0", "Step 1." }
+                            span {
+                                "Obtain the IOS image from Cisco, usually by downloading the IOS image from Cisco.com using HTTP or 
+                                FTP."
+                            }
+                        }
+                        li { class: "flex gap-x-4",
+                            span { class: "font-bold text-blue-500 shrink-0", "Step 2." }
+                            span {
+                                "Place the IOS image someplace that the router can reach. Locations include TFTP or FTP servers in 
+                                the network or a USB flash drive that is then inserted into the router."
+                            }
+                        }
+                        li { class: "flex gap-x-4",
+                            span { class: "font-bold text-blue-500 shrink-0", "Step 3." }
+                            span {
+                                "Issue the "
+                                {text_command("copy", TextCommandColor::Gold)}
+                                " command from the router, copying the file into the flash memory that usually remains with the 
+                                router on a permanent basis. ("
+                                strong {
+                                    "Routers usually cannot boot from the IOS image in a USB flash drive"
+                                }
+                                ".)"
+                            }
+                        }
+                    }
+
+                    KeyTopic {}
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Figure 12-13 Copying an IOS Image as Part of the Cisco IOS Software Upgrade Process",
+                        src: asset!("/assets/static/v2p3c12s3sh1f12-13.png", AssetOptions::image().with_avif()),
+                    }
+                }
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Copying a New IOS Image to a Local IOS File System Using TFTP")} }
