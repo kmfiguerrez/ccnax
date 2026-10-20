@@ -86,6 +86,12 @@ pub fn SectionIntroductionContent() -> Element {
             src: asset!("/assets/static/v2p3c12s2f12-8.png", AssetOptions::image().with_avif()),
         }
 
+        p { class: "mb-4",
+            strong { "NOTE" }
+            " I will include the implementations of SNMPv1, SNMPv2 and SNMPv3 found in appendix D in volume 2 on page 651, 
+            in this section."
+        }
+
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {

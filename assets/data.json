@@ -388,7 +388,9 @@
                                     "1": {"name": "SNMP Variable Reading and Writing: SNMP Get and Set"},
                                     "2": {"name": "SNMP Notifications: Traps and Informs"},
                                     "3": {"name": "The Management Information Base"},
-                                    "4": {"name": "Securing SNMP"}
+                                    "4": {"name": "Securing SNMP"},
+                                    "5": {"name": "Implementing SNMP Version 2c"},
+                                    "6": {"name": "Implementing SNMP Version 3"}
                                 }
                             },
                             "3": {
