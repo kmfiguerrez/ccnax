@@ -237,7 +237,112 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Copying a New IOS Image to a Local IOS File System Using TFTP")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        "Example 12-2 provides an example of step 3 from Figure 12-13, copying the IOS image into
+                        flash memory."
+                        br {}
+                        "In this case, router R2, a 2901, copies an IOS image from a TFTP server at IP address 2.2.2.1."
+                    }
+
+                    KeyTopic {}
+                    p { class: "mb-4", "See Example 12-2 in volume 1 on page 271." }
+
+                    {h4_heading("The copy command")}
+                    p { class: "mb-1",
+                        "The "
+                        {text_command("copy", TextCommandColor::Gold)}
+                        " command does a simple task—copy a file—but the command also has several small items to check."
+                        br {}
+                        "It needs a few pieces of information from the user, so the command prompts the user for that information 
+                        by showing the user some text and waiting for the user's input."
+                        br {}
+                        "The bold items in the example show the user's input."
+                        br {}
+                        "The router then has to check to make sure the copy will work."
+                        br {}
+                        "The command works through these kinds of questions:"
+                    }
+                    ol { class: "list-decimal list-inside pl-3 mb-4",
+                        li { "What is the IP address or host name of the TFTP server?" }
+                        li { "What is the name of the file?" }
+                        li {
+                            "Ask the server to learn the size of the file, and then check the local router's flash to
+                            ask whether enough space is available for this file in flash memory."
+                        }
+                        li { "Does the server actually have a file by that name?" }
+                        li { "Do you want the router to erase any old files in flash?" }
+                    }
+
+                    p { class: "mb-4",
+                        "The router prompts you for answers to some of these questions, as necessary."
+                        br {}
+                        "For each question, you should either type an answer or press Enter if the default answer (shown in
+                        square brackets at the end of the question) is acceptable."
+                        br {}
+                        strong {
+                            "Afterward, the router erases flash memory if directed, copies the file, and then verifies that the 
+                            checksum for the file shows that no errors occurred in transmission."
+                        }
+                    }
+
+                    GreenNote {
+                        p {
+                            strong { "NOTE" }
+                            "Most people use the IOS filenames that Cisco supplies because these names embed information about the 
+                            IOS image, like the version. Also, if you want to use the same destination filename as the source, avoid 
+                            the mistake of typing “y” or “yes” to confirm the selection; instead, you would be setting the 
+                            destination filename to “y” or “yes.” Simply press Enter to confirm the selection listed in brackets."
+                        }
+                    }
+
+                    {h4_heading("Viewing flash drives content")}
+                    p { class: "mb-4",
+                        "You can view the contents of the flash file system to see the IOS file that was just copied
+                        by using a couple of commands."
+                        br {}
+                        "The "
+                        {text_command("show flash", TextCommandColor::Gold)}
+                        " command shows the files in the default flash file system (flash0:), as seen at the top of Example 12-3."
+                        br {}
+                        "Below it, the more general "
+                        {text_command("dir flash0:", TextCommandColor::Gold)}
+                        " command lists the contents of that same file system, with similar information."
+                        br {}
+                        "(You can use the "
+                        {text_command("dir", TextCommandColor::Gold)}
+                        " command to display the contents of any local IFS.)"
+                    }
+
+                    p { class: "mb-4", "See Example 12-3 in volume 1 on page 272." }
+
+                    p { class: "mb-4",
+                        "Pay close attention to the memory usage per file and for the IFS as shown in the example."
+                        br {}
+                        "The output lists the size in bytes for each file."
+                        br {}
+                        "Note that the IOS file is about 104 MB."
+                        br {}
+                        "Note that the size of the IOS file matches the size shown earlier in the TFTP transfer in Example 12-2."
+                        br {}
+                        strong {
+                            "The end of each of the commands then lists the amount of space available for new files to be added to 
+                            flash (one lists it as “bytes available”; the other as “bytes free”)."
+                        }
+                        br {}
+                        "However, that same ending line of each command shows slightly different information
+                        about usage: "
+                        {text_command("show flash", TextCommandColor::Gold)}
+                        " lists the bytes used, whereas the "
+                        {text_command("dir", TextCommandColor::Gold)}
+                        " command lists the total bytes (bytes used plus bytes free)."
+                        br {}
+                        "Play around with the numbers in this example to make sure you know which command lists which particular 
+                        total."
+                    }
+                
+                }
+            
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Verifying IOS Code Integrity with MD5")} }
