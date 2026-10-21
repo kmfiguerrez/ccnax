@@ -164,6 +164,43 @@
             "5": {
                 "name": "IPv4 Routing",
                 "chapters": {
+                    "16": {
+                        "name": "Configuring IPv4 Addresses and Static Routes",
+                        "sections": {
+                            "1": {
+                                "name": "IP Routing",
+                                "subheaders": {
+                                    "1": {"name": "IPv4 Routing Process Reference" },
+                                    "2": {"name": "An Example of IP Routing" }
+                                }
+                            },
+                            "2": {
+                                "name": "Configuring IP Addresses and Connected Routes",
+                                "subheaders": {
+                                    "1": {"name": "Connected Routes and the ip address Command"},
+                                    "2": {"name": "The ARP Table on a Cisco Router "}
+                                }
+                            },
+                            "3": {
+                                "name": "Configuring Static Routes",
+                                "subheaders": {
+                                    "1": {"name": "Static Network Routes"},
+                                    "2": {"name": "Static Host Routes"},
+                                    "3": {"name": "Floating Static Routes"},
+                                    "4": {"name": "Static Default Routes"},
+                                    "5": {"name": "Troubleshooting Static Routes"}
+                                }
+                            },
+                            "4": {
+                                "name": "IP Forwarding with the Longest Prefix Match",
+                                "subheaders": {
+                                    "1": {"name": "Using show ip route to Find the Best Route"},
+                                    "2": {"name": "Using show ip route address to Find the Best Route"},
+                                    "3": {"name": "Interpreting the IP Routing Table"}
+                                }
+                            }
+                        }
+                    },
                     "17": {
                         "name": "IP Routing in the LAN",
                         "sections": {
@@ -328,6 +365,40 @@
                                     "3": {"name": "Dynamic NAT Verification"},
                                     "4": {"name": "NAT Overload (PAT) Configuration"},
                                     "5": {"name": "NAT Troubleshooting"}
+                                }
+                            }
+                        }
+                    },
+                    "12": {
+                        "name": "Miscellaneous IP Services",
+                        "sections": {
+                            "1": {
+                                "name": "First Hop Redundancy Protocol",
+                                "subheaders": {
+                                    "1": {"name": "The Need for Redundancy in Networks"},
+                                    "2": {"name": "The Need for a First Hop Redundancy Protocol"},
+                                    "3": {"name": "The Three Solutions for First-Hop Redundancy"},
+                                    "4": {"name": "HSRP Concepts"},
+                                    "5": {"name": "Implementing HSRP"}
+                                }
+                            },
+                            "2": {
+                                "name": "Simple Network Management Protocol",
+                                "subheaders": {
+                                    "1": {"name": "SNMP Variable Reading and Writing: SNMP Get and Set"},
+                                    "2": {"name": "SNMP Notifications: Traps and Informs"},
+                                    "3": {"name": "The Management Information Base"},
+                                    "4": {"name": "Securing SNMP"},
+                                    "5": {"name": "Implementing SNMP Version 2c"},
+                                    "6": {"name": "Implementing SNMP Version 3"}
+                                }
+                            },
+                            "3": {
+                                "name": "FTP and TFTP",
+                                "subheaders": {
+                                    "1": {"name": "Managing Cisco IOS Images with FTP/TFTP"},
+                                    "2": {"name": "The FTP and TFTP Protocols"},
+                                    "3": {"name": "TFTP Protocol Basics"}
                                 }
                             }
                         }
