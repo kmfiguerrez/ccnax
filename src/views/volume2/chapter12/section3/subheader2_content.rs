@@ -324,7 +324,88 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("FTP over TLS (FTP Secure)")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        "FTP, defined in RFC 959 back in 1985, has some shortcomings with security."
+                        br {}
+                        strong {
+                            "As originally defined, it does include the ability to use usernames and passwords for authentication and
+                            authorization; however, the username/password flows as clear text."
+                        }
+                        br {}
+                        "Additionally, all data transfers flow as clear text."
+                    }
+
+                    {h4_heading("Improvements for FTP")}
+                    p { class: "mb-4",
+                        "Over the years, several RFCs defined security improvements for FTP."
+                        br {}
+                        strong {
+                            "Those new features include using digital certificates for authentication as well as using Transport Layer 
+                            Security (TLS) to encrypt all data (including usernames/passwords)."
+                        }
+                        br {}
+                        "Fast forward to today and many of those features converge into what most FTP clients and servers support 
+                        as FTP over TLS or as FTP Secure (FTPS)."
+                    }
+
+                    {h4_heading("FTPS session")}
+                    p { class: "mb-1",
+                        "With FTPS, the client and server still use FTP commands and still use both a control and data connection."
+                        br {}
+                        "However, "
+                        strong {
+                            "FTPS encrypts both the control and data connections with TLS, including the exchange of the 
+                            usernames and passwords"
+                        }
+                        "."
+                        br {}
+                        "FTPS includes a few variations, including the FTPS explicit mode process shown in Figure 12-20:"
+                    }
+                    ol { class: "list-decimal list-inside mb-4",
+                        li {
+                            "The client creates the FTP control TCP connection to server well-known port 21."
+                        }
+                        li {
+                            "The client initiates the use of TLS in the control connection with the "
+                            {text_command("FTP AUTH", TextCommandColor::Gold)}
+                            " command."
+                        }
+                        li {
+                            "When the user takes an action that requires an FTP data connection, the client creates
+                            an FTP data TCP connection to server well-known port 21."
+                        }
+                        li {
+                            "The client initiates the use of TLS in the data connection with the "
+                            {text_command("FTP AUTH", TextCommandColor::Gold)}
+                            " command."
+                        }
+                    }
+
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Figure 12-20 FTPS Explicit Mode Control and Data Connection Establishment",
+                        src: asset!("/assets/static/v2p3c12s3sh2f12-20.png", AssetOptions::image().with_avif()),
+                    }
+
+                    p { class: "mb-4",
+                        "In contrast, the implicit mode process begins with a required TLS connection, with no need
+                        for an "
+                        {text_command("FTP AUTH", TextCommandColor::Gold)}
+                        " command, using well-known ports 990 (for the control connection) and
+                        989 (for the data connection)."
+                    }
+
+                    GreenNote {
+                        p {
+                            strong { "NOTE" }
+                            " SSH File Transfer Protocol (SFTP) is a different protocol than FTPS. SFTP uses
+                            SSH to encrypt file transfers over an SSH connection. However, the acronym SFTP does not
+                            refer to a secure version of FTP."
+                        }
+                    }
+                }
             }
         }
 
@@ -352,6 +433,19 @@ pub fn Content() -> Element {
             li {
                 "Passive mode helps solve the firewall restrictions by having the FTP client initiate the FTP data connection to 
                 the server."
+            }
+            li {
+                "FTP, defined in RFC 959 back in 1985, has some shortcomings with security. Credentials for authentication and 
+                data transfers flow as clear text."
+            }
+            li {
+                "FTP over TLS or as FTP Secure (FTPS) introduced security improvements for FTP including using digital certificates 
+                for authentication as well as using Transport Layer Security (TLS) to encrypt all data 
+                (including usernames/passwords)."
+            }
+            li {
+                "SSH File Transfer Protocol (SFTP) is a different protocol than FTPS. SFTP uses SSH to encrypt file transfers over 
+                an SSH connection."
             }
         }
     }
