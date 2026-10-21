@@ -164,7 +164,163 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("FTP Active and Passive Modes")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        strong { "FTP can operate in either active or passive mode." }
+                        br {}
+                        "The choice of mode may impact whether the TCP client can or cannot connect to the server and perform 
+                        normal functions."
+                        br {}
+                        "The user at the FTP client can choose which mode to use, so this section works through the underlying 
+                        details to explain why FTP passive mode may be the more likely option to work."
+                    }
+
+                    KeyTopic {}
+                    p { class: "mb-1", "First, note that FTP uses two types of TCP connections: " }
+                    ol { class: "mb-4",
+                        li {
+                            span { class: "font-bold mr-1", "Control Connection:" }
+                            "Used to exchange FTP commands"
+                        }
+                        li {
+                            span { class: "font-bold mr-1", "Data Connection:" }
+                            "Used for sending and receiving data, both for file transfers and for output to display to a user"
+                        }
+                    }
+
+                    {h4_heading("Control connection using TCP port 21")}
+                    p { class: "mb-4",
+                        strong {
+                            "Given the two roles, when a client connects to an FTP server, the client first creates the FTP
+                            control connection"
+                        }
+                        " as shown in Figure 12-17."
+                        br {}
+                        "The server listens for new control connections on its well-known port 21; the client allocates any new 
+                        dynamic port (49222 in this case) and creates a TCP connection to the server."
+                    }
+
+                    KeyTopic {}
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Figure 12-17 FTP Client Creates an FTP Control Connection",
+                        src: asset!("/assets/static/v2p3c12s3sh2f12-17.png", AssetOptions::image().with_avif()),
+                    }
+
+                    {h4_heading("Data connection using TCP port 20")}
+                    p { class: "mb-4",
+                        strong {
+                            "After creating the TCP connection, the user authenticates to the FTP server and takes some actions."
+                        }
+                        br {}
+                        "Some of those actions require only the control connection, but eventually the user
+                        will take an action (like getting a file) that requires a data connection."
+                        br {}
+                        strong {
+                            "When that happens, to create the FTP data connection, the client will either use active mode or passive 
+                            mode"
+                        }
+                        ", as shown in the next two examples."
+                    }
+
+                    {h4_heading("Active mode")}
+                    p { class: "mb-1",
+                        "Figure 12-18 shows an example of what happens in active mode."
+                        br {}
+                        "Following the steps in the figure:"
+                    }
+                    ol { class: "list-decimal list-inside mb-4",
+                        li {
+                            "The FTP client allocates a currently unused dynamic port and starts listening on that port."
+                        }
+                        li {
+                            "The client identifies that port (and its IP address) to the FTP server by sending an FTP "
+                            {text_command("PORT", TextCommandColor::Gold)}
+                            " command to the server."
+                        }
+                        li {
+                            "The server, because it also operates in active mode, expects the "
+                            {text_command("PORT", TextCommandColor::Gold)}
+                            " command; the server reacts and initiates the FTP data connection to the client's address
+                            (192.168.1.102) and port (49333)."
+                        }
+                    }
+
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Figure 12-18 FTP Active Mode Process to Create the Data Connection",
+                        src: asset!("/assets/static/v2p3c12s3sh2f12-18.png", AssetOptions::image().with_avif()),
+                    }
+
+                    p { class: "mb-4",
+                        strong {
+                            "Active mode works well with both the FTP client and server sitting inside the same enterprise network."
+                        }
+                        br {}
+                        "When within the same network, typically no NAT function and no firewall sits between the two."
+                        br {}
+                        strong {
+                            "However, if the FTP client sits in an enterprise network, and the FTP server resides somewhere in the 
+                            Internet, an active mode connection typically fails."
+                        }
+                        br {}
+                        "Most firewalls do not allow Internet-based hosts to initiate TCP connections to hosts inside the
+                        enterprise without a specific firewall rule allowing connections to a known port, and in this
+                        case, the FTP client allocates any available port number."
+                        br {}
+                        "For instance, in Figure 12-18, the TCP connection (step 3) would be discarded by a firewall."
+                    }
+
+                    GreenNote {
+                        p {
+                            strong { "NOTE" }
+                            " FTP reserves two well-known ports: port 21 for control connections and port 20
+                            for data connections. However, due to changes to FTP over the years, FTP often uses other
+                            TCP ports for the TCP data connection, as seen in the examples in this chapter."
+                        }
+                    }
+
+                    {h4_heading("Passive mode")}
+                    p { class: "mb-1",
+                        strong {
+                            "Passive mode helps solve the firewall restrictions by having the FTP client initiate the FTP
+                            data connection to the server."
+                        }
+                        br {}
+                        "However, passive mode does not simply cause the FTP client to connect to a well-known port on the server; 
+                        it requires more exchanges of port numbers to use between the server and client, as shown in Figure 12-19, 
+                        with these steps:"
+                    }
+                    ol { class: "list-decimal list-inside mb-4",
+                        li {
+                            "The FTP client changes to use FTP passive mode, notifying the server using the FTP "
+                            {text_command("PASV", TextCommandColor::Gold)}
+                            " command."
+                        }
+                        li {
+                            "The server chooses a port to listen on for the upcoming new TCP connection, in this case TCP port 49444."
+                        }
+                        li {
+                            "The FTP notifies the FTP client of its IP address and chosen port with the FTP "
+                            {text_command("PORT", TextCommandColor::Gold)}
+                            " command."
+                        }
+                        li {
+                            "The FTP client opens the TCP data connection to the IP address and port learned at the previous step."
+                        }
+                    }
+
+                    KeyTopic {}
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Figure 12-19 FTP Passive Mode Process to Create the Data Connection",
+                        src: asset!("/assets/static/v2p3c12s3sh2f12-19.png", AssetOptions::image().with_avif()),
+                    }
+                
+                }
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("FTP over TLS (FTP Secure)")} }
@@ -179,6 +335,24 @@ pub fn Content() -> Element {
                 primary file transfer protocol for several decades."
             }
             li { "FTP uses well-known TCP port 21 and in some cases also well-known port 20." }
+            li {
+                "FTP can operate in either active or passive mode. The choice of mode may impact whether the TCP client can or cannot connect 
+                to the server and perform normal functions."
+            }
+            li { "FTP uses two types of TCP connections: control and data connections." }
+            li {
+                "When a client connects to an FTP server, the client first creates the FTP control connection, 
+                after creating the TCP connection, the user authenticates to the FTP server and takes some actions. 
+                Then to create the FTP data connection, the client will either use active mode or passive mode."
+            }
+            li {
+                "Active mode works well with both the FTP client and server sitting inside the same enterprise network, 
+                where there's no NAT function and no firewall sits between the two."
+            }
+            li {
+                "Passive mode helps solve the firewall restrictions by having the FTP client initiate the FTP data connection to 
+                the server."
+            }
         }
     }
 }
