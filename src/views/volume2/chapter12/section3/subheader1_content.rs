@@ -289,7 +289,7 @@ pub fn Content() -> Element {
                     GreenNote {
                         p {
                             strong { "NOTE" }
-                            "Most people use the IOS filenames that Cisco supplies because these names embed information about the 
+                            " Most people use the IOS filenames that Cisco supplies because these names embed information about the 
                             IOS image, like the version. Also, if you want to use the same destination filename as the source, avoid 
                             the mistake of typing “y” or “yes” to confirm the selection; instead, you would be setting the 
                             destination filename to “y” or “yes.” Simply press Enter to confirm the selection listed in brackets."
@@ -346,11 +346,196 @@ pub fn Content() -> Element {
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Verifying IOS Code Integrity with MD5")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        "You download the IOS from Cisco, copy it to your router, and run it."
+                        br {}
+                        "Is it really the code from Cisco?"
+                        br {}
+                        "Or did some nefarious attacker somehow get you to download a fake IOS that has a virus?"
+                    }
+
+                    p { class: "mb-4",
+                        "Cisco provides a means to check the integrity of the IOS file to prevent this type of problem."
+                        br {}
+                        "Figure 12-14 shows the basic mechanics of the process."
+                        br {}
+                        strong {
+                            "First, when Cisco builds a new IOS image, it calculates and publishes an MD5 hash value for that specific 
+                            IOS file."
+                        }
+                        br {}
+                        "That is, Cisco uses as input the IOS file itself, runs the MD5 math algorithm against that file, producing 
+                        a hex code."
+                        br {}
+                        "Cisco places that code at the download site for all to see."
+                        br {}
+                        "Then, you run that same MD5 math on your router against the IOS file on the router, using the IOS "
+                        {text_command("verify", TextCommandColor::Gold)}
+                        " command."
+                        br {}
+                        "That command will list the MD5 hash as recalculated on your router."
+                        br {}
+                        "If both MD5 hashes are equal, the file has not changed."
+                    }
+
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Figure 12-14 MD5 Verification of IOS Images—Concepts",
+                        src: asset!("/assets/static/v2p3c12s3sh1f12-14.png", AssetOptions::image().with_avif()),
+                    }
+
+                    {h4_heading("The verify /md5 command")}
+                    p { class: "mb-4",
+                        "The "
+                        {text_command("verify /md5", TextCommandColor::Gold)}
+                        " command generates the MD5 hash on your router, as shown in Example 12-4."
+                        br {}
+                        "Note that you can include the hash value computed by Cisco as the last parameter
+                        (as shown in the example), or leave it off."
+                        br {}
+                        "If you include it, IOS will tell you if the locally computed value matches what you copied into the command."
+                        br {}
+                        "If you leave it out, the "
+                        {text_command("verify", TextCommandColor::Gold)}
+                        " command lists the locally computed MD5 hash, and you have to do the picky 
+                        character-bycharacter check of the values yourself ."
+                    }
+
+                    p { class: "mb-4", "See Example 12-4 in volume 1 on page 273." }
+                }
             }
             AccordionItem {
                 AccordionTrigger { {h3_heading("Copying Images with FTP")} }
-                AccordionContent {}
+                AccordionContent {
+                    p { class: "mb-4",
+                        "The networking world has many options for file transfer, several of which IOS supports for
+                        the transfer of files into and out of the IOS file systems that reside on the router."
+                        br {}
+                        strong {
+                            "TFTP and FTP have been supported for the longest time, with more recent support added for protocols like 
+                            Secure Copy Protocol (SCP), which uses the SSH File Transfer Protocol (SFTP)"
+                        }
+                        "."
+                        br {}
+                        "Table 12-3 lists some of the names of file transfer protocols that you might come across
+                        when working with routers."
+                    }
+
+                    img {
+                        class: "mb-4 rounded-lg",
+                        loading: "lazy",
+                        alt: "Table 12-3 Common Methods to Copy Files Outside a Router",
+                        src: asset!("/assets/static/v2p3c12s3sh1t12-3.png", AssetOptions::image().with_avif()),
+                    }
+
+                    p { class: "mb-4",
+                        "To copy files with FTP, you follow the same kind of process you use with TFTP (see Example 12-5)."
+                        br {}
+                        "You can follow the interactive prompts after using an EXEC command like "
+                        {text_command("copy ftp flash", TextCommandColor::Gold)}
+                        "."
+                        br {}
+                        "However, the "
+                        {text_command("copy", TextCommandColor::Gold)}
+                        " command allows you to use a URI for the source and/ or destination, which lets you put 
+                        most or all of the information in the command line itself."
+                        br {}
+                        "Each URI refers to the formal name of a file in the IFS."
+                    }
+
+                    KeyTopic {}
+                    p { class: "mb-4", "See Example 12-5 in volume 1 on page 274." }
+
+                    {h4_heading("The URI structure")}
+                    p { class: "mb-4",
+                        "First, take a close look at the long URI in the command that begins with “ftp.”"
+                        br {}
+                        "The “ftp” part identifies the protocol, of course."
+                        br {}
+                        "After the //, the text references the username (wendell) 
+                        and password (odom), as well as the FTP server's IP address."
+                        br {}
+                        "After the single / comes the filename on the server."
+                    }
+
+                    {h4_heading("The copy command structure")}
+                    p { class: "mb-4",
+                        "Although the command is long, it has only two parameters, with the long first parameter
+                        and the short keyword "
+                        {text_command("flash", TextCommandColor::Gold)}
+                        " as the second parameter."
+                        br {}
+                        "The "
+                        {text_command("copy", TextCommandColor::Gold)}
+                        " command lists the source location as the first parameter and the destination as the second."
+                        br {}
+                        "The destination in this case, "
+                        {text_command("flash", TextCommandColor::Gold)}
+                        ", is a keyword that refers to the default flash, typically "
+                        strong { "flash0:" }
+                        ", but 
+                        it does not identify a specific filename."
+                        br {}
+                        "As a result, IOS prompts the user for a specific destination filename, with a default (in brackets) to keep 
+                        the source filename."
+                        br {}
+                        "In this case, the user just pressed Enter to accept the default."
+                        br {}
+                        "To avoid being prompted at all, the command could have listed "
+                        {
+                            text_command(
+                                "flash:c2900-universalk9-mz.SPA.155-2.T1.bin",
+                                TextCommandColor::Gold,
+                            )
+                        }
+                        " as that second parameter, fully defining the destination file."
+                    }
+
+                    {h4_heading("Shortening the copy with ftp command")}
+                    p { class: "mb-4",
+                        "Finally, with another twist, you can configure the FTP username and password on the
+                        router so that you do not have to include them in the "
+                        {text_command("copy", TextCommandColor::Gold)}
+                        " command."
+                        br {}
+                        "For instance, the global configuration commands "
+                        {text_command("ip ftp username wendell", TextCommandColor::Gold)}
+                        " and "
+                        {text_command("ip ftp password odom", TextCommandColor::Gold)}
+                        " would have configured those values."
+                        br {}
+                        "Then the "
+                        {text_command("copy", TextCommandColor::Gold)}
+                        " command would have begun with "
+                        {text_command("copy ftp://192.168.1.170/...", TextCommandColor::Gold)}
+                        ", omitting the username:password 
+                        in the command, without needing to then prompt the user for the username and password."
+                    }
+
+                    {h4_heading("Completing the IOS upgrade process")}
+                    p { class: "mb-4",
+                        "That completes the examples of showing how to copy IOS files into a router using TFTP and FTP."
+                        br {}
+                        "The exam topics happen to mention TFTP and FTP, but not the IOS upgrade  process, so the text now turns 
+                        away from the IOS upgrade process to focus more on TFTP and FTP."
+                        br {}
+                        strong {
+                            "However, there are a few more steps to complete to upgrade IOS, such as configuring the boot system 
+                            command and reloading the router."
+                        }
+                        br {}
+                        "If you want to read about the rest of the IOS upgrade process or other related tasks like managing 
+                        configuration files and performing password recovery, refer to this book's Appendix F, “Previous Edition 
+                        ICND1 Chapter 35: Managing IOS Files.”"
+                    }
+
+                    p { class: "mb-4",
+                        "However, to complete the IOS upgrade process, you need to finish a few more required steps. "
+                    }
+                
+                }
             }
         }
 
@@ -378,6 +563,14 @@ pub fn Content() -> Element {
                 "For each physical memory device in the router, IOS creates a simple IOS file system and gives that device a name."
             }
             li { "IOS commands can reference filenames with their formal or informal names." }
+            li {
+                "When Cisco builds a new IOS image, it calculates and publishes an MD5 hash value for that specific IOS file,
+                to provide a means to check the integrity of the IOS file."
+            }
+            li {
+                "IOS have supported TFTP and FTP for the longest time, with more recent support added for protocols like 
+                Secure Copy Protocol (SCP), which uses the SSH File Transfer Protocol (SFTP)."
+            }
         }
     }
 }
