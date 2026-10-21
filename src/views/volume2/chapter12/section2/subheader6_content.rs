@@ -1,9 +1,8 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::{
-        ConfigChecklist, GreenNote, my_accordion::{Accordion, AccordionContent, AccordionItem, AccordionTrigger}
-    }, utils::{TextCommandColor, h3_heading, h4_heading, text_command}
+    components::my_accordion::{Accordion, AccordionContent, AccordionItem, AccordionTrigger}, 
+    utils::{TextCommandColor, h3_heading, h4_heading, text_command}
 };
 
 #[component]
