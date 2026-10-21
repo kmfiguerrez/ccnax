@@ -30,12 +30,12 @@ jobs:
         run: cargo install dioxus-cli --version 0.7.10 --locked
 
       - name: Build Dioxus app
-        run: dx bundle --web --ssg
+        run: dx bundle --web --ssg --release --debug-symbols false
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: target/dx/ccnax/debug/web/public
+          path: target/dx/ccnax/release/web/public
 
   deploy:
     needs: build
