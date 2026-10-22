@@ -356,6 +356,26 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                 },
                             }
                         },
+                        // part 5
+                        8 => rsx! {
+                            match chapter_id {
+                                // chapter 16
+                                26 => rsx! {
+                                    match (section_id, subheader_id) {
+                                        // start of chapter 26 section 2
+                                        (2, 1) => rsx! {
+                                            volume1::chapter26::section2::subheader1_content::Content {}
+                                        },
+                                        _ => rsx! {
+                                            h3 { "Subheader content not found!" }
+                                        },
+                                    }
+                                },
+                                _ => rsx! {
+                                    h3 { "Chapter {chapter_id} does not exist!" }
+                                },
+                            }
+                        },
                         _ => rsx! {
                             h3 { "Part {part_id} does not exist!" }
                         },
