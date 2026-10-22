@@ -231,6 +231,45 @@
                         }
                     }
                 }
+            },
+            "8": {
+                "name": "Wireless LANs",
+                "chapters": {
+                    "26": {
+                        "name": "Fundamentals of Wireless Networks",
+                        "sections": {
+                            "1": {
+                                "name": "Comparing Wired and Wireless Networks",
+                                "subheaders": {}
+                            },
+                            "2": {
+                                "name": "Wireless LAN Topologies",
+                                "subheaders": {
+                                    "1": {"name": "Basic Service Set"},
+                                    "2": {"name": "Distribution System"},
+                                    "3": {"name": "Extended Service Set"},
+                                    "4": {"name": "Independent Basic Service Set"}
+                                }
+                            },
+                            "3": {
+                                "name": "Other Wireless Topologies",
+                                "subheaders": {
+                                    "1": {"name": "Repeater "},
+                                    "2": {"name": "Workgroup Bridge"},
+                                    "3": {"name": "Outdoor Bridge"},
+                                    "4": {"name": "Mesh Network"}
+                                }
+                            },
+                            "4": {
+                                "name": "RF Overview",
+                                "subheaders": {
+                                    "1": {"name": "Wireless Bands and Channels"},
+                                    "2": {"name": "APs and Wireless Standards"}
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
