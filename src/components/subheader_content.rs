@@ -375,6 +375,10 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                         (2, 4) => rsx! {
                                             volume1::chapter26::section2::subheader4_content::Content {}
                                         },
+                                        // start of chapter 26 section 3
+                                        (3, 1) => rsx! {
+                                            volume1::chapter26::section3::subheader1_content::Content {}
+                                        },
                                         _ => rsx! {
                                             h3 { "Subheader content not found!" }
                                         },
