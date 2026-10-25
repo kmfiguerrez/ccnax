@@ -141,8 +141,10 @@ pub fn SectionIntroductionContent() -> Element {
             "The Spanning Tree Protocol (STP) running on each switch becomes a vital ingredient to prevent bridging loops from 
             forming and corrupting the network."
             br {}
-            "For these reasons, client roaming across autonomous APs is typically limited to the Layer 2 domain, or the extent of a 
-            single VLAN."
+            strong {
+                "For these reasons, client roaming across autonomous APs is typically limited to the Layer 2 domain, or the extent of a 
+                single VLAN."
+            }
             br {}
             "As the wireless network expands, the infrastructure becomes more difficult to configure correctly and becomes less
             efficient."
