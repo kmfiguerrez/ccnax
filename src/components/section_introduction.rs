@@ -147,6 +147,33 @@ pub fn SectionIntroduction(volume_id: u32, part_id: u32, chapter_id: u32, sectio
                             },
                         }
                     },
+                    8 => rsx! {
+                        match chapter_id {
+                            26 => rsx! {
+                                match section_id {
+                                    1 => rsx! {
+                                        volume1::chapter26::section1::SectionIntroductionContent {}
+                                    },
+                                    2 => rsx! {
+                                        volume1::chapter26::section2::SectionIntroductionContent {}
+                                    },
+                                    3 => rsx! {
+                                        volume1::chapter26::section3::SectionIntroductionContent {}
+                                    },
+                                    4 => rsx! {
+                                        volume1::chapter26::section4::SectionIntroductionContent {}
+                                    },
+                                    _ => rsx! {
+                                        h3 { "Section introduction content not found!" }
+                                    },
+                                }
+                            },
+                            _ => rsx! {
+                                h3 { "Chapter {chapter_id} does not exist!" }
+                            },
+                        }
+                    },
+
                     _ => rsx! {
                         h3 { "Part {part_id} does not exist" }
                     },

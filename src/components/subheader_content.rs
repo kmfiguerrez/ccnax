@@ -356,6 +356,55 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                 },
                             }
                         },
+                        // part 5
+                        8 => rsx! {
+                            match chapter_id {
+                                // chapter 16
+                                26 => rsx! {
+                                    match (section_id, subheader_id) {
+                                        // start of chapter 26 section 2
+                                        (2, 1) => rsx! {
+                                            volume1::chapter26::section2::subheader1_content::Content {}
+                                        },
+                                        (2, 2) => rsx! {
+                                            volume1::chapter26::section2::subheader2_content::Content {}
+                                        },
+                                        (2, 3) => rsx! {
+                                            volume1::chapter26::section2::subheader3_content::Content {}
+                                        },
+                                        (2, 4) => rsx! {
+                                            volume1::chapter26::section2::subheader4_content::Content {}
+                                        },
+                                        // start of chapter 26 section 3
+                                        (3, 1) => rsx! {
+                                            volume1::chapter26::section3::subheader1_content::Content {}
+                                        },
+                                        (3, 2) => rsx! {
+                                            volume1::chapter26::section3::subheader2_content::Content {}
+                                        },
+                                        (3, 3) => rsx! {
+                                            volume1::chapter26::section3::subheader3_content::Content {}
+                                        },
+                                        (3, 4) => rsx! {
+                                            volume1::chapter26::section3::subheader4_content::Content {}
+                                        },
+                                        // start of chapter 26 section 3
+                                        (4, 1) => rsx! {
+                                            volume1::chapter26::section4::subheader1_content::Content {}
+                                        },
+                                        (4, 2) => rsx! {
+                                            volume1::chapter26::section4::subheader2_content::Content {}
+                                        },
+                                        _ => rsx! {
+                                            h3 { "Subheader content not found!" }
+                                        },
+                                    }
+                                },
+                                _ => rsx! {
+                                    h3 { "Chapter {chapter_id} does not exist!" }
+                                },
+                            }
+                        },
                         _ => rsx! {
                             h3 { "Part {part_id} does not exist!" }
                         },
