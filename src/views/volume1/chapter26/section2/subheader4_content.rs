@@ -57,7 +57,7 @@ pub fn Content() -> Element {
                 i { "ad hoc" }
                 " wireless network, or an "
                 i { "independent basic service set" }
-                " (IBSS) where  two or more wireless clients to communicate directly with each other, with no other means of 
+                " (IBSS) where  two or more wireless clients can communicate directly with each other, with no other means of 
                 network connectivity."
             }
             li {
