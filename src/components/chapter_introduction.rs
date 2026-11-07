@@ -38,6 +38,9 @@ pub fn ChapterIntroduction(volume_id: u32, part_id: u32, chapter_id: u32) -> Ele
                 (1, 8, 27) => rsx! {
                     volume1::chapter27::ChapterIntroductionContent {}
                 },
+                (1, 8, 29) => rsx! {
+                    volume1::chapter29::ChapterIntroductionContent {}
+                },
                 // Start of volume 2, part 1
                 (2, 1, 2) => rsx! {
                     volume2::chapter2::ChapterIntroductionContent {}
