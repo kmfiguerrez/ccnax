@@ -15,21 +15,21 @@ pub fn Content() -> Element {
         ol { class: "list-disc list-inside mb-4",
             li {
                 span { class: "font-bold mr-1", "Service port:" }
-                " Used for out-of-band management, system recovery, and initial boot functions; always connects to a switch port in 
+                "Used for out-of-band management, system recovery, and initial boot functions; always connects to a switch port in 
                 access mode"
             }
             li {
                 span { class: "font-bold mr-1", "Distribution system port:" }
-                "  Used for all normal AP and management traffic; usually connects to a switch port in 802.1Q trunk mode"
+                "Used for all normal AP and management traffic; usually connects to a switch port in 802.1Q trunk mode"
             }
             li {
                 span { class: "font-bold mr-1", "Console port:" }
-                " Used for out-of-band management, system recovery, and initial boot functions; asynchronous connection to a 
+                "Used for out-of-band management, system recovery, and initial boot functions; asynchronous connection to a 
                 terminal emulator (9600 baud, 8 data bits, 1 stop bit, by default)"
             }
             li {
                 span { class: "font-bold mr-1", "Redundancy port:" }
-                " Used to connect to a peer controller for high availability (HA) operation"
+                "Used to connect to a peer controller for high availability (HA) operation"
             }
         }
 
@@ -38,7 +38,7 @@ pub fn Content() -> Element {
             class: "mb-4 rounded-lg",
             alt: "Figure 29-5 Cisco Wireless LAN Controller Ports",
             loading: "lazy",
-            src: asset!("/assets/static/v1p8c29s1f29-5.png", AssetOptions::image().with_avif()),
+            src: asset!("/assets/static/v1p8c29s3sh1f29-5.png", AssetOptions::image().with_avif()),
         }
 
         {h3_heading("Service Port")}
