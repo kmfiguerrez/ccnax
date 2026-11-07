@@ -67,6 +67,8 @@ pub fn SectionIntroductionContent() -> Element {
             "You will get a feel for which tabs and list items you should use as you work through the remainder of the chapter."
         }
 
+        p { class: "mb-4", "See Figure 29-3, 29-4 in volume 1 on page 671." }
+
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {
