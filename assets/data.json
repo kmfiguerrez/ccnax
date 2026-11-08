@@ -292,6 +292,39 @@
                             }
                         }
                     },
+                    "28": {
+                        "name": "Securing Wireless Networks",
+                        "sections": {
+                            "1": {
+                                "name": "Anatomy of a Secure Connection",
+                                "subheaders": {
+                                    "1": {"name": "Authentication"},
+                                    "2": {"name": "Message Privacy"},
+                                    "3": {"name": "Message Integrity"}
+                                }
+                            },
+                            "2": {
+                                "name": "Wireless Client Authentication Methods",
+                                "subheaders": {
+                                    "1": {"name": "Open Authentication"},
+                                    "2": {"name": "WEP"},
+                                    "3": {"name": "802.1x/EAP"}
+                                }
+                            },
+                            "3": {
+                                "name": "Wireless Privacy and Integrity Methods",
+                                "subheaders": {
+                                    "1": {"name": "TKIP"},
+                                    "2": {"name": "CCMP"},
+                                    "3": {"name": "GCMP"}
+                                }
+                            },
+                            "4": {
+                                "name": "WPA, WPA2, and WPA3",
+                                "subheaders": {}
+                            }
+                        }
+                    },
                     "29": {
                         "name": "Building a Wireless LAN",
                         "sections": {
