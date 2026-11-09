@@ -75,6 +75,10 @@ pub fn Content() -> Element {
         {h3_heading("RECAP")}
         ol { class: "list-disc list-inside",
             li {
+                "After a client associates itself with the AP, it authenticates the AP and its management frames before the client 
+                is authenticated."
+            }
+            li {
                 "To protect data privacy on a wireless network, the data should be encrypted for its journey through free space."
             }
             li {

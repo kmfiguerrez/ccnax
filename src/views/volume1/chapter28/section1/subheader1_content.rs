@@ -124,8 +124,8 @@ pub fn Content() -> Element {
             }
             li { "Wireless authentication can take many forms." }
             li {
-                "To prevent common attacks on wireless networks, like the man-in-the-middle attack, the client should authenticate the AP before 
-                the client itself is authenticated."
+                "To prevent common attacks on wireless networks, like the man-in-the-middle attack, the client should authenticate the AP 
+                before the client itself is authenticated."
             }
             li {
                 "Even further, any management frames received by a client should be authenticated too, as proof that they were sent by a 
