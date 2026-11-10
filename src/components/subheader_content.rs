@@ -411,6 +411,43 @@ pub fn SubheaderContent(volume_id: u32, part_id: u32, chapter_id: u32, section_i
                                         },
                                     }
                                 },
+                                28 => rsx! {
+                                    match (section_id, subheader_id) {
+                                        // start of chapter 28 section 1
+                                        (1, 1) => rsx! {
+                                            volume1::chapter28::section1::subheader1_content::Content {}
+                                        },
+                                        (1, 2) => rsx! {
+                                            volume1::chapter28::section1::subheader2_content::Content {}
+                                        },
+                                        (1, 3) => rsx! {
+                                            volume1::chapter28::section1::subheader3_content::Content {}
+                                        },
+                                        // start of chapter 28 section 2
+                                        (2, 1) => rsx! {
+                                            volume1::chapter28::section2::subheader1_content::Content {}
+                                        },
+                                        (2, 2) => rsx! {
+                                            volume1::chapter28::section2::subheader2_content::Content {}
+                                        },
+                                        (2, 3) => rsx! {
+                                            volume1::chapter28::section2::subheader3_content::Content {}
+                                        },
+                                        // start of chapter 28 section 3
+                                        (3, 1) => rsx! {
+                                            volume1::chapter28::section3::subheader1_content::Content {}
+                                        },
+                                        (3, 2) => rsx! {
+                                            volume1::chapter28::section3::subheader2_content::Content {}
+                                        },
+                                        (3, 3) => rsx! {
+                                            volume1::chapter28::section3::subheader3_content::Content {}
+                                        },
+                                        _ => rsx! {
+                                            h3 { "Subheader content not found!" }
+                                        },
+                                    }
+                                },
                                 29 => rsx! {
                                     match (section_id, subheader_id) {
                                         // start of chapter 29 section 3

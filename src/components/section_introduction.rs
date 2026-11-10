@@ -187,6 +187,25 @@ pub fn SectionIntroduction(volume_id: u32, part_id: u32, chapter_id: u32, sectio
                                     },
                                 }
                             },
+                            28 => rsx! {
+                                match section_id {
+                                    1 => rsx! {
+                                        volume1::chapter28::section1::SectionIntroductionContent {}
+                                    },
+                                    2 => rsx! {
+                                        volume1::chapter28::section2::SectionIntroductionContent {}
+                                    },
+                                    3 => rsx! {
+                                        volume1::chapter28::section3::SectionIntroductionContent {}
+                                    },
+                                    4 => rsx! {
+                                        volume1::chapter28::section4::SectionIntroductionContent {}
+                                    },
+                                    _ => rsx! {
+                                        h3 { "Section introduction content not found!" }
+                                    },
+                                }
+                            },
                             29 => rsx! {
                                 match section_id {
                                     1 => rsx! {
