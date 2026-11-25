@@ -531,7 +531,38 @@
                         }
                     }
                 }
+            },
+            "4": {
+                "name": "Network Architecture",
+                "chapters": {
+                    "13": {
+                        "name": "LAN Architecture",
+                        "sections": {
+                            "1": {
+                                "name": "Analyzing Campus LAN Topologies",
+                                "subheaders": {
+                                    "1": {"name": "Two-Tier Campus Design (Collapsed Core)"},
+                                    "2": {"name": "Three-Tier Campus Design (Core)"},
+                                    "3": {"name": "Topology Design Terminology"}
+                                }
+                            },
+                            "2": {
+                                "name": "Small Office/Home Office",
+                                "subheaders": {}
+                            },
+                            "3": {
+                                "name": "Power over Ethernet (PoE)",
+                                "subheaders": {
+                                    "1": {"name": "PoE Basics "},
+                                    "2": {"name": "PoE Operation"},
+                                    "3": {"name": "PoE and LAN Design"}
+                                }
+                            }
+                        }
+                    }
+                }
             }
+
         }
     }
 }
